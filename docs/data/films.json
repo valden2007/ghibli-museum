@@ -1,0 +1,41 @@
+[
+  {
+    "id": "totoro",
+    "title": { "ru": "Мой сосед Тоторо", "en": "My Neighbor Totoro" },
+    "year": 1988,
+    "director": "Хаяо Миядзаки",
+    "synopsis": { "ru": "TODO: авторский текст", "en": "TODO: author text" },
+    "facts": [{ "ru": "TODO: авторский текст", "en": "TODO: author text" }],
+    "trailerId": null,
+    "watch": [],
+    "palette": ["#2f5d3a", "#6b8f4e", "#a8c09a", "#d9c9a3", "#7a6a55"],
+    "era": "1980s",
+    "motif": "rain"
+  },
+  {
+    "id": "spirited-away",
+    "title": { "ru": "Унесённые призраками", "en": "Spirited Away" },
+    "year": 2001,
+    "director": "Хаяо Миядзаки",
+    "synopsis": { "ru": "TODO: авторский текст", "en": "TODO: author text" },
+    "facts": [{ "ru": "TODO: авторский текст", "en": "TODO: author text" }],
+    "trailerId": null,
+    "watch": [],
+    "palette": ["#6b1a2b", "#c9a227", "#1a2a4a", "#e8d9a0", "#3b2a4a"],
+    "era": "2000s",
+    "motif": "lanterns"
+  },
+  {
+    "id": "wind-rises",
+    "title": { "ru": "Ветер крепчает", "en": "The Wind Rises" },
+    "year": 2013,
+    "director": "Хаяо Миядзаки",
+    "synopsis": { "ru": "TODO: авторский текст", "en": "TODO: author text" },
+    "facts": [{ "ru": "TODO: авторский текст", "en": "TODO: author text" }],
+    "trailerId": null,
+    "watch": [],
+    "palette": ["#6fa8dc", "#b8d4e8", "#d9c98a", "#9fc9a0", "#e8f0f5"],
+    "era": "2010s",
+    "motif": "wind"
+  }
+]

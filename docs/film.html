@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghibli Museum — фильм</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1 class="site-title">Ghibli Museum</h1>
+      <div class="lang-switch" aria-label="Language">
+        <button type="button">RU</button>
+        <button type="button">EN</button>
+      </div>
+    </header>
+    <main>
+      <h1 class="film-title" id="film-title">Загрузка…</h1>
+      <div id="empty" class="empty" hidden>
+        <p>Фильм с таким идентификатором не найден.</p>
+        <a class="back-link" href="index.html">Вернуться на главную</a>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="js/film.js"></script>
+</body>
+</html>
