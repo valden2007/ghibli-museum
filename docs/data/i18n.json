@@ -1,1 +1,18 @@
-{}
+{
+  "nav.home": { "ru": "Главная", "en": "Home" },
+  "nav.timeline": { "ru": "Таймлайн", "en": "Timeline" },
+  "nav.films": { "ru": "Фильмы", "en": "Films" },
+  "nav.player": { "ru": "Плеер", "en": "Player" },
+  "nav.about": { "ru": "О проекте", "en": "About" },
+  "hero.title": { "ru": "Музей студии Гибли", "en": "Ghibli Museum" },
+  "hero.subtitle": { "ru": "Таймлайн, фильмография и официальные трейлеры в одном месте.", "en": "Timeline, filmography and official trailers in one place." },
+  "timeline.title": { "ru": "Таймлайн студии", "en": "Studio timeline" },
+  "timeline.subtitle": { "ru": "Ключевые вехи с 1985 года.", "en": "Key milestones since 1985." },
+  "films.title": { "ru": "Фильмография", "en": "Filmography" },
+  "films.subtitle": { "ru": "Одиннадцать фильмов Хаяо Миядзаки.", "en": "Eleven films by Hayao Miyazaki." },
+  "player.title": { "ru": "Плеер", "en": "Player" },
+  "player.subtitle": { "ru": "Демонстрация возможностей плеера.", "en": "Showcase of player capabilities." },
+  "about.title": { "ru": "О проекте", "en": "About" },
+  "about.text": { "ru": "Неофициальный фанатский проект. Не связан со Studio Ghibli. Все права на фильмы принадлежат правообладателям.", "en": "Unofficial fan project. Not affiliated with Studio Ghibli. All film rights belong to their owners." },
+  "footer.text": { "ru": "Сделано с любовью к анимации.", "en": "Made with love for animation." }
+}

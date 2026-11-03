@@ -9,22 +9,69 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <h1 class="site-title">Ghibli Museum</h1>
-      <div class="lang-switch" aria-label="Language">
-        <button type="button">RU</button>
-        <button type="button">EN</button>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="#hero">Ghibli Museum</a>
+    <nav id="main-nav" aria-label="Main">
+      <a href="#hero" data-i18n="nav.home">Главная</a>
+      <a href="#timeline" data-i18n="nav.timeline">Таймлайн</a>
+      <a href="#films" data-i18n="nav.films">Фильмы</a>
+      <a href="#player" data-i18n="nav.player">Плеер</a>
+      <a href="#about" data-i18n="nav.about">О проекте</a>
+    </nav>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" data-lang="ru">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <h1 data-i18n="hero.title">Музей студии Гибли</h1>
+        <p data-i18n="hero.subtitle">Таймлайн, фильмография и официальные трейлеры в одном месте.</p>
       </div>
-    </header>
-    <main>
-      <section class="hero">
-        <h1>Музей студии Гибли</h1>
-        <p>Таймлайн, фильмография и официальные трейлеры в одном месте.</p>
-      </section>
-      <section class="grid" id="film-grid" aria-label="Фильмы"></section>
-    </main>
-  </div>
+    </section>
+
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2 data-i18n="timeline.title">Таймлайн студии</h2>
+        <p data-i18n="timeline.subtitle">Ключевые вехи с 1985 года.</p>
+        <p class="muted">TODO: наполнение на этапе C.</p>
+      </div>
+    </section>
+
+    <section id="films" class="section">
+      <div class="container">
+        <h2 data-i18n="films.title">Фильмография</h2>
+        <p data-i18n="films.subtitle">Одиннадцать фильмов Хаяо Миядзаки.</p>
+        <div class="grid" id="film-grid" aria-label="Фильмы"></div>
+      </div>
+    </section>
+
+    <section id="player" class="section">
+      <div class="container">
+        <h2 data-i18n="player.title">Плеер</h2>
+        <p data-i18n="player.subtitle">Демонстрация возможностей плеера.</p>
+        <p class="muted">TODO: наполнение на этапе E.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 data-i18n="about.title">О проекте</h2>
+        <p data-i18n="about.text">Неофициальный фанатский проект. Не связан со Studio Ghibli. Все права на фильмы принадлежат правообладателям.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer.text">Сделано с любовью к анимации.</p>
+    </div>
+  </footer>
+
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

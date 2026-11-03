@@ -27,15 +27,3 @@
 
   --max-width: 1120px;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #f4f1ea;
-    --color-surface: #ffffff;
-    --color-surface-2: #efebe2;
-    --color-text: #1a1c22;
-    --color-muted: #5a6070;
-    --color-accent: #8a6a1a;
-    --color-border: #d8d2c4;
-  }
-}
