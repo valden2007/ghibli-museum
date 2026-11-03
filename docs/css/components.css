@@ -218,8 +218,13 @@
   color: var(--color-muted);
 }
 
-.soot-canvas {
-  position: fixed;
+.motif-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
   inset: 0;
   pointer-events: none;
   z-index: 9999;
@@ -338,4 +343,131 @@
   .burger {
     display: inline-block;
   }
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.filter-btn {
+  background: var(--color-surface);
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--font-size-small);
+  transition: all 0.15s ease;
+}
+
+.filter-btn.active {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+}
+
+.films-section {
+  transition: background 0.6s ease;
+  background: var(--color-bg);
+}
+
+.films-section.morphed {
+  background: radial-gradient(ellipse at top, color-mix(in srgb, var(--c1, var(--color-accent)) 25%, transparent), var(--color-bg) 70%);
+}
+
+.card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.card-swatch {
+  transition: filter 0.3s ease;
+}
+
+.card:hover .card-swatch {
+  filter: saturate(1.2) brightness(1.05);
+}
+
+.film-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-12) 0 var(--space-8);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.film-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.film-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.film-hero .film-title {
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.film-meta {
+  color: rgba(255,255,255,0.85);
+  font-size: var(--font-size-small);
+  margin: 0;
+}
+
+.film-body {
+  padding: var(--space-8) 0 var(--space-12);
+}
+
+.film-body h2 {
+  font-size: var(--font-size-h2);
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+.film-body p, .film-body li {
+  color: var(--color-text);
+  max-width: 70ch;
+}
+
+.film-neighbors {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.player-slot {
+  margin: var(--space-6) 0;
+  padding: var(--space-6);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.btn {
+  display: inline-block;
+  margin: var(--space-2) var(--space-2) 0 0;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: #111;
+  font-weight: 600;
+}
+
+.film-hero .film-title span {
+  display: inline-block;
 }

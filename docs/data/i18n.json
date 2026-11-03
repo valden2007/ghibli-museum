@@ -14,5 +14,11 @@
   "player.subtitle": { "ru": "Демонстрация возможностей плеера.", "en": "Showcase of player capabilities." },
   "about.title": { "ru": "О проекте", "en": "About" },
   "about.text": { "ru": "Неофициальный фанатский проект. Не связан со Studio Ghibli. Все права на фильмы принадлежат правообладателям.", "en": "Unofficial fan project. Not affiliated with Studio Ghibli. All film rights belong to their owners." },
-  "footer.text": { "ru": "Сделано с любовью к анимации.", "en": "Made with love for animation." }
+  "footer.text": { "ru": "Сделано с любовью к анимации.", "en": "Made with love for animation." },
+  "film.synopsis": { "ru": "Синопсис", "en": "Synopsis" },
+  "film.facts": { "ru": "Факты", "en": "Facts" },
+  "film.watch": { "ru": "Где смотреть", "en": "Where to watch" },
+  "film.watch.empty": { "ru": "Скоро", "en": "Coming soon" },
+  "film.prev": { "ru": "Предыдущий", "en": "Previous" },
+  "film.next": { "ru": "Следующий", "en": "Next" }
 }

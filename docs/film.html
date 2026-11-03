@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <style>
+    @view-transition { navigation: auto; }
+  </style>
 </head>
 <body>
   <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
@@ -25,13 +28,44 @@
     </div>
     <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
   </header>
-  <main class="container">
-    <h1 class="film-title" id="film-title">Загрузка…</h1>
-    <div id="empty" class="empty" hidden>
-      <p>Фильм с таким идентификатором не найден.</p>
-      <a class="back-link" href="index.html">Вернуться на главную</a>
-    </div>
+
+  <main>
+    <section class="film-hero" id="film-hero">
+      <div class="film-hero-bg" id="film-hero-bg"></div>
+      <div class="container film-hero-content">
+        <h1 class="film-title" id="film-title" data-reveal><span>Загрузка…</span></h1>
+        <p class="film-meta" id="film-meta"></p>
+      </div>
+    </section>
+
+    <section class="container film-body" id="film-content" hidden>
+      <h2 data-i18n="film.synopsis">Синопсис</h2>
+      <p id="film-synopsis"></p>
+
+      <h2 data-i18n="film.facts">Факты</h2>
+      <ul id="film-facts"></ul>
+
+      <h2 data-i18n="film.watch">Где смотреть</h2>
+      <div id="film-watch"></div>
+
+      <div id="film-player-slot" class="player-slot">
+        <p class="muted">Трейлер скоро.</p>
+      </div>
+
+      <nav class="film-neighbors">
+        <a id="prev-film" href="index.html#films">← Предыдущий</a>
+        <a id="next-film" href="index.html#films">Следующий →</a>
+      </nav>
+    </section>
+
+    <section class="container" id="film-empty" hidden>
+      <div class="empty">
+        <p>Фильм с таким идентификатором не найден.</p>
+        <a class="back-link" href="index.html">Вернуться на главную</a>
+      </div>
+    </section>
   </main>
+
   <script src="js/vendor/lenis.min.js"></script>
   <script type="module" src="js/film.js"></script>
 </body>
