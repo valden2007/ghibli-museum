@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивный музей студии Гибли: таймлайн, фильмография и официальные трейлеры.">
   <title>Ghibli Museum</title>
-  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -85,7 +86,7 @@
         <h2 data-reveal data-i18n="films.title"><span>Фильмография</span></h2>
         <p data-i18n="films.subtitle">Одиннадцать фильмов Хаяо Миядзаки.</p>
         <div class="filters" id="film-filters"></div>
-        <div class="grid" id="film-grid" aria-label="Фильмы"></div>
+        <div class="grid" id="film-grid"></div>
       </div>
     </section>
 
@@ -100,8 +101,20 @@
 
     <section id="about" class="section">
       <div class="container">
-        <h2 data-i18n="about.title">О проекте</h2>
+        <h2 data-reveal data-i18n="about.title"><span>О проекте</span></h2>
         <p data-i18n="about.text">Неофициальный фанатский проект. Не связан со Studio Ghibli. Все права на фильмы принадлежат правообладателям.</p>
+        <div class="colophon">
+          <h3>Стек</h3>
+          <p>HTML, CSS, JavaScript (ES-модули), JSON. Без сборщика и бэкенда. Плавный скролл — Lenis (MIT). Плеер — YouTube IFrame API (youtube-nocookie.com) + собственный canvas-адаптер.</p>
+          <h3>Принципы</h3>
+          <p>Легально: никаких копий фильмов, саундтреков, постеров и кадров. Визуал — CSS-палитры и собственная svg/css/canvas-графика. Видео — только официальные трейлеры через YouTube.</p>
+          <h3>Как сделано</h3>
+          <p>Данные в JSON, интерфейс рендерится модулями. Мотивы — процедурные canvas-анимации, живут только в видимой области. i18n через data-i18n и localStorage.</p>
+          <h3>Репозиторий</h3>
+          <p><a href="https://github.com/valden2007/ghibli-museum" target="_blank" rel="noopener">github.com/valden2007/ghibli-museum</a></p>
+          <h3>Отказ от ответственности</h3>
+          <p>Неофициальный фанатский проект, не связан со Studio Ghibli; все права на фильмы принадлежат правообладателям.</p>
+        </div>
       </div>
     </section>
   </main>

@@ -13,6 +13,8 @@ export async function loadTimeline() {
   }
   return response.json();
 }
+
+export async function loadI18n() {
   const response = await fetch('data/i18n.json');
   if (!response.ok) {
     throw new Error('Не удалось загрузить i18n.json');

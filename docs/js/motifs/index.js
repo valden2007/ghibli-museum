@@ -22,6 +22,7 @@ export function getMotifFactory(type) {
 }
 
 export function mountMotif(container, type, palette) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
   const factory = getMotifFactory(type);
   if (!factory || !container) return null;
   const canvas = document.createElement('canvas');

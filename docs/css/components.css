@@ -563,3 +563,13 @@
   color: #fff;
   background: rgba(0,0,0,0.6);
 }
+
+.colophon h3 {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: 1.125rem;
+}
+
+.colophon p {
+  color: var(--color-muted);
+  max-width: 70ch;
+}
