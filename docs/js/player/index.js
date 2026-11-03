@@ -27,7 +27,7 @@ export async function mountPlayer(container, options = {}) {
   playBtn.setAttribute('aria-label', 'Play');
 
   const seek = document.createElement('input');
-  seek.type = 'range';
+  seek.setAttribute('aria-label', 'Seek');
   seek.className = 'player-seek';
   seek.min = '0';
   seek.max = '100';
@@ -46,13 +46,14 @@ export async function mountPlayer(container, options = {}) {
   const volume = document.createElement('input');
   volume.type = 'range';
   volume.className = 'player-volume';
-  volume.min = '0';
+  volume.setAttribute('aria-label', 'Volume');
   volume.max = '1';
   volume.step = '0.01';
   volume.value = '1';
 
   const speed = document.createElement('select');
   speed.className = 'player-speed';
+  speed.setAttribute('aria-label', 'Playback speed');
   [0.5, 0.75, 1, 1.25, 1.5, 2].forEach((r) => {
     const o = document.createElement('option');
     o.value = String(r);
