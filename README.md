@@ -26,6 +26,12 @@ python -m http.server 8000
 GitHub Pages: branch `main`, папка `/docs`.
 Живая ссылка: https://valden2007.github.io/ghibli-museum/
 
+### Деплой: чек-лист
+- Регистр путей: каждый путь в `<link>`, `@import`, `import`, `fetch`, `url()` должен совпадать с именем файла в репо побуквенно (GitHub Pages чувствителен к регистру).
+- Все нужные файлы закоммичены: проверь `git ls-files` vs фактические файлы в `docs/`.
+- `.gitignore` не должен исключать нужные css/js/data.
+- После пуша проверь живой URL с кэш-бастингом `?v=timestamp`: статусы ≥400, ошибки консоли, скриншоты на 1440 и 390.
+
 ## Лицензии
 
 - Lenis — MIT (см. docs/js/vendor/LENIS-LICENSE.txt)

@@ -4,6 +4,7 @@ import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initReveal } from './reveal.js';
 import { initSoot } from './soot.js';
+import { initTimeline } from './timeline.js';
 import { mountPlayer } from './player/index.js';
 
 const grid = document.querySelector('#film-grid');

@@ -2,6 +2,7 @@ import { loadFilms } from './data.js';
 import { initI18n, getLang, onLangChange, setLang, t } from './i18n.js';
 import { initNav } from './nav.js';
 import { mountMotif } from './motifs/index.js';
+import { initReveal } from './reveal.js';
 import { mountPlayer } from './player/index.js';
 
 const titleEl = document.querySelector('#film-title');

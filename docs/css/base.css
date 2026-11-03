@@ -17,6 +17,7 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   min-width: 360px;
+  overflow-x: hidden;
 }
 
 a {
