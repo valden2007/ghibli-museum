@@ -33,8 +33,10 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
     img.width = 480;
     img.height = 600;
     img.alt = imageInfo[lang === 'en' ? 'altEn' : 'altRu'] || '';
-    img.sizes = '(max-width: 600px) calc(100vw - 48px), (max-width: 1100px) 30vw, 360px';
-    img.srcset = `${imageInfo.fileSm} 360w, ${imageInfo.file} 480w`;
+    if (imageInfo.fileSm) {
+      img.srcset = `${imageInfo.fileSm} 360w, ${imageInfo.file} 480w`;
+      img.sizes = '(max-width: 600px) calc(100vw - 48px), (max-width: 1100px) 30vw, 390px';
+    }
     img.src = imageInfo.file;
     img.addEventListener('error', () => {
       img.remove();
