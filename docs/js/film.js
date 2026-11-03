@@ -2,7 +2,7 @@ import { loadFilms } from './data.js';
 import { initI18n, getLang, onLangChange, setLang, t } from './i18n.js';
 import { initNav } from './nav.js';
 import { mountMotif } from './motifs/index.js';
-import { initReveal } from './reveal.js';
+import { mountPlayer } from './player/index.js';
 
 const titleEl = document.querySelector('#film-title');
 const metaEl = document.querySelector('#film-meta');
@@ -149,6 +149,25 @@ async function init() {
   if (heroBg) {
     if (motifHandle) motifHandle.destroy();
     motifHandle = mountMotif(heroBg, film.motif, film.palette);
+  }
+
+  const slot = document.querySelector('#film-player-slot');
+  if (slot) {
+    slot.innerHTML = '';
+    if (film.trailerId) {
+      mountPlayer(slot, { adapter: 'youtube', videoId: film.trailerId, palette: film.palette });
+    } else {
+      const p = document.createElement('p');
+      p.className = 'muted';
+      p.textContent = 'Трейлер скоро.';
+      const a = document.createElement('a');
+      a.className = 'btn';
+      a.href = `https://www.youtube.com/results?search_query=${encodeURIComponent((film.title.en || film.title.ru) + ' trailer')}`;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = 'Поискать трейлер на YouTube';
+      slot.append(p, a);
+    }
   }
 
   if (contentEl) contentEl.hidden = false;
