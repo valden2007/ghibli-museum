@@ -13,10 +13,12 @@
 }
 
 .logo {
-  font-size: 1.125rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
   color: var(--color-text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 #main-nav {
@@ -99,10 +101,10 @@
 
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 100svh;
   display: flex;
-  align-items: center;
-  padding: var(--space-12) 0 var(--space-8);
+  align-items: flex-end;
+  padding: 0 0 var(--space-12);
   overflow: hidden;
 }
 
@@ -575,4 +577,82 @@
 .colophon p {
   color: var(--color-muted);
   max-width: 70ch;
+}
+
+@keyframes grassSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.grass-blade {
+  transition: transform 0.3s ease;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--space-8);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 300;
+  line-height: 1.05;
+  margin: 0 0 var(--space-4);
+  color: #fff;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.35);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  color: rgba(255,255,255,0.9);
+  max-width: 48ch;
+  margin: 0 0 var(--space-6);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #1a3a3a;
+  padding: var(--space-3) var(--space-6);
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  text-decoration: none;
+}
+
+.hero-scroll-hint {
+  color: rgba(255,255,255,0.8);
+  font-size: var(--font-size-small);
+  animation: hintPulse 2s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+.wave-divider {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
 }
