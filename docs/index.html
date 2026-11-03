@@ -66,11 +66,17 @@
     </div>
   </section>
 
-    <section id="timeline" class="section">
+    <section id="timeline" class="section timeline-section">
       <div class="container">
-        <h2 data-i18n="timeline.title">Таймлайн студии</h2>
+        <h2 data-reveal data-i18n="timeline.title"><span>Таймлайн студии</span></h2>
         <p data-i18n="timeline.subtitle">Ключевые вехи с 1985 года.</p>
-        <p class="muted">TODO: наполнение на этапе C.</p>
+        <div class="timeline">
+          <div class="timeline-sticky">
+            <div class="timeline-year" id="timeline-year">1985</div>
+            <div class="timeline-title" id="timeline-title">Основание студии</div>
+          </div>
+          <div class="timeline-list" id="timeline-list"></div>
+        </div>
       </div>
     </section>
 

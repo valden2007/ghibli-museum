@@ -3,7 +3,7 @@ import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
 import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initReveal } from './reveal.js';
-import { initSoot } from './soot.js';
+import { initTimeline } from './timeline.js';
 
 const grid = document.querySelector('#film-grid');
 
@@ -72,6 +72,7 @@ async function init() {
   initHero();
   initReveal();
   initSoot();
+  initTimeline();
   renderFilms();
   onLangChange(() => renderFilms());
 }
