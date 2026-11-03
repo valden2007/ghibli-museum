@@ -1,6 +1,9 @@
 import { loadFilms } from './data.js';
 import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
 import { initNav } from './nav.js';
+import { initHero } from './hero.js';
+import { initReveal } from './reveal.js';
+import { initSoot } from './soot.js';
 
 const grid = document.querySelector('#film-grid');
 
@@ -53,8 +56,22 @@ function initLangSwitch() {
 
 async function init() {
   await initI18n();
-  initNav();
+
+  let lenis = null;
+  if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    lenis = new window.Lenis({ lerp: 0.1, smoothWheel: true });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  initNav(lenis);
   initLangSwitch();
+  initHero();
+  initReveal();
+  initSoot();
   renderFilms();
   onLangChange(() => renderFilms());
 }

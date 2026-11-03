@@ -26,8 +26,15 @@ function initLangSwitch() {
 }
 
 async function init() {
+  let lenis = null;
+  if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    lenis = new window.Lenis({ lerp: 0.1, smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+
   await initI18n();
-  initNav();
+  initNav(lenis);
   initLangSwitch();
 
   const params = new URLSearchParams(window.location.search);

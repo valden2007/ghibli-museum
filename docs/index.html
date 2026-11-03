@@ -28,11 +28,43 @@
 
   <main>
     <section id="hero" class="hero">
-      <div class="container">
-        <h1 data-i18n="hero.title">Музей студии Гибли</h1>
-        <p data-i18n="hero.subtitle">Таймлайн, фильмография и официальные трейлеры в одном месте.</p>
-      </div>
-    </section>
+    <div class="hero-scene" aria-hidden="true">
+      <svg class="hero-sky" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0f1a3a"/>
+            <stop offset="55%" stop-color="#2a4a6a"/>
+            <stop offset="100%" stop-color="#6fa8dc"/>
+          </linearGradient>
+          <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f0d9a0" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#f0d9a0" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#skyGrad)"/>
+        <circle cx="1220" cy="200" r="120" fill="url(#sunGrad)"/>
+        <g data-speed="0.04">
+          <ellipse cx="300" cy="180" rx="120" ry="40" fill="rgba(255,255,255,0.08)"/>
+          <ellipse cx="900" cy="140" rx="160" ry="45" fill="rgba(255,255,255,0.06)"/>
+          <ellipse cx="1400" cy="260" rx="130" ry="38" fill="rgba(255,255,255,0.07)"/>
+        </g>
+        <g data-speed="0.1">
+          <ellipse cx="500" cy="320" rx="180" ry="50" fill="rgba(255,255,255,0.12)"/>
+          <ellipse cx="1100" cy="360" rx="200" ry="55" fill="rgba(255,255,255,0.1)"/>
+        </g>
+        <g data-speed="0.2">
+          <path d="M0,700 Q400,620 800,680 T1600,660 L1600,900 L0,900 Z" fill="#2f5d3a" opacity="0.85"/>
+        </g>
+        <g data-speed="0.35">
+          <path d="M0,780 Q300,720 700,760 T1600,740 L1600,900 L0,900 Z" fill="#1f3d2a" opacity="0.95"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container hero-content">
+      <h1 data-reveal data-i18n="hero.title"><span>Музей студии Гибли</span></h1>
+      <p data-reveal data-i18n="hero.subtitle"><span>Таймлайн, фильмография и официальные трейлеры в одном месте.</span></p>
+    </div>
+  </section>
 
     <section id="timeline" class="section">
       <div class="container">
@@ -72,6 +104,7 @@
     </div>
   </footer>
 
+  <script src="js/vendor/lenis.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
