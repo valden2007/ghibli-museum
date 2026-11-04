@@ -675,6 +675,81 @@
   z-index: 5;
 }
 
+.hero-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero-world {
+  position: absolute;
+  inset: -40px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  background-size: cover;
+}
+
+.hero-world.is-active {
+  opacity: 1;
+}
+
+.hero-train {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 90px;
+  width: auto;
+  z-index: 6;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.35));
+  will-change: transform;
+}
+
+.hero-train-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(255,200,120,0.55) 0%, rgba(255,200,120,0) 70%);
+  z-index: 7;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hero-castle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 220px;
+  width: auto;
+  z-index: 4;
+  opacity: 0.9;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+  will-change: transform;
+}
+
+.hero-events {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-event-sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80px;
+  width: auto;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-sun, .cloud-drift, .grass-blade {
     animation: none;
