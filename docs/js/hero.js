@@ -1,6 +1,8 @@
 export async function initHero() {
+  const ENABLE_NEW_HERO = false;
   const scene = document.querySelector('.hero-scene');
   if (!scene) return;
+  if (!ENABLE_NEW_HERO) return;
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const coarse = window.matchMedia('(pointer: coarse)').matches;
