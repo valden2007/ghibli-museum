@@ -1,10 +1,156 @@
 {
+  "nausicaa": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#3a6b4a",
+      "#7fb069",
+      "#a8d5a2",
+      "#d9c9a3",
+      "#4a7c6f"
+    ],
+    "altRu": "Кадр из «Навсикая из Долины ветров»",
+    "altEn": "A frame from Nausicaä of the Valley of the Wind"
+  },
+  "laputa": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#4a6fa5",
+      "#8fb3d9",
+      "#c9d6e8",
+      "#2a3a5a",
+      "#b8c4d4"
+    ],
+    "altRu": "Кадр из «Небесный замок Лапута»",
+    "altEn": "A frame from Castle in the Sky"
+  },
   "totoro": {
     "file": "img/films/totoro.webp",
     "fileSm": "img/films/totoro-sm.webp",
     "ratio": "4:5",
-    "paletteHint": ["#2f5d3a", "#6b8f4e", "#a8c09a", "#d9c9a3", "#7a6a55"],
+    "paletteHint": [
+      "#2f5d3a",
+      "#6b8f4e",
+      "#a8c09a",
+      "#d9c9a3",
+      "#7a6a55"
+    ],
     "altRu": "Кадр из «Мой сосед Тоторо»",
     "altEn": "A frame from My Neighbor Totoro"
+  },
+  "kiki": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#6b4a7a",
+      "#c94a4a",
+      "#8fa8d9",
+      "#f0d9a0",
+      "#3a2a4a"
+    ],
+    "altRu": "Кадр из «Ведьмина служба доставки»",
+    "altEn": "A frame from Kiki's Delivery Service"
+  },
+  "porco-rosso": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#1a3a5a",
+      "#4a7a8a",
+      "#c97a4a",
+      "#d9b08a",
+      "#2a2a3a"
+    ],
+    "altRu": "Кадр из «Порко Россо»",
+    "altEn": "A frame from Porco Rosso"
+  },
+  "mononoke": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#1a2a1a",
+      "#6b1a1a",
+      "#c9a227",
+      "#4a6b3a",
+      "#2a1a2a"
+    ],
+    "altRu": "Кадр из «Принцесса Мононоке»",
+    "altEn": "A frame from Princess Mononoke"
+  },
+  "spirited-away": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#6b1a2b",
+      "#c9a227",
+      "#1a2a4a",
+      "#e8d9a0",
+      "#3b2a4a"
+    ],
+    "altRu": "Кадр из «Унесённые призраками»",
+    "altEn": "A frame from Spirited Away"
+  },
+  "howl": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#4a5a7a",
+      "#8a9ac9",
+      "#d9c9e8",
+      "#e8d9a0",
+      "#2a2a4a"
+    ],
+    "altRu": "Кадр из «Ходячий замок»",
+    "altEn": "A frame from Howl's Moving Castle"
+  },
+  "ponyo": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#c94a3a",
+      "#4aa8a8",
+      "#f0d080",
+      "#8ad0d0",
+      "#2a4a5a"
+    ],
+    "altRu": "Кадр из «Рыбка Поньо на утёсе»",
+    "altEn": "A frame from Ponyo"
+  },
+  "wind-rises": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#6fa8dc",
+      "#b8d4e8",
+      "#d9c98a",
+      "#9fc9a0",
+      "#e8f0f5"
+    ],
+    "altRu": "Кадр из «Ветер крепчает»",
+    "altEn": "A frame from The Wind Rises"
+  },
+  "boy-heron": {
+    "file": null,
+    "fileSm": null,
+    "ratio": "4:5",
+    "paletteHint": [
+      "#1a1a2a",
+      "#c96a2a",
+      "#4a6a8a",
+      "#d9b080",
+      "#2a3a4a"
+    ],
+    "altRu": "Кадр из «Мальчик и птица»",
+    "altEn": "A frame from The Boy and the Heron"
   }
 }

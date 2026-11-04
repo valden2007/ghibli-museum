@@ -73,6 +73,7 @@
 
 .catalog-prototype__duotone {
   z-index: 2;
+  opacity: 0.5;
   background: linear-gradient(145deg, color-mix(in srgb, var(--tone-1) 22%, transparent), color-mix(in srgb, var(--tone-3) 18%, transparent));
   mix-blend-mode: color;
 }
@@ -89,7 +90,7 @@
 .catalog-prototype__motif {
   z-index: 4;
   opacity: 0.22;
-  mix-blend-mode: screen;
+  mix-blend-mode: var(--motif-blend, screen);
   transition: opacity 220ms ease;
 }
 

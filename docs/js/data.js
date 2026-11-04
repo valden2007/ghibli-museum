@@ -14,6 +14,12 @@ export async function loadTimeline() {
   return response.json();
 }
 
+export async function loadImages() {
+  const response = await fetch('data/images.json');
+  if (!response.ok) throw new Error('Не удалось загрузить images.json');
+  return response.json();
+}
+
 export async function loadI18n() {
   const response = await fetch('data/i18n.json');
   if (!response.ok) {

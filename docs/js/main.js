@@ -1,12 +1,12 @@
-import { loadFilms } from './data.js';
+import { loadFilms, loadImages } from './data.js';
 import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
 import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initReveal } from './reveal.js';
 import { initSoot } from './soot.js';
 import { initTimeline } from './timeline.js';
-import { mountMotif } from './motifs/index.js';
 import { mountPlayer } from './player/index.js';
+import { createCatalogCard } from './catalog-card.js';
 
 const grid = document.querySelector('#film-grid');
 const filtersEl = document.querySelector('#film-filters');
@@ -38,91 +38,33 @@ function renderFilters() {
   });
 }
 
+let imagesData = {};
+let cardInstances = [];
+
+function morphSection(film) {
+  if (!filmsSection) return;
+  (film.palette || []).forEach((color, i) => {
+    filmsSection.style.setProperty(`--c${i + 1}`, color);
+  });
+  filmsSection.classList.add('morphed');
+}
+
 function renderFilms() {
   if (!grid) return;
+  cardInstances.forEach((instance) => instance?.destroy?.());
+  cardInstances = [];
   grid.innerHTML = '';
   const lang = getLang();
   const list = activeEra === 'all' ? allFilms : allFilms.filter((f) => f.era === activeEra);
   list.forEach((film) => {
-    const card = document.createElement('a');
-    card.className = 'card';
-    card.href = `film.html?id=${encodeURIComponent(film.id)}`;
-    card.dataset.era = film.era;
-
-    const swatch = document.createElement('div');
-    swatch.className = 'card-swatch';
-    swatch.style.background = `radial-gradient(circle at 20% 30%, ${film.palette[0]}cc, transparent 60%),
-      radial-gradient(circle at 80% 20%, ${film.palette[1] || film.palette[0]}aa, transparent 55%),
-      radial-gradient(circle at 50% 80%, ${film.palette[2] || film.palette[0]}99, transparent 60%),
-      radial-gradient(circle at 10% 90%, ${film.palette[3] || film.palette[0]}88, transparent 50%),
-      var(--color-surface)`;
-
-    const motifBox = document.createElement('div');
-    motifBox.className = 'card-motif';
-
-    const body = document.createElement('div');
-    body.className = 'card-body';
-
-    const title = document.createElement('h3');
-    title.className = 'card-title';
-    title.textContent = film.title[lang] || film.title.ru;
-
-    const year = document.createElement('p');
-    year.className = 'card-year';
-    year.textContent = film.year;
-
-    body.append(title, year);
-    card.append(swatch, motifBox, body);
-
-    // palette morph on hover
-    card.addEventListener('mouseenter', () => {
-      if (!filmsSection) return;
-      film.palette.forEach((c, i) => {
-        filmsSection.style.setProperty(`--c${i + 1}`, c);
-      });
-      filmsSection.classList.add('morphed');
-    });
-    card.addEventListener('mouseleave', () => {
-      if (filmsSection) filmsSection.classList.remove('morphed');
-    });
-    card.addEventListener('focus', () => {
-      if (!filmsSection) return;
-      film.palette.forEach((c, i) => {
-        filmsSection.style.setProperty(`--c${i + 1}`, c);
-      });
-      filmsSection.classList.add('morphed');
-    });
-    card.addEventListener('blur', () => {
-      if (filmsSection) filmsSection.classList.remove('morphed');
-    });
-
-    // tilt + mini motif on hover (mouse only)
-    let motifHandle = null;
-    const canTilt = window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (canTilt) {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(900px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-4px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-        if (motifHandle) { motifHandle.destroy(); motifHandle = null; }
-      });
-      card.addEventListener('mouseenter', () => {
-        if (!motifHandle && motifBox) {
-          motifHandle = mountMotif(motifBox, film.motif, film.palette);
-        }
-      });
-      card.addEventListener('focus', () => {
-        card.classList.add('is-focused');
-      });
-      card.addEventListener('blur', () => {
-        card.classList.remove('is-focused');
-      });
-    }
-    grid.append(card);
+    const instance = createCatalogCard(film, imagesData[film.id], lang);
+    cardInstances.push(instance);
+    const el = instance.element;
+    el.addEventListener('mouseenter', () => morphSection(film));
+    el.addEventListener('mouseleave', () => filmsSection?.classList.remove('morphed'));
+    el.addEventListener('focusin', () => morphSection(film));
+    el.addEventListener('focusout', () => filmsSection?.classList.remove('morphed'));
+    grid.append(el);
   });
 }
 
@@ -164,6 +106,7 @@ async function init() {
 
   try {
     allFilms = await loadFilms();
+    imagesData = await loadImages();
     renderFilters();
     renderFilms();
   } catch (error) {
