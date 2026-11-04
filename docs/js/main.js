@@ -10,6 +10,9 @@ import { createCatalogCard } from './catalog-card.js';
 
 const grid = document.querySelector('#film-grid');
 const filtersEl = document.querySelector('#film-filters');
+
+grid?.addEventListener('card:activate', (event) => console.log('card:activate', event.detail));
+grid?.addEventListener('card:deactivate', (event) => console.log('card:deactivate', event.detail));
 const filmsSection = document.querySelector('.films-section');
 
 let allFilms = [];

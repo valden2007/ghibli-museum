@@ -49,6 +49,10 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   frame.className = 'catalog-prototype__frame';
   frame.setAttribute('aria-label', film.title[lang] || film.title.ru);
 
+  const ambient = document.createElement('span');
+  ambient.className = 'catalog-prototype__ambient';
+  ambient.setAttribute('aria-hidden', 'true');
+
   const hasImage = Boolean(imageInfo?.file);
   if (hasImage) {
     const img = document.createElement('img');
@@ -63,6 +67,10 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
       img.sizes = '(max-width: 600px) calc(100vw - 48px), (max-width: 1100px) 30vw, 390px';
     }
     img.src = imageInfo.file;
+    if (imageInfo?.crop) {
+      img.style.transform = imageInfo.crop;
+      img.style.transformOrigin = 'center top';
+    }
     img.addEventListener('error', () => {
       img.remove();
       frame.classList.add('has-placeholder');
@@ -89,7 +97,7 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   const motif = document.createElement('span');
   motif.className = 'catalog-prototype__motif';
   motif.setAttribute('aria-hidden', 'true');
-  frame.append(duotone, print, motif);
+  frame.append(ambient, duotone, print, motif);
 
   const heading = document.createElement('div');
   heading.className = 'catalog-prototype__heading';
@@ -130,7 +138,9 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   card.append(frame, heading, passport);
 
   let motifHandle = null;
-  let intersecting = false;
+  let intersecting = true;
+  let hovered = false;
+  let focused = false;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const observer = 'IntersectionObserver' in window
@@ -142,12 +152,23 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   observer?.observe(card);
 
   function syncMotif() {
-    const active = intersecting && !reducedMotion.matches && (
-      (finePointer.matches && card.matches(':hover')) || card.matches(':focus-visible')
-    );
+    const active = intersecting && !reducedMotion.matches && (hovered || focused);
+    const wasActive = card.classList.contains('is-active');
     card.classList.toggle('is-active', active);
     const showcase = card.closest('.catalog-showcase');
     showcase?.classList.toggle('is-active', active);
+    if (active && !wasActive) {
+      card.dispatchEvent(new CustomEvent('card:activate', {
+        bubbles: true,
+        detail: { id: film.id, palette: tones, motif: film.motif, era: film.era },
+      }));
+    }
+    if (!active && wasActive) {
+      card.dispatchEvent(new CustomEvent('card:deactivate', {
+        bubbles: true,
+        detail: { id: film.id, palette: tones, motif: film.motif, era: film.era },
+      }));
+    }
     if (active && !motifHandle) motifHandle = mountMotif(motif, film.motif, tones);
     if (!active && motifHandle) {
       motifHandle.destroy();
@@ -155,10 +176,10 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
     }
   }
 
-  card.addEventListener('pointerenter', syncMotif);
-  card.addEventListener('pointerleave', syncMotif);
-  card.addEventListener('focusin', syncMotif);
-  card.addEventListener('focusout', syncMotif);
+  card.addEventListener('pointerenter', () => { hovered = true; syncMotif(); });
+  card.addEventListener('pointerleave', () => { hovered = false; syncMotif(); });
+  card.addEventListener('focusin', () => { focused = true; syncMotif(); });
+  card.addEventListener('focusout', () => { focused = false; syncMotif(); });
   reducedMotion.addEventListener?.('change', syncMotif);
   finePointer.addEventListener?.('change', syncMotif);
 

@@ -79,7 +79,7 @@
 }
 
 .catalog-prototype__print {
-  z-index: 3;
+  z-index: 4;
   opacity: 0.42;
   background:
     radial-gradient(ellipse at center, transparent 46%, rgba(26, 36, 29, 0.36) 100%),
@@ -88,10 +88,34 @@
 }
 
 .catalog-prototype__motif {
-  z-index: 4;
+  z-index: 5;
   opacity: 0.22;
   mix-blend-mode: var(--motif-blend, screen);
   transition: opacity 220ms ease;
+}
+
+.catalog-prototype__ambient {
+  z-index: 3;
+  opacity: 0.26;
+  background:
+    repeating-linear-gradient(104deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 13px),
+    repeating-linear-gradient(104deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 26px);
+  mix-blend-mode: screen;
+  animation: ambient-rain 1.4s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ambient-rain {
+  0% { transform: translateY(-8%); }
+  100% { transform: translateY(8%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-prototype__ambient {
+    animation: none;
+    transform: none;
+    opacity: 0.14;
+  }
 }
 
 .catalog-prototype:hover .catalog-prototype__motif,
