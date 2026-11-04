@@ -2,6 +2,7 @@ import { loadTimeline, loadFilms } from './data.js';
 import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
 import { initNav } from './nav.js';
 import { initReveal } from './reveal.js';
+import { mountMotif } from './motifs/index.js';
 
 const yearEl = document.querySelector('#milestone-year');
 const titleEl = document.querySelector('#milestone-title');
@@ -12,9 +13,24 @@ const relatedEl = document.querySelector('#milestone-related');
 const prevLink = document.querySelector('#prev-milestone');
 const nextLink = document.querySelector('#next-milestone');
 
+const PRIMARY_MOTIF = {
+  '1985-founding': 'clouds',
+  '1988-totoro-grave': 'rain',
+  '2001-ghibli-museum': 'clouds',
+  '2001-spirited': 'lanterns',
+  '2003-oscar-spirited': 'lanterns',
+  '2013-wind': 'wind',
+  '2022-ghibli-park': 'leaves',
+  '2023-boy-heron': 'stars',
+  '2024-oscar-boy-heron': 'stars',
+};
+const NEUTRAL_PALETTE = ['#2f5d3a', '#6b8f4e', '#a8c09a', '#d9c9a3', '#7a6a55'];
+
 let milestones = [];
 let films = [];
 let current = null;
+let weatherHandle = null;
+let creatureEl = null;
 
 function initLangSwitch() {
   document.querySelectorAll('.lang-switch button[data-lang]').forEach((btn) => {
@@ -28,6 +44,55 @@ function initLangSwitch() {
   });
 }
 
+function paletteFor(item) {
+  const fid = item.relatedFilms && item.relatedFilms[0];
+  const film = fid ? films.find((f) => f.id === fid) : null;
+  return film && Array.isArray(film.palette) ? film.palette : NEUTRAL_PALETTE;
+}
+
+function applyWorld(item) {
+  const lang = getLang();
+  const pal = paletteFor(item);
+  const hero = document.querySelector('#milestone-hero');
+  if (hero) pal.forEach((c, i) => hero.style.setProperty(`--c${i + 1}`, c));
+
+  // weather host
+  let host = document.querySelector('#milestone-weather');
+  if (!host) {
+    host = document.createElement('div');
+    host.id = 'milestone-weather';
+    host.className = 'milestone-weather';
+    host.setAttribute('aria-hidden', 'true');
+    const heroEl = document.querySelector('#milestone-hero');
+    if (heroEl) heroEl.prepend(host);
+  }
+  if (weatherHandle) { weatherHandle.destroy(); weatherHandle = null; }
+  host.innerHTML = '';
+  const motifType = PRIMARY_MOTIF[item.slug];
+  if (motifType) weatherHandle = mountMotif(host, motifType, pal);
+
+  // creature
+  if (creatureEl) { creatureEl.remove(); creatureEl = null; }
+  const creature = item.creature;
+  if (creature && creature.file) {
+    const img = new Image();
+    img.onload = () => {
+      creatureEl = document.createElement('img');
+      creatureEl.className = 'milestone-creature';
+      creatureEl.src = creature.file;
+      creatureEl.alt = creature.alt ? (creature.alt[lang] || creature.alt.ru) : '';
+      creatureEl.setAttribute('aria-hidden', 'true');
+      host.append(creatureEl);
+    };
+    img.onerror = () => {
+      console.log(`missing creature: ${creature.file}`);
+    };
+    img.src = creature.file;
+  } else if (creature && (creature.file === null || creature.file === undefined)) {
+    console.log(`missing creature: docs/img/milestones/creatures/${item.slug}.png`);
+  }
+}
+
 function render() {
   if (!current) return;
   const lang = getLang();
@@ -38,6 +103,7 @@ function render() {
     else titleEl.textContent = current.title[lang] || current.title.ru;
   }
   if (detailEl) detailEl.textContent = current.detail[lang] || current.detail.ru;
+  applyWorld(current);
 
   // related films
   if (relatedEl) {

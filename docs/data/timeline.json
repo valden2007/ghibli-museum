@@ -16,7 +16,14 @@
       "en": "The studio is founded by Hayao Miyazaki and Isao Takahata after the success of Nausicaa. The beginning of a path that will lead to its own museum and worldwide recognition."
     },
     "relatedFilms": [],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 1988,
@@ -37,7 +44,14 @@
     "relatedFilms": [
       "totoro"
     ],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2001,
@@ -56,7 +70,14 @@
       "en": "The studio museum opens in Inokashira Park in Tokyo, a place to touch the world of animation."
     },
     "relatedFilms": [],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2001,
@@ -77,7 +98,14 @@
     "relatedFilms": [
       "spirited-away"
     ],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2003,
@@ -98,7 +126,14 @@
     "relatedFilms": [
       "spirited-away"
     ],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2013,
@@ -119,7 +154,14 @@
     "relatedFilms": [
       "wind-rises"
     ],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2022,
@@ -138,7 +180,14 @@
       "en": "A theme park dedicated to the studio worlds opens in Aichi Prefecture."
     },
     "relatedFilms": [],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2023,
@@ -159,7 +208,14 @@
     "relatedFilms": [
       "boy-heron"
     ],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   },
   {
     "year": 2024,
@@ -180,6 +236,13 @@
     "relatedFilms": [
       "boy-heron"
     ],
-    "image": null
+    "image": null,
+    "creature": {
+      "file": null,
+      "alt": {
+        "ru": "Существо эпохи",
+        "en": "Era creature"
+      }
+    }
   }
 ]

@@ -1,5 +1,20 @@
-import { loadTimeline } from './data.js';
+import { loadTimeline, loadFilms } from './data.js';
 import { getLang, onLangChange } from './i18n.js';
+import { mountMotif } from './motifs/index.js';
+
+const PRIMARY_MOTIF = {
+  '1985-founding': 'clouds',
+  '1988-totoro-grave': 'rain',
+  '2001-ghibli-museum': 'clouds',
+  '2001-spirited': 'lanterns',
+  '2003-oscar-spirited': 'lanterns',
+  '2013-wind': 'wind',
+  '2022-ghibli-park': 'leaves',
+  '2023-boy-heron': 'stars',
+  '2024-oscar-boy-heron': 'stars',
+};
+
+const NEUTRAL_PALETTE = ['#2f5d3a', '#6b8f4e', '#a8c09a', '#d9c9a3', '#7a6a55'];
 
 export async function initTimeline() {
   const container = document.querySelector('#timeline-list');
@@ -10,9 +25,11 @@ export async function initTimeline() {
   if (!container || !timeline) return;
 
   let items;
+  let films = [];
   try {
-    const tr = await fetch('data/timeline.json?v=2');
+    const tr = await fetch('data/timeline.json?v=3');
     items = tr.ok ? await tr.json() : await loadTimeline();
+    films = await loadFilms();
   } catch (e) {
     console.error(e);
     return;
@@ -20,6 +37,61 @@ export async function initTimeline() {
 
   const lang = getLang();
   container.innerHTML = '';
+
+  // weather + creature layer host (created once)
+  let weatherHost = section.querySelector('.timeline-weather');
+  if (!weatherHost) {
+    weatherHost = document.createElement('div');
+    weatherHost.className = 'timeline-weather';
+    weatherHost.setAttribute('aria-hidden', 'true');
+    section.prepend(weatherHost);
+  }
+  let weatherHandle = null;
+  let creatureEl = null;
+
+  function paletteFor(item) {
+    const fid = item.relatedFilms && item.relatedFilms[0];
+    const film = fid ? films.find((f) => f.id === fid) : null;
+    return film && Array.isArray(film.palette) ? film.palette : NEUTRAL_PALETTE;
+  }
+
+  function applyWorld(item) {
+    const pal = paletteFor(item);
+    pal.forEach((c, i) => section.style.setProperty(`--c${i + 1}`, c));
+
+    // weather motif: destroy previous, mount new
+    if (weatherHandle) { weatherHandle.destroy(); weatherHandle = null; }
+    weatherHost.innerHTML = '';
+    const motifType = PRIMARY_MOTIF[item.slug];
+    if (motifType) weatherHandle = mountMotif(weatherHost, motifType, pal);
+
+    // secondary weather hint via CSS class
+    section.classList.remove('weather-wind', 'weather-clouds', 'weather-leaves');
+    if (item.slug === '1985-founding' || item.slug === '2013-wind') section.classList.add('weather-wind');
+    if (item.slug === '2022-ghibli-park') section.classList.add('weather-leaves');
+
+    // creature
+    if (creatureEl) { creatureEl.remove(); creatureEl = null; }
+    const creature = item.creature;
+    if (creature && creature.file) {
+      const img = new Image();
+      img.onload = () => {
+        creatureEl = document.createElement('img');
+        creatureEl.className = 'timeline-creature';
+        creatureEl.src = creature.file;
+        creatureEl.alt = creature.alt ? (creature.alt[lang] || creature.alt.ru) : '';
+        creatureEl.setAttribute('aria-hidden', 'true');
+        weatherHost.append(creatureEl);
+      };
+      img.onerror = () => {
+        console.log(`missing creature: ${creature.file}`);
+      };
+      img.src = creature.file;
+    } else if (creature && (creature.file === null || creature.file === undefined)) {
+      console.log(`missing creature: docs/img/milestones/creatures/${item.slug}.png`);
+    }
+  }
+
   items.forEach((item, index) => {
     const el = document.createElement('a');
     el.className = 'timeline-item';
@@ -44,8 +116,7 @@ export async function initTimeline() {
   timeline.append(rail);
   const progressLine = rail.querySelector('.rail-progress');
 
-  // nodes
-  container.querySelectorAll('.timeline-item').forEach((el, index) => {
+  container.querySelectorAll('.timeline-item').forEach((el) => {
     const node = document.createElement('span');
     node.className = 'timeline-node';
     node.style.top = '12px';
@@ -74,7 +145,7 @@ export async function initTimeline() {
         const item = items[idx];
         if (!item) return;
         updatePanel(item, section, yearEl, titleEl);
-        // nodes
+        applyWorld(item);
         container.querySelectorAll('.timeline-node').forEach((n, i) => {
           n.classList.toggle('active', i === idx);
         });
@@ -84,7 +155,6 @@ export async function initTimeline() {
 
   container.querySelectorAll('.timeline-item').forEach((el) => io.observe(el));
 
-  // scroll draw
   function updateRail() {
     const rect = section.getBoundingClientRect();
     const vh = window.innerHeight;
@@ -99,7 +169,10 @@ export async function initTimeline() {
   window.addEventListener('scroll', updateRail, { passive: true });
   updateRail();
 
-  if (items[0]) updatePanel(items[0], section, yearEl, titleEl);
+  if (items[0]) {
+    updatePanel(items[0], section, yearEl, titleEl);
+    applyWorld(items[0]);
+  }
 
   onLangChange(() => {
     initTimeline();

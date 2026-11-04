@@ -891,6 +891,41 @@
   letter-spacing: 0.04em;
 }
 
+.timeline-weather {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.timeline-creature {
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
+  height: 90px;
+  width: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  transform: translateX(120%);
+  animation: creaturePeek 12s ease-in-out infinite;
+}
+
+@keyframes creaturePeek {
+  0%, 85% { transform: translateX(120%); }
+  90%, 95% { transform: translateX(0); }
+  100% { transform: translateX(120%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-creature {
+    animation: none;
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+}
+
 .milestone-hero {
   position: relative;
   min-height: 60vh;
@@ -925,6 +960,30 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: var(--color-surface);
+}
+
+.milestone-weather {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.milestone-creature {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  height: 120px;
+  width: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .milestone-creature {
+    transform: none;
+  }
 }
 
 .milestone-hero-content {
