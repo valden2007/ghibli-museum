@@ -32,6 +32,10 @@ export function initHero() {
   wrap.append(iframe);
   scene.append(wrap);
 
+  const cover = document.createElement('div');
+  cover.className = 'hero-video-cover';
+  scene.append(cover);
+
   const overlay = document.createElement('div');
   overlay.className = 'hero-overlay';
   scene.append(overlay);
