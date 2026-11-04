@@ -30,7 +30,6 @@
   "totoro": {
     "file": "img/films/totoro.webp",
     "fileSm": "img/films/totoro-sm.webp",
-    "crop": "scale(1.7) translateY(-5%)",
     "ratio": "4:5",
     "paletteHint": [
       "#2f5d3a",
