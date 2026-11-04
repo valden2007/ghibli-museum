@@ -15,7 +15,7 @@ const filmsSection = document.querySelector('.films-section');
 
 const sceneBackdrop = document.createElement('div');
 sceneBackdrop.className = 'scene-backdrop';
-document.body.prepend(sceneBackdrop);
+filmsSection?.prepend(sceneBackdrop);
 
 const filmsWeatherHost = document.createElement('div');
 filmsWeatherHost.className = 'films-weather';

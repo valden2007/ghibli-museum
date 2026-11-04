@@ -303,6 +303,8 @@
 }
 
 .timeline-section {
+  position: relative;
+  overflow: hidden;
   transition: background 0.8s ease;
   background: color-mix(in srgb, var(--timeline-accent, transparent) 6%, var(--color-bg));
 }
@@ -403,9 +405,9 @@
 }
 
 .scene-backdrop {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   opacity: 0;
   transition: opacity 0.8s ease, background 0.8s ease;
   pointer-events: none;
