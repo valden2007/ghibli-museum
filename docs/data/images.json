@@ -1,7 +1,7 @@
 {
   "nausicaa": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/nausicaa.webp",
+    "fileSm": "img/films/nausicaa-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#3a6b4a",
@@ -11,11 +11,12 @@
       "#4a7c6f"
     ],
     "altRu": "Кадр из «Навсикая из Долины ветров»",
-    "altEn": "A frame from Nausicaä of the Valley of the Wind"
+    "altEn": "A frame from Nausicaä of the Valley of the Wind",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "laputa": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/laputa.webp",
+    "fileSm": "img/films/laputa-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#4a6fa5",
@@ -25,7 +26,8 @@
       "#b8c4d4"
     ],
     "altRu": "Кадр из «Небесный замок Лапута»",
-    "altEn": "A frame from Castle in the Sky"
+    "altEn": "A frame from Castle in the Sky",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "totoro": {
     "file": "img/films/totoro.webp",
@@ -43,8 +45,8 @@
     "altEn": "A frame from My Neighbor Totoro"
   },
   "kiki": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/kiki.webp",
+    "fileSm": "img/films/kiki-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#6b4a7a",
@@ -54,11 +56,12 @@
       "#3a2a4a"
     ],
     "altRu": "Кадр из «Ведьмина служба доставки»",
-    "altEn": "A frame from Kiki's Delivery Service"
+    "altEn": "A frame from Kiki's Delivery Service",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "porco-rosso": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/porco-rosso.webp",
+    "fileSm": "img/films/porco-rosso-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#1a3a5a",
@@ -68,11 +71,12 @@
       "#2a2a3a"
     ],
     "altRu": "Кадр из «Порко Россо»",
-    "altEn": "A frame from Porco Rosso"
+    "altEn": "A frame from Porco Rosso",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "mononoke": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/mononoke.webp",
+    "fileSm": "img/films/mononoke-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#1a2a1a",
@@ -82,11 +86,12 @@
       "#2a1a2a"
     ],
     "altRu": "Кадр из «Принцесса Мононоке»",
-    "altEn": "A frame from Princess Mononoke"
+    "altEn": "A frame from Princess Mononoke",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "spirited-away": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/spirited-away.webp",
+    "fileSm": "img/films/spirited-away-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#6b1a2b",
@@ -96,11 +101,12 @@
       "#3b2a4a"
     ],
     "altRu": "Кадр из «Унесённые призраками»",
-    "altEn": "A frame from Spirited Away"
+    "altEn": "A frame from Spirited Away",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "howl": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/howl.webp",
+    "fileSm": "img/films/howl-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#4a5a7a",
@@ -110,11 +116,12 @@
       "#2a2a4a"
     ],
     "altRu": "Кадр из «Ходячий замок»",
-    "altEn": "A frame from Howl's Moving Castle"
+    "altEn": "A frame from Howl's Moving Castle",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "ponyo": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/ponyo.webp",
+    "fileSm": "img/films/ponyo-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#c94a3a",
@@ -124,11 +131,12 @@
       "#2a4a5a"
     ],
     "altRu": "Кадр из «Рыбка Поньо на утёсе»",
-    "altEn": "A frame from Ponyo"
+    "altEn": "A frame from Ponyo",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "wind-rises": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/wind-rises.webp",
+    "fileSm": "img/films/wind-rises-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#6fa8dc",
@@ -138,11 +146,12 @@
       "#e8f0f5"
     ],
     "altRu": "Кадр из «Ветер крепчает»",
-    "altEn": "A frame from The Wind Rises"
+    "altEn": "A frame from The Wind Rises",
+    "crop": "scale(1.7) translateY(-5%)"
   },
   "boy-heron": {
-    "file": null,
-    "fileSm": null,
+    "file": "img/films/boy-heron.webp",
+    "fileSm": "img/films/boy-heron-sm.webp",
     "ratio": "4:5",
     "paletteHint": [
       "#1a1a2a",
@@ -152,6 +161,7 @@
       "#2a3a4a"
     ],
     "altRu": "Кадр из «Мальчик и птица»",
-    "altEn": "A frame from The Boy and the Heron"
+    "altEn": "A frame from The Boy and the Heron",
+    "crop": "scale(1.7) translateY(-5%)"
   }
 }
