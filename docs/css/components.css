@@ -682,6 +682,26 @@
   z-index: 2;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  will-change: transform;
+}
+
+.hero-train {
+  mix-blend-mode: multiply;
+  opacity: 0;
+}
+
+.hero-castle {
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
 .hero-world {
   position: absolute;
   inset: -40px;

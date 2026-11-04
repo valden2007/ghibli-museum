@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "id": "station-bg",
+    "role": "background",
+    "world": "spirited",
+    "file": "img/scenes/station-bg.png",
+    "alt": "Station surrounded by water",
+    "blend": "normal"
+  },
+  {
+    "id": "train",
+    "role": "train",
+    "world": "spirited",
+    "file": "img/scenes/train.png",
+    "alt": "Train",
+    "blend": "multiply",
+    "holdMs": 0
+  },
+  {
+    "id": "castle-howl",
+    "role": "castle-howl",
+    "world": "spirited",
+    "file": "img/scenes/castle-howl.png",
+    "alt": "Howl's castle in the mountains",
+    "blend": "multiply"
+  }
+]

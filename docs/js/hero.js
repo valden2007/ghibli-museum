@@ -74,35 +74,26 @@ export async function initHero() {
   stage.className = 'hero-stage';
   scene.append(stage);
 
-  // worlds
-  const worlds = [
-    { id: 'nausicaa', bg: 'linear-gradient(180deg, #8fb3d9 0%, #a8d5a2 60%, #3a6b4a 100%)' },
-    { id: 'ponyo', bg: 'linear-gradient(180deg, #8ad0d0 0%, #4aa8a8 50%, #2a4a5a 100%)' },
-    { id: 'spirited', bg: 'linear-gradient(180deg, #3b2a4a 0%, #6b1a2b 50%, #1a2a4a 100%)' },
-    { id: 'laputa', bg: 'linear-gradient(180deg, #c9d6e8 0%, #8fb3d9 50%, #4a6fa5 100%)' },
-    { id: 'totoro', bg: 'linear-gradient(180deg, #a8c09a 0%, #6b8f4e 60%, #2f5d3a 100%)' },
-  ];
-  const worldEls = worlds.map((w) => {
-    const el = document.createElement('div');
-    el.className = 'hero-world';
-    el.style.background = w.bg;
-    stage.append(el);
-    return el;
-  });
-  let worldIndex = 0;
-  worldEls[0].classList.add('is-active');
+  // background image (station scene)
+  const bgEntry = manifest.find((e) => e.role === 'background');
+  const bgImg = document.createElement('img');
+  bgImg.className = 'hero-bg';
+  if (bgEntry) { bgImg.src = bgEntry.file; bgImg.alt = bgEntry.alt || ''; }
+  stage.append(bgImg);
 
   // anchors
   const trainImg = document.createElement('img');
   trainImg.className = 'hero-train';
   trainImg.src = trainRes.img.src;
   trainImg.alt = trainEntry.alt || '';
+  if (trainEntry.blend) trainImg.style.mixBlendMode = trainEntry.blend;
   stage.append(trainImg);
 
   const castleImg = document.createElement('img');
   castleImg.className = 'hero-castle';
   castleImg.src = castleRes.img.src;
   castleImg.alt = castleEntry.alt || '';
+  if (castleEntry.blend) castleImg.style.mixBlendMode = castleEntry.blend;
   stage.append(castleImg);
 
   // window glow overlay for train
@@ -173,16 +164,19 @@ export async function initHero() {
   }
 
   // train state
-  let trainX = -200;
+  let trainState = 'idle';
+  let trainIdleUntil = performance.now() + 5000;
+  let trainRideStart = 0;
+  let trainRideDuration = 0;
   let trainDir = 1;
+  let trainX = -300;
   let trainY = 0;
+  let trainSpeed = 0;
 
   // castle state
   let castleX = w * 0.6;
   let castleY = h * 0.35;
   let castleBob = 0;
-
-  let worldTimer = performance.now() + 15000;
 
   let running = true;
   document.addEventListener('visibilitychange', () => { running = !document.hidden; });
@@ -194,20 +188,31 @@ export async function initHero() {
   function tick(now) {
     if (!running) { requestAnimationFrame(tick); return; }
 
-    // world rotation
-    if (now >= worldTimer) {
-      worldEls[worldIndex].classList.remove('is-active');
-      worldIndex = (worldIndex + 1) % worlds.length;
-      worldEls[worldIndex].classList.add('is-active');
-      worldTimer = now + 15000;
-    }
-
     // train
-    trainX += trainDir * 0.6;
-    if (trainX > w + 200) { trainDir = -1; trainX = w + 200; }
-    if (trainX < -200) { trainDir = 1; trainX = -200; }
-    trainY = h * 0.72 + Math.sin(now * 0.001) * 2;
-    trainImg.style.transform = `translate3d(${trainX}px, ${trainY}px, 0)`;
+    if (trainState === 'idle') {
+      trainImg.style.opacity = '0';
+      if (now >= trainIdleUntil) {
+        trainState = 'riding';
+        trainRideStart = now;
+        trainRideDuration = rand(30000, 60000);
+        trainDir = Math.random() < 0.5 ? 1 : -1;
+        trainX = trainDir > 0 ? -400 : w + 400;
+        trainSpeed = (w + 800) / trainRideDuration;
+      }
+    } else {
+      const rp = (now - trainRideStart) / trainRideDuration;
+      if (rp >= 1 || (trainDir > 0 && trainX > w + 400) || (trainDir < 0 && trainX < -400)) {
+        trainState = 'idle';
+        trainIdleUntil = now + 120000;
+        trainImg.style.opacity = '0';
+      } else {
+        trainX += trainDir * trainSpeed * 16;
+        const alpha = rp < 0.08 ? rp / 0.08 : rp > 0.92 ? (1 - rp) / 0.08 : 1;
+        trainImg.style.opacity = String(alpha);
+        trainY = h * 0.72 + Math.sin(now * 0.001) * 2;
+        trainImg.style.transform = `translate3d(${trainX}px, ${trainY}px, 0)`;
+      }
+    }
 
     // castle
     castleX += 0.05;
@@ -234,12 +239,10 @@ export async function initHero() {
       ev.el.style.transform = `translate3d(${ev.x}px, ${ev.y}px, 0) scale(${ev.scale}) rotate(${ev.rot}rad)`;
     }
 
-    // parallax for world backgrounds
-    const px = coarse ? 0 : mx * 12;
-    const py = scrollY * 0.05 + (coarse ? 0 : my * 8);
-    worldEls.forEach((el) => {
-      el.style.transform = `translate3d(${px}px, ${py}px, 0)`;
-    });
+    // parallax for background
+    const px = coarse ? 0 : mx * 8;
+    const py = scrollY * 0.03 + (coarse ? 0 : my * 6);
+    bgImg.style.transform = `translate3d(${px}px, ${py}px, 0) scale(1.05)`;
 
     requestAnimationFrame(tick);
   }
