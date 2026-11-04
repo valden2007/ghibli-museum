@@ -1,222 +1,475 @@
 [
   {
     "id": "nausicaa",
-    "title": { "ru": "Навсикая из Долины ветров", "en": "Nausicaä of the Valley of the Wind" },
+    "title": {
+      "ru": "Навсикая из Долины ветров",
+      "en": "Nausicaä of the Valley of the Wind"
+    },
     "year": 1984,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "В далёком будущем Земля покрыта ядовитым Лесом, населённым гигантскими насекомыми. Юная принцесса Навсикая пытается понять природу этого мира и найти мир между людьми и лесом. Её путь — это борьба за выживание и надежда на примирение. Фильм стал отправной точкой для всей студии.",
-      "en": "In a distant future, Earth is covered by a toxic forest inhabited by giant insects. Young princess Nausicaä seeks to understand this world and find peace between humans and the forest. Her journey is a struggle for survival and a hope for reconciliation. The film became the starting point for the whole studio."
+      "ru": "В далёком будущем Земля покрыта токсичным лесом, где живут гигантские насекомые. Юная принцесса Навсикая пытается понять этот мир и найти мир между людьми и лесом. Её путь — борьба за выживание и надежда на примирение. Фильм стал отправной точкой для всей студии.",
+      "en": "In a distant future, Earth is covered by a toxic forest inhabited by giant insects. Young princess Nausicaa seeks to understand this world and find peace between humans and the forest. Her journey is a struggle for survival and a hope for reconciliation. The film became the starting point for the whole studio."
     },
     "facts": [
-      { "ru": "Фильм вышел до основания Studio Ghibli.", "en": "The film was released before Studio Ghibli was founded." },
-      { "ru": "Основан на манге, которую написал сам режиссёр.", "en": "It is based on a manga written by the director himself." }
+      {
+        "ru": "Фильм вышел до основания Studio Ghibli, но именно он задал тон будущим работам.",
+        "en": "The film was released before Studio Ghibli was founded, yet it set the tone for future works."
+      },
+      {
+        "ru": "Режиссёр сам написал оригинальную мангу.",
+        "en": "The director wrote the original manga himself."
+      },
+      {
+        "ru": "Тема примирения с природой станет сквозной для студии.",
+        "en": "The theme of reconciliation with nature would become a thread through the studio."
+      },
+      {
+        "ru": "Пустынные пейзажи и гигантские насекомые создают ощущение чужого, но живого мира.",
+        "en": "Desert landscapes and giant insects create a sense of an alien yet living world."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#3a6b4a", "#7fb069", "#a8d5a2", "#d9c9a3", "#4a7c6f"],
+    "palette": [
+      "#3a6b4a",
+      "#7fb069",
+      "#a8d5a2",
+      "#d9c9a3",
+      "#4a7c6f"
+    ],
     "era": "1980s",
     "motif": "leaves",
-    "note": "TODO: переписать автором"
+    "note": "Обрати внимание на тишину между сценами — она работает как дыхание леса."
   },
   {
     "id": "laputa",
-    "title": { "ru": "Небесный замок Лапута", "en": "Castle in the Sky" },
+    "title": {
+      "ru": "Небесный замок Лапута",
+      "en": "Castle in the Sky"
+    },
     "year": 1986,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Девочка, упавшая с неба, и шахтёрский мальчик отправляются на поиски легендарного летающего острова. За ними охотятся пираты и военные, желающие завладеть древней силой. Приключение полно полётов, руин и тайн. В центре — дружба и ответственность за мощь, которую нельзя отдавать в чужие руки.",
+      "ru": "Девушка, упавшая с неба, и мальчик-шахтёр отправляются на поиски легендарного летающего острова. За ними гонятся пираты и солдаты, ищущие древнюю силу. Приключение полно полётов, руин и тайн. В центре — дружба и ответственность за силу, которая не должна попасть в чужие руки.",
       "en": "A girl who fell from the sky and a miner boy set out to find a legendary flying island. Pirates and soldiers chase them, seeking ancient power. The adventure is full of flight, ruins and secrets. At its heart are friendship and responsibility for a power that must not fall into the wrong hands."
     },
     "facts": [
-      { "ru": "Название отсылает к роману Джонатана Свифта.", "en": "The title refers to Jonathan Swift's novel." },
-      { "ru": "История начинается с девочки, упавшей с неба.", "en": "The story begins with a girl falling from the sky." }
+      {
+        "ru": "Название отсылает к роману Джонатана Свифта.",
+        "en": "The title refers to a novel by Jonathan Swift."
+      },
+      {
+        "ru": "История начинается с падения девушки с неба.",
+        "en": "The story begins with a girl falling from the sky."
+      },
+      {
+        "ru": "Тема связи с природой и ответственности за технологию.",
+        "en": "Themes of connection with nature and responsibility for technology."
+      },
+      {
+        "ru": "Воздушные сцены задают ритм приключения.",
+        "en": "Aerial scenes set the rhythm of the adventure."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#4a6fa5", "#8fb3d9", "#c9d6e8", "#2a3a5a", "#b8c4d4"],
+    "palette": [
+      "#4a6fa5",
+      "#8fb3d9",
+      "#c9d6e8",
+      "#2a3a5a",
+      "#b8c4d4"
+    ],
     "era": "1980s",
     "motif": "clouds",
-    "note": "TODO: переписать автором"
+    "note": "Смотри на руины: они говорят о цивилизации, которая умела летать, но не умела жить."
   },
   {
     "id": "totoro",
-    "title": { "ru": "Мой сосед Тоторо", "en": "My Neighbor Totoro" },
+    "title": {
+      "ru": "Мой сосед Тоторо",
+      "en": "My Neighbor Totoro"
+    },
     "year": 1988,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Две сестры переезжают в деревню и встречают добрых лесных духов, среди которых огромный и пушистый Тоторо. Фильм состоит из спокойных наблюдений за детством, природой и семьёй. В нём почти нет конфликта, зато много тепла и чуда. Тихая, уютная сказка, ставшая символом студии.",
+      "ru": "Две сестры переезжают в деревню и встречают добрых лесных духов, включая большого мохнатого Тоторо. Фильм состоит из спокойных наблюдений за детством, природой и семьёй. Конфликта почти нет, зато много тепла и чуда. Тихая уютная сказка, ставшая символом студии.",
       "en": "Two sisters move to the countryside and meet gentle forest spirits, including the big, fluffy Totoro. The film consists of calm observations of childhood, nature and family. It has almost no conflict, but plenty of warmth and wonder. A quiet, cozy fairy tale that became the studio's symbol."
     },
     "facts": [
-      { "ru": "Вышел в двойном показе с «Могилой светлячков».", "en": "Released as a double feature with Grave of the Fireflies." },
-      { "ru": "Тоторо стал талисманом студии.", "en": "Totoro became the studio's mascot." }
+      {
+        "ru": "Вышел в двойном показе с «Могилой светлячков».",
+        "en": "Released as a double feature with Grave of the Fireflies."
+      },
+      {
+        "ru": "Тоторо стал талисманом студии.",
+        "en": "Totoro became the studio's mascot."
+      },
+      {
+        "ru": "Пейзажи и звуки дождя создают ощущение живого леса.",
+        "en": "Landscapes and the sound of rain create a sense of a living forest."
+      },
+      {
+        "ru": "Детское восприятие мира — главный приём фильма.",
+        "en": "A child's perception of the world is the film's main device."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#2f5d3a", "#6b8f4e", "#a8c09a", "#d9c9a3", "#7a6a55"],
+    "palette": [
+      "#2f5d3a",
+      "#6b8f4e",
+      "#a8c09a",
+      "#d9c9a3",
+      "#7a6a55"
+    ],
     "era": "1980s",
     "motif": "rain",
-    "note": "TODO: переписать автором"
+    "note": "Слушай дождь: он звучит как дыхание леса."
   },
   {
     "id": "kiki",
-    "title": { "ru": "Ведьмина служба доставки", "en": "Kiki's Delivery Service" },
+    "title": {
+      "ru": "Ведьмина служба доставки",
+      "en": "Kiki's Delivery Service"
+    },
     "year": 1989,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Юная ведьма уезжает из дома, чтобы год жить самостоятельно и найти своё призвание. Она открывает службу доставки на метле и сталкивается с трудностями взросления. Фильм мягко рассказывает о самостоятельности, усталости и возвращении веры в себя. Светлая и бодрая история с морским ветром.",
+      "ru": "Юная ведьма уезжает из дома, чтобы прожить год самостоятельно и найти своё призвание. Она начинает службу доставки на метле и сталкивается с трудностями взросления. Фильм мягко говорит о независимости, выгорании и возвращении веры в себя. Светлая, бойкая история с морским ветром.",
       "en": "A young witch leaves home to live independently for a year and find her calling. She starts a delivery service on a broom and faces the challenges of growing up. The film gently speaks about independence, burnout and regaining self-belief. A bright, brisk story with a sea breeze."
     },
     "facts": [
-      { "ru": "Основан на романе Эйко Кадоно.", "en": "Based on a novel by Eiko Kadono." },
-      { "ru": "История о взрослении и самостоятельности.", "en": "A story about growing up and independence." }
+      {
+        "ru": "Основан на романе Эйко Кадоно.",
+        "en": "Based on a novel by Eiko Kadono."
+      },
+      {
+        "ru": "История о взрослении и самостоятельности.",
+        "en": "A story about growing up and independence."
+      },
+      {
+        "ru": "Метла и морской ветер — символы свободы и движения.",
+        "en": "The broom and sea breeze are symbols of freedom and motion."
+      },
+      {
+        "ru": "Выгорание показано через потерю магии, а не через драму.",
+        "en": "Burnout is shown through the loss of magic, not through drama."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#6b4a7a", "#c94a4a", "#8fa8d9", "#f0d9a0", "#3a2a4a"],
+    "palette": [
+      "#6b4a7a",
+      "#c94a4a",
+      "#8fa8d9",
+      "#f0d9a0",
+      "#3a2a4a"
+    ],
     "era": "1980s",
     "motif": "wind",
-    "note": "TODO: переписать автором"
+    "note": "Заметь, как тишина после полёта меняет настроение сцены."
   },
   {
     "id": "porco-rosso",
-    "title": { "ru": "Порко Россо", "en": "Porco Rosso" },
+    "title": {
+      "ru": "Порко Россо",
+      "en": "Porco Rosso"
+    },
     "year": 1992,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Лётчик-ас, превращённый в свинью, охотится на воздушных пиратов над Адриатикой. Вокруг него — старые друзья, соперники и тень прошлого. Фильм сочетает приключения, ностальгию и лёгкую грусть. Море, самолёты и романтика межвоенной эпохи.",
+      "ru": "Ас, превратившийся в свинью, охотится на воздушных пиратов над Адриатикой. Вокруг него старые друзья, соперники и тени прошлого. Фильм сочетает приключение, ностальгию и мягкую меланхолию. Море, самолёты и романтика межвоенной эпохи.",
       "en": "An ace pilot turned into a pig hunts air pirates over the Adriatic. Around him are old friends, rivals and shadows of the past. The film blends adventure, nostalgia and gentle melancholy. Sea, airplanes and the romance of the interwar era."
     },
     "facts": [
-      { "ru": "Действие происходит над Адриатическим морем.", "en": "The story takes place over the Adriatic Sea." },
-      { "ru": "Главный герой — лётчик, превращённый в свинью.", "en": "The hero is a pilot turned into a pig." }
+      {
+        "ru": "Действие разворачивается над Адриатическим морем.",
+        "en": "The story takes place over the Adriatic Sea."
+      },
+      {
+        "ru": "Герой — пилот, превращённый в свинью.",
+        "en": "The hero is a pilot turned into a pig."
+      },
+      {
+        "ru": "Авиация и море создают особый ритм повествования.",
+        "en": "Aviation and the sea create a special rhythm of storytelling."
+      },
+      {
+        "ru": "Ностальгия по ушедшей эпохе — главная эмоция.",
+        "en": "Nostalgia for a bygone era is the main emotion."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#1a3a5a", "#4a7a8a", "#c97a4a", "#d9b08a", "#2a2a3a"],
+    "palette": [
+      "#1a3a5a",
+      "#4a7a8a",
+      "#c97a4a",
+      "#d9b08a",
+      "#2a2a3a"
+    ],
     "era": "1990s",
     "motif": "sea",
-    "note": "TODO: переписать автором"
+    "note": "Смотри на закаты: они как память о прошлом."
   },
   {
     "id": "mononoke",
-    "title": { "ru": "Принцесса Мононоке", "en": "Princess Mononoke" },
+    "title": {
+      "ru": "Принцесса Мононоке",
+      "en": "Princess Mononoke"
+    },
     "year": 1997,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Проклятый принц Аситака ищет исцеление и оказывается в центре войны между людьми, вырубающими лес, и духами природы. Мононоке, выросшая среди волков, ненавидит людей, но не может полностью отвернуться от них. Фильм жёсткий и эпичный, без простых злодеев. Конфликт здесь не имеет однозначного решения.",
+      "ru": "Проклятый принц Аситака ищет исцеление и оказывается в центре войны между людьми, вырубающими лес, и духами природы. Мононоке, выросшая среди волков, ненавидит людей, но не может полностью от них отвернуться. Фильм суров и эпичен, без простых злодеев. Конфликт не имеет лёгкого разрешения.",
       "en": "Cursed prince Ashitaka seeks healing and finds himself in the middle of a war between humans cutting the forest and nature spirits. Mononoke, raised by wolves, hates humans yet cannot fully turn away from them. The film is harsh and epic, with no simple villains. The conflict has no easy resolution."
     },
     "facts": [
-      { "ru": "История разворачивается в средневековой Японии.", "en": "The story is set in medieval Japan." },
-      { "ru": "Фильм исследует конфликт человека и природы.", "en": "The film explores the conflict between humans and nature." }
+      {
+        "ru": "Действие происходит в средневековой Японии.",
+        "en": "The story is set in medieval Japan."
+      },
+      {
+        "ru": "Фильм исследует конфликт человека и природы.",
+        "en": "The film explores the conflict between humans and nature."
+      },
+      {
+        "ru": "Нет однозначных злодеев — каждый прав по-своему.",
+        "en": "There are no clear villains — everyone is right in their own way."
+      },
+      {
+        "ru": "Лес и духи показаны как живой организм.",
+        "en": "The forest and spirits are shown as a living organism."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#1a2a1a", "#6b1a1a", "#c9a227", "#4a6b3a", "#2a1a2a"],
+    "palette": [
+      "#1a2a1a",
+      "#6b1a1a",
+      "#c9a227",
+      "#4a6b3a",
+      "#2a1a2a"
+    ],
     "era": "1990s",
     "motif": "leaves",
-    "note": "TODO: переписать автором"
+    "note": "Обрати внимание на туман: он скрывает границу между мирами."
   },
   {
     "id": "spirited-away",
-    "title": { "ru": "Унесённые призраками", "en": "Spirited Away" },
+    "title": {
+      "ru": "Унесённые призраками",
+      "en": "Spirited Away"
+    },
     "year": 2001,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Десятилетняя Тихиро попадает в мир духов и вынуждена работать в банном доме, чтобы спасти родителей. Её путь — взросление через труд, память и доброту. Вокруг — странные существа, магия и опасности. Фильм полон образов и тёплого света фонариков.",
+      "ru": "Десятилетняя Тихиро попадает в мир духов и должна работать в бане, чтобы спасти родителей. Её путь — взросление через труд, память и доброту. Вокруг неё странные существа, магия и опасности. Фильм полон образов и тёплого света фонарей.",
       "en": "Ten-year-old Chihiro enters a spirit world and must work in a bathhouse to save her parents. Her journey is growing up through labor, memory and kindness. Around her are strange beings, magic and dangers. The film is full of imagery and the warm glow of lanterns."
     },
     "facts": [
-      { "ru": "Действие разворачивается в банном доме духов.", "en": "The story takes place in a spirit bathhouse." },
-      { "ru": "Фильм получил премию «Оскар».", "en": "The film won an Academy Award." }
+      {
+        "ru": "Действие разворачивается в бане духов.",
+        "en": "The story takes place in a spirit bathhouse."
+      },
+      {
+        "ru": "Тема труда и памяти как путь взросления.",
+        "en": "Themes of labor and memory as a path to growing up."
+      },
+      {
+        "ru": "Фонари и свет создают тёплую атмосферу.",
+        "en": "Lanterns and light create a warm atmosphere."
+      },
+      {
+        "ru": "Мир духов показан как рабочая среда, а не только волшебная.",
+        "en": "The spirit world is shown as a workplace, not just a magical place."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#6b1a2b", "#c9a227", "#1a2a4a", "#e8d9a0", "#3b2a4a"],
+    "palette": [
+      "#6b1a2b",
+      "#c9a227",
+      "#1a2a4a",
+      "#e8d9a0",
+      "#3b2a4a"
+    ],
     "era": "2000s",
     "motif": "lanterns",
-    "note": "TODO: переписать автором"
+    "note": "Смотри на тени: они живут своей жизнью."
   },
   {
     "id": "howl",
-    "title": { "ru": "Ходячий замок", "en": "Howl's Moving Castle" },
+    "title": {
+      "ru": "Ходячий замок",
+      "en": "Howl's Moving Castle"
+    },
     "year": 2004,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Молодая шляпница Софи превращена в старуху и находит приют в ходячем замке колдуна Хаула. Война разгорается вокруг, а в замке живут огненный демон и говорящее пугало. История о любви, трусости и храбрости. Магия здесь капризна и красива.",
+      "ru": "Юная шляпница Софи превращается в старуху и находит приют в ходячем замке волшебника Хаула. Снаружи бушует война, внутри живут огненный демон и говорящее пугало. История любви, трусости и смелости. Магия здесь капризная и прекрасная.",
       "en": "Young hatter Sophie is turned into an old woman and finds refuge in the wizard Howl's walking castle. War rages outside, while a fire demon and a talking scarecrow live inside. A story of love, cowardice and courage. Magic here is capricious and beautiful."
     },
     "facts": [
-      { "ru": "Основан на романе Дианы Уинн Джонс.", "en": "Based on a novel by Diana Wynne Jones." },
-      { "ru": "В центре — проклятие, превращающее героиню в старуху.", "en": "At the center is a curse turning the heroine into an old woman." }
+      {
+        "ru": "Основан на романе Дианы Уинн Джонс.",
+        "en": "Based on a novel by Diana Wynne Jones."
+      },
+      {
+        "ru": "В центре — проклятие, превращающее героиню в старуху.",
+        "en": "At the center is a curse turning the heroine into an old woman."
+      },
+      {
+        "ru": "Война на фоне личной истории.",
+        "en": "War unfolds against the backdrop of a personal story."
+      },
+      {
+        "ru": "Замок — живой персонаж, а не декорация.",
+        "en": "The castle is a living character, not just a decoration."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#4a5a7a", "#8a9ac9", "#d9c9e8", "#e8d9a0", "#2a2a4a"],
+    "palette": [
+      "#4a5a7a",
+      "#8a9ac9",
+      "#d9c9e8",
+      "#e8d9a0",
+      "#2a2a4a"
+    ],
     "era": "2000s",
     "motif": "stars",
-    "note": "TODO: переписать автором"
+    "note": "Замок дышит: следи за тем, как он меняется."
   },
   {
     "id": "ponyo",
-    "title": { "ru": "Рыбка Поньо на утёсе", "en": "Ponyo" },
+    "title": {
+      "ru": "Рыбка Поньо на утёсе",
+      "en": "Ponyo"
+    },
     "year": 2008,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Рыбка Поньо, дочь морского колдуна, мечтает стать человеком и сбегает к мальчику Сосукэ. Её магия нарушает баланс моря, поднимая волны и наводнения. Фильм яркий, детский и бесконечно добрый. Вода здесь нарисована от руки и живёт своей жизнью.",
+      "ru": "Поньо — золотая рыбка и дочь морского волшебника — мечтает стать человеком и убегает к мальчику Сосукэ. Её магия нарушает баланс моря, поднимая волны и наводнения. Фильм яркий, детский и бесконечно добрый. Вода здесь нарисована вручную и живёт своей жизнью.",
       "en": "Ponyo, a goldfish and daughter of a sea wizard, dreams of becoming human and escapes to boy Sosuke. Her magic upsets the sea's balance, raising waves and floods. The film is bright, childlike and endlessly kind. Water here is hand-drawn and lives its own life."
     },
     "facts": [
-      { "ru": "История вдохновлена «Русалочкой».", "en": "The story is inspired by The Little Mermaid." },
-      { "ru": "Главные герои — мальчик и рыбка, мечтающая стать человеком.", "en": "The heroes are a boy and a fish dreaming of becoming human." }
+      {
+        "ru": "История вдохновлена «Русалочкой».",
+        "en": "The story is inspired by The Little Mermaid."
+      },
+      {
+        "ru": "Герои — мальчик и рыбка, мечтающая стать человеком.",
+        "en": "The heroes are a boy and a fish dreaming of becoming human."
+      },
+      {
+        "ru": "Вода — главный персонаж фильма.",
+        "en": "Water is the film's main character."
+      },
+      {
+        "ru": "Детское восприятие магии без страха.",
+        "en": "A child's perception of magic without fear."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#c94a3a", "#4aa8a8", "#f0d080", "#8ad0d0", "#2a4a5a"],
+    "palette": [
+      "#c94a3a",
+      "#4aa8a8",
+      "#f0d080",
+      "#8ad0d0",
+      "#2a4a5a"
+    ],
     "era": "2000s",
     "motif": "sea",
-    "note": "TODO: переписать автором"
+    "note": "Смотри на волны: они рисованы кадр за кадром."
   },
   {
     "id": "wind-rises",
-    "title": { "ru": "Ветер крепчает", "en": "The Wind Rises" },
+    "title": {
+      "ru": "Ветер крепчает",
+      "en": "The Wind Rises"
+    },
     "year": 2013,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "История авиаконструктора Дзиро Хорикоси, мечтающего о красивых самолётах. Его мечты сталкиваются с реальностью войны и хрупкостью жизни. Фильм тихий и печальный, о красоте творчества и его цене. Ветер здесь — и вдохновение, и разрушение.",
+      "ru": "История авиаконструктора Дзиро Хорикоси, который мечтает о красивых самолётах. Его мечты сталкиваются с реальностью войны и хрупкостью жизни. Фильм тихий и печальный, о красоте творения и его цене. Ветер здесь — и вдохновение, и разрушение.",
       "en": "The story of aircraft designer Jiro Horikoshi, who dreams of beautiful airplanes. His dreams collide with the reality of war and the fragility of life. The film is quiet and sad, about the beauty of creation and its cost. Wind here is both inspiration and destruction."
     },
     "facts": [
-      { "ru": "Рассказывает о конструкторе самолётов.", "en": "It tells of an aircraft designer." },
-      { "ru": "Фильм назван в честь стихотворения Поля Валери.", "en": "The film is named after a poem by Paul Valéry." }
+      {
+        "ru": "Рассказывает об авиаконструкторе.",
+        "en": "It tells of an aircraft designer."
+      },
+      {
+        "ru": "Назван по стихотворению Поля Валери.",
+        "en": "The film is named after a poem by Paul Valery."
+      },
+      {
+        "ru": "Красота и цена творения — центральная тема.",
+        "en": "The beauty and cost of creation is the central theme."
+      },
+      {
+        "ru": "Ветер — образ, связывающий мечту и реальность.",
+        "en": "Wind is an image connecting dream and reality."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#6fa8dc", "#b8d4e8", "#d9c98a", "#9fc9a0", "#e8f0f5"],
+    "palette": [
+      "#6fa8dc",
+      "#b8d4e8",
+      "#d9c98a",
+      "#9fc9a0",
+      "#e8f0f5"
+    ],
     "era": "2010s",
     "motif": "wind",
-    "note": "TODO: переписать автором"
+    "note": "Слушай ветер: он говорит о мечте."
   },
   {
     "id": "boy-heron",
-    "title": { "ru": "Мальчик и птица", "en": "The Boy and the Heron" },
+    "title": {
+      "ru": "Мальчик и птица",
+      "en": "The Boy and the Heron"
+    },
     "year": 2023,
     "director": "Хаяо Миядзаки",
     "synopsis": {
-      "ru": "Мальчик Махиito, потерявший мать, переезжает в деревню и находит заброшенную башню, где его зовёт серая цапля. За порогом открывается мир, где живые и мёртвые переплетаются. Фильм медитативный и загадочный, о горе и принятии. Визуально — один из самых смелых проектов студии.",
+      "ru": "Мальчик Махито, потерявший мать, переезжает в деревню и находит заброшенную башню, где серая цапля зовёт его. За порогом — мир, где живые и мёртвые переплетаются. Фильм медитативный и таинственный, о горе и принятии. Визуально — один из самых смелых проектов студии.",
       "en": "Boy Mahito, who lost his mother, moves to the countryside and finds an abandoned tower where a grey heron calls him. Beyond the threshold lies a world where the living and the dead intertwine. The film is meditative and mysterious, about grief and acceptance. Visually it is one of the studio's boldest projects."
     },
     "facts": [
-      { "ru": "Фильм вышел после долгого перерыва режиссёра.", "en": "The film came after the director's long break." },
-      { "ru": "Получил премию «Оскар».", "en": "It won an Academy Award." }
+      {
+        "ru": "Фильм вышел после долгого перерыва режиссёра.",
+        "en": "The film came after the director's long break."
+      },
+      {
+        "ru": "Тема горя и принятия через путешествие.",
+        "en": "Themes of grief and acceptance through a journey."
+      },
+      {
+        "ru": "Визуальный язык — самый экспериментальный у студии.",
+        "en": "The visual language is the studio's most experimental."
+      },
+      {
+        "ru": "Мир за порогом показан как переплетение живого и мёртвого.",
+        "en": "The world beyond the threshold is shown as an intertwining of living and dead."
+      }
     ],
     "trailerId": null,
     "watch": [],
-    "palette": ["#1a1a2a", "#c96a2a", "#4a6a8a", "#d9b080", "#2a3a4a"],
+    "palette": [
+      "#1a1a2a",
+      "#c96a2a",
+      "#4a6a8a",
+      "#d9b080",
+      "#2a3a4a"
+    ],
     "era": "2020s",
     "motif": "stars",
-    "note": "TODO: переписать автором"
+    "note": "Смотри на цаплю: она не то, чем кажется."
   }
 ]
