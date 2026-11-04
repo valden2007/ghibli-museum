@@ -376,6 +376,47 @@
 .films-section {
   transition: background 0.6s ease;
   background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.films-weather {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.films-decor {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  height: 120px;
+  width: auto;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.scene-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease, background 0.8s ease;
+  pointer-events: none;
+}
+
+.scene-backdrop.is-active {
+  opacity: 1;
+}
+
+.films-section.is-world {
+  background: radial-gradient(ellipse at top, color-mix(in srgb, var(--c1, var(--color-accent)) 18%, transparent), var(--color-bg) 70%);
 }
 
 .films-section.morphed {

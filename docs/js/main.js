@@ -6,15 +6,92 @@ import { initReveal } from './reveal.js';
 import { initSoot } from './soot.js';
 import { initTimeline } from './timeline.js';
 import { mountPlayer } from './player/index.js';
+import { mountMotif } from './motifs/index.js';
 import { createCatalogCard } from './catalog-card.js';
 
 const grid = document.querySelector('#film-grid');
 const filtersEl = document.querySelector('#film-filters');
-
-grid?.addEventListener('card:activate', (event) => console.log('card:activate', event.detail));
-grid?.addEventListener('card:deactivate', (event) => console.log('card:deactivate', event.detail));
 const filmsSection = document.querySelector('.films-section');
 
+const sceneBackdrop = document.createElement('div');
+sceneBackdrop.className = 'scene-backdrop';
+document.body.prepend(sceneBackdrop);
+
+const filmsWeatherHost = document.createElement('div');
+filmsWeatherHost.className = 'films-weather';
+filmsSection?.prepend(filmsWeatherHost);
+
+const filmsDecor = document.createElement('img');
+filmsDecor.className = 'films-decor';
+filmsDecor.alt = '';
+filmsDecor.setAttribute('aria-hidden', 'true');
+filmsSection?.append(filmsDecor);
+
+let filmsWeatherHandle = null;
+let decorLoaded = false;
+
+function applyIdle() {
+  if (filmsSection) filmsSection.classList.remove('is-world');
+  sceneBackdrop.classList.remove('is-active');
+  sceneBackdrop.style.background = '';
+  if (filmsWeatherHandle) { filmsWeatherHandle.destroy(); filmsWeatherHandle = null; }
+  filmsWeatherHost.innerHTML = '';
+  filmsDecor.style.opacity = '0';
+  filmsDecor.removeAttribute('src');
+  decorLoaded = false;
+}
+
+function applyWorld(detail) {
+  if (!detail) return;
+  const palette = Array.isArray(detail.palette) ? detail.palette : [];
+  if (filmsSection) {
+    filmsSection.classList.add('is-world');
+    palette.forEach((c, i) => filmsSection.style.setProperty(`--c${i + 1}`, c));
+  }
+  // global backdrop tint
+  if (palette.length) {
+    sceneBackdrop.style.background = `radial-gradient(ellipse at 30% 20%, ${palette[0]}33, transparent 60%), radial-gradient(ellipse at 70% 80%, ${palette[2] || palette[0]}22, transparent 60%)`;
+    sceneBackdrop.classList.add('is-active');
+  }
+  // weather motif
+  if (filmsWeatherHandle) { filmsWeatherHandle.destroy(); filmsWeatherHandle = null; }
+  filmsWeatherHost.innerHTML = '';
+  if (detail.motif) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced) filmsWeatherHandle = mountMotif(filmsWeatherHost, detail.motif, palette);
+  }
+  // decor slot
+  const decorInfo = imagesData[detail.id]?.decor;
+  if (decorInfo && decorInfo.file) {
+    const img = new Image();
+    img.onload = () => {
+      filmsDecor.src = decorInfo.file;
+      filmsDecor.alt = decorInfo.alt || '';
+      filmsDecor.style.opacity = '0.6';
+      decorLoaded = true;
+    };
+    img.onerror = () => {
+      console.log(`missing decor: ${decorInfo.file}`);
+      filmsDecor.style.opacity = '0';
+    };
+    img.src = decorInfo.file;
+  } else {
+    filmsDecor.style.opacity = '0';
+    if (decorInfo === null || decorInfo === undefined) {
+      // convention fallback
+      const conv = `img/decor/${detail.id}.png`;
+      // do not request; log only
+      // console.log(`missing decor: ${conv}`);
+    }
+  }
+}
+
+grid?.addEventListener('card:activate', (event) => {
+  applyWorld(event.detail);
+});
+grid?.addEventListener('card:deactivate', (event) => {
+  applyIdle();
+});
 let allFilms = [];
 let activeEra = 'all';
 
