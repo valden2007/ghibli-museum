@@ -93,16 +93,14 @@ export async function initTimeline() {
   }
 
   items.forEach((item, index) => {
-    const el = document.createElement('a');
+    const el = document.createElement('article');
     el.className = 'timeline-item';
     el.dataset.index = String(index);
-    el.href = `milestone.html?id=${encodeURIComponent(item.slug)}`;
-    el.setAttribute('aria-label', `${item.year} — ${item.title[lang] || item.title.ru}`);
     el.innerHTML = `
       <div class="timeline-item-year">${item.year}</div>
       <h3 class="timeline-item-title">${item.title[lang] || item.title.ru}</h3>
       <p class="timeline-item-text">${item.text[lang] || item.text.ru}</p>
-      <span class="timeline-item-more">${lang === 'en' ? 'Details →' : 'Подробнее →'}</span>
+      <a class="timeline-item-more" href="history.html#${encodeURIComponent(item.slug)}">${lang === 'en' ? 'Details →' : 'Подробнее →'}</a>
     `;
     container.append(el);
   });
