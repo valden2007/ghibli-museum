@@ -11,8 +11,7 @@
       "#4a7c6f"
     ],
     "altRu": "Кадр из «Навсикая из Долины ветров»",
-    "altEn": "A frame from Nausicaä of the Valley of the Wind",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Nausicaä of the Valley of the Wind"
   },
   "laputa": {
     "file": "img/films/laputa.webp",
@@ -26,8 +25,7 @@
       "#b8c4d4"
     ],
     "altRu": "Кадр из «Небесный замок Лапута»",
-    "altEn": "A frame from Castle in the Sky",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Castle in the Sky"
   },
   "totoro": {
     "file": "img/films/totoro.webp",
@@ -56,8 +54,7 @@
       "#3a2a4a"
     ],
     "altRu": "Кадр из «Ведьмина служба доставки»",
-    "altEn": "A frame from Kiki's Delivery Service",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Kiki's Delivery Service"
   },
   "porco-rosso": {
     "file": "img/films/porco-rosso.webp",
@@ -71,8 +68,7 @@
       "#2a2a3a"
     ],
     "altRu": "Кадр из «Порко Россо»",
-    "altEn": "A frame from Porco Rosso",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Porco Rosso"
   },
   "mononoke": {
     "file": "img/films/mononoke.webp",
@@ -86,8 +82,7 @@
       "#2a1a2a"
     ],
     "altRu": "Кадр из «Принцесса Мононоке»",
-    "altEn": "A frame from Princess Mononoke",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Princess Mononoke"
   },
   "spirited-away": {
     "file": "img/films/spirited-away.webp",
@@ -101,8 +96,7 @@
       "#3b2a4a"
     ],
     "altRu": "Кадр из «Унесённые призраками»",
-    "altEn": "A frame from Spirited Away",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Spirited Away"
   },
   "howl": {
     "file": "img/films/howl.webp",
@@ -116,8 +110,7 @@
       "#2a2a4a"
     ],
     "altRu": "Кадр из «Ходячий замок»",
-    "altEn": "A frame from Howl's Moving Castle",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Howl's Moving Castle"
   },
   "ponyo": {
     "file": "img/films/ponyo.webp",
@@ -131,8 +124,7 @@
       "#2a4a5a"
     ],
     "altRu": "Кадр из «Рыбка Поньо на утёсе»",
-    "altEn": "A frame from Ponyo",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from Ponyo"
   },
   "wind-rises": {
     "file": "img/films/wind-rises.webp",
@@ -146,8 +138,7 @@
       "#e8f0f5"
     ],
     "altRu": "Кадр из «Ветер крепчает»",
-    "altEn": "A frame from The Wind Rises",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from The Wind Rises"
   },
   "boy-heron": {
     "file": "img/films/boy-heron.webp",
@@ -161,7 +152,6 @@
       "#2a3a4a"
     ],
     "altRu": "Кадр из «Мальчик и птица»",
-    "altEn": "A frame from The Boy and the Heron",
-    "crop": "scale(1.7) translateY(-5%)"
+    "altEn": "A frame from The Boy and the Heron"
   }
 }
