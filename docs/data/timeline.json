@@ -1,248 +1,254 @@
-[
-  {
-    "year": 1985,
-    "title": {
-      "ru": "Основание студии",
-      "en": "Studio founded"
-    },
-    "text": {
-      "ru": "Хаяо Миядзаки и Исао Такахата основывают Studio Ghibli после успеха «Навсикаи».",
-      "en": "Hayao Miyazaki and Isao Takahata found Studio Ghibli after the success of Nausicaä."
-    },
-    "accent": "#2f5d3a",
-    "slug": "1985-founding",
-    "detail": {
-      "ru": "Студия основана Хаяо Миядзаки и Исао Такахатой после успеха Навсикаи. Начало пути, который приведёт к собственному музею и мировому признанию.",
-      "en": "The studio is founded by Hayao Miyazaki and Isao Takahata after the success of Nausicaa. The beginning of a path that will lead to its own museum and worldwide recognition."
-    },
-    "relatedFilms": [],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
+{
+  "intro": {
+    "ru": "Studio Ghibli выросла из желания делать мультфильмы, в которых мир дышит. Основанная в середине восьмидесятых, студия прошла путь от смелых экспериментов до признания по всему миру, не потеряв при этом ручной работы и внимания к деталям. Здесь встречаются детские сказки и взрослые трагедии, техника и природа, мечта и память. Каждая веха ниже — не просто дата, а шаг в формировании собственного языка анимации.",
+    "en": "Studio Ghibli grew from a desire to make films in which the world breathes. Founded in the mid-eighties, the studio traveled from bold experiments to worldwide recognition without losing its handmade craft and attention to detail. Fairy tales for children and adult tragedies, technology and nature, dream and memory meet here. Each milestone below is not just a date but a step in shaping its own language of animation."
   },
-  {
-    "year": 1988,
-    "title": {
-      "ru": "«Тоторо» и «Могила светлячков»",
-      "en": "Totoro and Grave of the Fireflies"
+  "milestones": [
+    {
+      "year": 1985,
+      "title": {
+        "ru": "Основание студии",
+        "en": "Studio founded"
+      },
+      "text": {
+        "ru": "Хаяо Миядзаки и Исао Такахата основывают Studio Ghibli после успеха «Навсикаи».",
+        "en": "Hayao Miyazaki and Isao Takahata found Studio Ghibli after the success of Nausicaä."
+      },
+      "accent": "#2f5d3a",
+      "slug": "1985-founding",
+      "detail": {
+        "ru": "Основание студии стало возможным после успеха Навсикаи: режиссёр и его соавторы получили пространство для собственных проектов. Важно, что с самого начала студия строилась вокруг авторского видения, а не вокруг франшизы. Этот шаг заложил принцип: каждый фильм — отдельный мир, сделанный вручную. Именно тогда сформировалась привычка уделять внимание пейзажу и звуку как полноправным героям.",
+        "en": "The studio was founded after the success of Nausicaa, giving the director and his collaborators room for their own projects. From the start the studio was built around an author's vision rather than a franchise. This step set the principle: each film is a separate world made by hand. It was then that the habit of treating landscape and sound as full characters took shape."
+      },
+      "relatedFilms": [],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
     },
-    "text": {
-      "ru": "Двойной показ двух классиков: тёплая сказка и трагедия войны.",
-      "en": "A double bill of two classics: a warm fairy tale and a war tragedy."
+    {
+      "year": 1988,
+      "title": {
+        "ru": "«Тоторо» и «Могила светлячков»",
+        "en": "Totoro and Grave of the Fireflies"
+      },
+      "text": {
+        "ru": "Двойной показ двух классиков: тёплая сказка и трагедия войны.",
+        "en": "A double bill of two classics: a warm fairy tale and a war tragedy."
+      },
+      "accent": "#6b8f4e",
+      "slug": "1988-totoro-grave",
+      "detail": {
+        "ru": "Двойной показ двух совершенно разных фильмов показал диапазон студии. С одной стороны — тёплая сказка о детстве и лесе, с другой — трагедия войны и памяти. Вместе они задали два полюса, между которыми будет жить всё дальнейшее творчество. Тоторо стал талисманом, а Могила светлячков — напоминанием о цене.",
+        "en": "A double bill of two very different films showed the studio's range. On one side a warm tale of childhood and forest, on the other a tragedy of war and memory. Together they set the two poles between which all later work would live. Totoro became a mascot, while Grave of the Fireflies remained a reminder of cost."
+      },
+      "relatedFilms": [
+        "totoro"
+      ],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
     },
-    "accent": "#6b8f4e",
-    "slug": "1988-totoro-grave",
-    "detail": {
-      "ru": "Двойной показ двух классик: тёплая сказка и военная трагедия. Этот год стал символом студии, Тоторо стал её талисманом.",
-      "en": "A double bill of two classics: a warm fairy tale and a war tragedy. This year became a symbol of the studio, Totoro became its mascot."
+    {
+      "year": 2001,
+      "title": {
+        "ru": "Музей Гибли в Митаке",
+        "en": "Ghibli Museum in Mitaka"
+      },
+      "text": {
+        "ru": "Открывается музей студии в парке Инокасира, Токио.",
+        "en": "The studio's museum opens in Inokashira Park, Tokyo."
+      },
+      "accent": "#c9a227",
+      "slug": "2001-ghibli-museum",
+      "detail": {
+        "ru": "Музей в Митаке открыл двери в мир студии: здесь можно увидеть наброски, раскадровки и рабочие процессы. Это не просто выставка, а приглашение заглянуть за кулисы ремесла. Музей стал физическим воплощением того, что студия ценит ручную работу и внимание к деталям.",
+        "en": "The museum in Mitaka opened doors into the studio's world: sketches, storyboards and working processes can be seen there. It is not just an exhibition but an invitation behind the scenes of the craft. The museum became a physical embodiment of the studio's value for handmade work and attention to detail."
+      },
+      "relatedFilms": [],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
     },
-    "relatedFilms": [
-      "totoro"
-    ],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
+    {
+      "year": 2001,
+      "title": {
+        "ru": "«Унесённые призраками»",
+        "en": "Spirited Away"
+      },
+      "text": {
+        "ru": "Выходит фильм, ставший визитной карточкой студии.",
+        "en": "The film that became the studio's calling card is released."
+      },
+      "accent": "#6b1a2b",
+      "slug": "2001-spirited",
+      "detail": {
+        "ru": "Фильм стал визитной карточкой студии и познакомил мировую аудиторию с её языком. История о девочке в мире духов говорит о труде, памяти и доброте без морализаторства. Образы бани, фонарей и теней создали новый визуальный стандарт. После этого фильма студия окончательно стала явлением мировой анимации.",
+        "en": "The film became the studio's calling card and introduced its language to worldwide audiences. A story of a girl in a spirit world speaks of labor, memory and kindness without moralizing. Images of the bathhouse, lanterns and shadows created a new visual standard. After this film the studio finally became a phenomenon of world animation."
+      },
+      "relatedFilms": [
+        "spirited-away"
+      ],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
+    },
+    {
+      "year": 2003,
+      "title": {
+        "ru": "Оскар за «Унесённых»",
+        "en": "Oscar for Spirited Away"
+      },
+      "text": {
+        "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм (церемония 2003).",
+        "en": "The film wins the Academy Award for Best Animated Feature (2003 ceremony)."
+      },
+      "accent": "#1a2a4a",
+      "slug": "2003-oscar-spirited",
+      "detail": {
+        "ru": "Признание академии подтвердило то, что зрители уже чувствовали: студия делает не просто мультфильмы, а кино. Награда стала символом того, что авторский анимационный язык может говорить с любым зрителем. Это признание укрепило независимость студии и её право на собственный темп.",
+        "en": "Academy recognition confirmed what audiences already felt: the studio makes not just animated films but cinema. The award became a symbol that an author's animated language can speak to any viewer. This recognition strengthened the studio's independence and its right to its own pace."
+      },
+      "relatedFilms": [
+        "spirited-away"
+      ],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
+    },
+    {
+      "year": 2013,
+      "title": {
+        "ru": "«Ветер крепчает»",
+        "en": "The Wind Rises"
+      },
+      "text": {
+        "ru": "Фильм, который Миядзаки назвал своим последним.",
+        "en": "The film Miyazaki called his last."
+      },
+      "accent": "#6fa8dc",
+      "slug": "2013-wind",
+      "detail": {
+        "ru": "Фильм, который режиссёр назвал своим последним, оказался тихой и печальной историей о красоте творения и его цене. Авиаконструктор и ветер соединили мечту и реальность. Картина показала, что студия умеет говорить о взрослых темах без потери поэзии. Это был шаг к более личному и рефлексивному кино.",
+        "en": "The film the director called his last turned out to be a quiet, sad story about the beauty of creation and its cost. An aircraft designer and the wind joined dream and reality. The picture showed that the studio can speak about adult themes without losing poetry. It was a step toward more personal and reflective cinema."
+      },
+      "relatedFilms": [
+        "wind-rises"
+      ],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "title": {
+        "ru": "Ghibli Park",
+        "en": "Ghibli Park"
+      },
+      "text": {
+        "ru": "Открывается тематический парк в префектуре Айти.",
+        "en": "A theme park opens in Aichi Prefecture."
+      },
+      "accent": "#9fc9a0",
+      "slug": "2022-ghibli-park",
+      "detail": {
+        "ru": "Тематический парк открыл миры студии в физическом пространстве. Это не аттракцион, а приглашение погулять по ландшафтам, знакомым по фильмам. Парк стал ещё одним способом сохранить и передать наследие студии новым поколениям.",
+        "en": "The theme park opened the studio's worlds in physical space. It is not an attraction but an invitation to walk through landscapes familiar from the films. The park became another way to preserve and pass on the studio's heritage to new generations."
+      },
+      "relatedFilms": [],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "title": {
+        "ru": "«Мальчик и птица»",
+        "en": "The Boy and the Heron"
+      },
+      "text": {
+        "ru": "Новый фильм Миядзаки после долгого перерыва.",
+        "en": "Miyazaki's new film after a long break."
+      },
+      "accent": "#c96a2a",
+      "slug": "2023-boy-heron",
+      "detail": {
+        "ru": "Новый фильм после долгого перерыва оказался медитативным и таинственным. История горя и принятия разворачивается через путешествие в мир, где живые и мёртвые переплетаются. Визуально это один из самых смелых проектов студии. Фильм показал, что студия продолжает искать новые формы.",
+        "en": "The new film after a long break turned out meditative and mysterious. A story of grief and acceptance unfolds through a journey into a world where the living and the dead intertwine. Visually it is one of the studio's boldest projects. The film showed that the studio keeps searching for new forms."
+      },
+      "relatedFilms": [
+        "boy-heron"
+      ],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "title": {
+        "ru": "Оскар за «Мальчика и птицу»",
+        "en": "Oscar for The Boy and the Heron"
+      },
+      "text": {
+        "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм.",
+        "en": "The film wins the Academy Award for Best Animated Feature."
+      },
+      "accent": "#4a6a8a",
+      "slug": "2024-oscar-boy-heron",
+      "detail": {
+        "ru": "Признание академии подтвердило, что студия остаётся живой и актуальной. Награда стала символом преемственности: от первых экспериментов до современного кино. Это напоминание, что авторский анимационный язык по-прежнему говорит с миром.",
+        "en": "Academy recognition confirmed that the studio remains alive and relevant. The award became a symbol of continuity: from early experiments to contemporary cinema. It is a reminder that an author's animated language still speaks to the world."
+      },
+      "relatedFilms": [
+        "boy-heron"
+      ],
+      "image": null,
+      "creature": {
+        "file": null,
+        "alt": {
+          "ru": "Существо эпохи",
+          "en": "Era creature"
+        }
       }
     }
-  },
-  {
-    "year": 2001,
-    "title": {
-      "ru": "Музей Гибли в Митаке",
-      "en": "Ghibli Museum in Mitaka"
-    },
-    "text": {
-      "ru": "Открывается музей студии в парке Инокасира, Токио.",
-      "en": "The studio's museum opens in Inokashira Park, Tokyo."
-    },
-    "accent": "#c9a227",
-    "slug": "2001-ghibli-museum",
-    "detail": {
-      "ru": "Открывается музей студии в парке Инокасира в Токио, место, где можно прикоснуться к миру анимации.",
-      "en": "The studio museum opens in Inokashira Park in Tokyo, a place to touch the world of animation."
-    },
-    "relatedFilms": [],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  },
-  {
-    "year": 2001,
-    "title": {
-      "ru": "«Унесённые призраками»",
-      "en": "Spirited Away"
-    },
-    "text": {
-      "ru": "Выходит фильм, ставший визитной карточкой студии.",
-      "en": "The film that became the studio's calling card is released."
-    },
-    "accent": "#6b1a2b",
-    "slug": "2001-spirited",
-    "detail": {
-      "ru": "Выходит фильм, ставший визитной карточкой студии. История о девочке в мире духов покорила зрителей по всему миру.",
-      "en": "The film that became the studio calling card is released. A story of a girl in a spirit world captivated audiences worldwide."
-    },
-    "relatedFilms": [
-      "spirited-away"
-    ],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  },
-  {
-    "year": 2003,
-    "title": {
-      "ru": "Оскар за «Унесённых»",
-      "en": "Oscar for Spirited Away"
-    },
-    "text": {
-      "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм (церемония 2003).",
-      "en": "The film wins the Academy Award for Best Animated Feature (2003 ceremony)."
-    },
-    "accent": "#1a2a4a",
-    "slug": "2003-oscar-spirited",
-    "detail": {
-      "ru": "Фильм получает премию Оскар за лучший анимационный полнометражный фильм на церемонии 2003 года.",
-      "en": "The film wins the Academy Award for Best Animated Feature at the 2003 ceremony."
-    },
-    "relatedFilms": [
-      "spirited-away"
-    ],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  },
-  {
-    "year": 2013,
-    "title": {
-      "ru": "«Ветер крепчает»",
-      "en": "The Wind Rises"
-    },
-    "text": {
-      "ru": "Фильм, который Миядзаки назвал своим последним.",
-      "en": "The film Miyazaki called his last."
-    },
-    "accent": "#6fa8dc",
-    "slug": "2013-wind",
-    "detail": {
-      "ru": "Фильм, который Миядзаки назвал своим последним. История авиаконструктора, тихая и печальная.",
-      "en": "The film Miyazaki called his last. A quiet, sad story of an aircraft designer."
-    },
-    "relatedFilms": [
-      "wind-rises"
-    ],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  },
-  {
-    "year": 2022,
-    "title": {
-      "ru": "Ghibli Park",
-      "en": "Ghibli Park"
-    },
-    "text": {
-      "ru": "Открывается тематический парк в префектуре Айти.",
-      "en": "A theme park opens in Aichi Prefecture."
-    },
-    "accent": "#9fc9a0",
-    "slug": "2022-ghibli-park",
-    "detail": {
-      "ru": "В префектуре Айти открывается тематический парк, посвящённый мирам студии.",
-      "en": "A theme park dedicated to the studio worlds opens in Aichi Prefecture."
-    },
-    "relatedFilms": [],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  },
-  {
-    "year": 2023,
-    "title": {
-      "ru": "«Мальчик и птица»",
-      "en": "The Boy and the Heron"
-    },
-    "text": {
-      "ru": "Новый фильм Миядзаки после долгого перерыва.",
-      "en": "Miyazaki's new film after a long break."
-    },
-    "accent": "#c96a2a",
-    "slug": "2023-boy-heron",
-    "detail": {
-      "ru": "Новый фильм Миядзаки после долгого перерыва. Медитативная и загадочная история о горе и принятии.",
-      "en": "Miyazaki new film after a long break. A meditative and mysterious story of grief and acceptance."
-    },
-    "relatedFilms": [
-      "boy-heron"
-    ],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  },
-  {
-    "year": 2024,
-    "title": {
-      "ru": "Оскар за «Мальчика и птицу»",
-      "en": "Oscar for The Boy and the Heron"
-    },
-    "text": {
-      "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм.",
-      "en": "The film wins the Academy Award for Best Animated Feature."
-    },
-    "accent": "#4a6a8a",
-    "slug": "2024-oscar-boy-heron",
-    "detail": {
-      "ru": "Фильм получает премию Оскар за лучший анимационный полнометражный фильм.",
-      "en": "The film wins the Academy Award for Best Animated Feature."
-    },
-    "relatedFilms": [
-      "boy-heron"
-    ],
-    "image": null,
-    "creature": {
-      "file": null,
-      "alt": {
-        "ru": "Существо эпохи",
-        "en": "Era creature"
-      }
-    }
-  }
-]
+  ]
+}

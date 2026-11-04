@@ -11,7 +11,11 @@ export async function loadTimeline() {
   if (!response.ok) {
     throw new Error('Не удалось загрузить timeline.json');
   }
-  return response.json();
+  const data = await response.json();
+  if (Array.isArray(data)) return data;
+  const list = data.milestones || [];
+  if (data.intro) list.intro = data.intro;
+  return list;
 }
 
 export async function loadImages() {

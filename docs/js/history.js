@@ -1,5 +1,5 @@
 import { loadTimeline, loadFilms } from './data.js';
-import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
+import { initI18n, getLang, onLangChange, setLang, t } from './i18n.js';
 import { initNav } from './nav.js';
 import { initReveal } from './reveal.js';
 
@@ -7,6 +7,7 @@ const listEl = document.querySelector('#history-list');
 
 let milestones = [];
 let films = [];
+let intro = null;
 
 function initLangSwitch() {
   document.querySelectorAll('.lang-switch button[data-lang]').forEach((btn) => {
@@ -24,6 +25,16 @@ function render() {
   if (!listEl) return;
   const lang = getLang();
   listEl.innerHTML = '';
+  if (intro) {
+    const introBlock = document.createElement('section');
+    introBlock.className = 'history-intro';
+    const h = document.createElement('h2');
+    h.textContent = t('history.introTitle') || (lang === 'en' ? 'Introduction' : 'Введение');
+    const p1 = document.createElement('p');
+    p1.textContent = intro[lang] || intro.ru;
+    introBlock.append(h, p1);
+    listEl.append(introBlock);
+  }
   const sorted = [...milestones].sort((a, b) => a.year - b.year || a.slug.localeCompare(b.slug));
   sorted.forEach((m) => {
     if (!m.image) console.log(`missing milestone image: docs/img/milestones/${m.slug}.webp`);
@@ -100,7 +111,9 @@ async function init() {
   initReveal();
 
   try {
-    milestones = await loadTimeline();
+    const tl = await loadTimeline();
+    milestones = tl;
+    intro = tl.intro || null;
     films = await loadFilms();
   } catch (error) {
     console.error(error);

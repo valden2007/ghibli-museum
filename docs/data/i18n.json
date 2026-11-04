@@ -94,5 +94,9 @@
   "history.subtitle": {
     "ru": "Ключевые вехи Studio Ghibli.",
     "en": "Key milestones of Studio Ghibli."
+  },
+  "history.introTitle": {
+    "ru": "Введение",
+    "en": "Introduction"
   }
 }
