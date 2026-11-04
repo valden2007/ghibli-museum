@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Веха истории Studio Ghibli.">
+  <title>Ghibli Museum — веха</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap"></noscript>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/catalog-card.css">
+  <style>
+    @view-transition { navigation: auto; }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="index.html">Ghibli Museum</a>
+    <nav id="main-nav" aria-label="Main">
+      <a href="index.html#hero" data-i18n="nav.home">Главная</a>
+      <a href="index.html#timeline" data-i18n="nav.timeline">Таймлайн</a>
+      <a href="index.html#films" data-i18n="nav.films">Фильмы</a>
+      <a href="index.html#player" data-i18n="nav.player">Плеер</a>
+      <a href="index.html#about" data-i18n="nav.about">О проекте</a>
+    </nav>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" data-lang="ru">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="milestone-hero" id="milestone-hero">
+      <div class="milestone-hero-bg" id="milestone-hero-bg"></div>
+      <div class="container milestone-hero-content">
+        <p class="milestone-year" id="milestone-year">—</p>
+        <h1 class="milestone-title" id="milestone-title" data-reveal><span>Загрузка…</span></h1>
+      </div>
+    </section>
+
+    <section class="container milestone-body" id="milestone-content" hidden>
+      <p id="milestone-detail"></p>
+
+      <h2 data-i18n="milestone.related">Связанные фильмы</h2>
+      <div id="milestone-related" class="milestone-related"></div>
+
+      <nav class="film-neighbors">
+        <a id="prev-milestone" href="index.html#timeline">← Предыдущая</a>
+        <a id="next-milestone" href="index.html#timeline">Следующая →</a>
+      </nav>
+    </section>
+
+    <section class="container" id="milestone-empty" hidden>
+      <div class="empty">
+        <p>Веха с таким идентификатором не найдена.</p>
+        <a class="back-link" href="index.html#timeline">Вернуться к таймлайну</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/vendor/lenis.min.js" defer></script>
+  <script type="module" src="js/milestone.js"></script>
+</body>
+</html>

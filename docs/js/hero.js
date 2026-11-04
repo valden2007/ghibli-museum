@@ -4,30 +4,20 @@ export function initHero() {
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // grass blades (static decoration)
-  const grassLayer = scene.querySelector('.grass-layer');
-  if (grassLayer) {
-    const w = 1600;
-    for (let i = 0; i < 60; i++) {
-      const x = (i / 60) * w + (Math.random() - 0.5) * 20;
-      const h = 40 + Math.random() * 60;
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', `M${x},${900} Q${x + (Math.random()-0.5)*8},${900 - h*0.6} ${x + (Math.random()-0.5)*12},${900 - h}`);
-      path.setAttribute('stroke', i % 3 === 0 ? '#3a6b4a' : '#2f5d3a');
-      path.setAttribute('stroke-width', (1 + Math.random()).toFixed(1));
-      path.setAttribute('fill', 'none');
-      path.setAttribute('class', 'grass-blade');
-      path.style.transformOrigin = `${x}px 900px`;
-      if (!reduce) path.style.animation = `grassSway ${2 + Math.random()*2}s ease-in-out ${Math.random()*2}s infinite`;
-      grassLayer.append(path);
-    }
+  // reduced-motion fallback: static poster or gradient
+  if (reduce) {
+    const poster = new Image();
+    poster.onload = () => {
+      scene.style.backgroundImage = `url('${poster.src}')`;
+      scene.style.backgroundSize = 'cover';
+      scene.style.backgroundPosition = 'center';
+    };
+    poster.onerror = () => {
+      scene.style.background = 'linear-gradient(180deg, #0a3a4a 0%, #1a6a6a 45%, #e8a070 75%, #f2c9a0 100%)';
+    };
+    poster.src = 'img/scenes/hero-poster.webp';
+    return;
   }
-
-  if (reduce) return;
-
-  // remove old SVG sun background
-  const svg = scene.querySelector('svg.hero-sky');
-  if (svg) svg.style.display = 'none';
 
   // YouTube video background
   const videoId = 'Y3_XCQ09f-Q';

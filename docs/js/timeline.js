@@ -11,7 +11,8 @@ export async function initTimeline() {
 
   let items;
   try {
-    items = await loadTimeline();
+    const tr = await fetch('data/timeline.json?v=2');
+    items = tr.ok ? await tr.json() : await loadTimeline();
   } catch (e) {
     console.error(e);
     return;
@@ -20,13 +21,16 @@ export async function initTimeline() {
   const lang = getLang();
   container.innerHTML = '';
   items.forEach((item, index) => {
-    const el = document.createElement('article');
+    const el = document.createElement('a');
     el.className = 'timeline-item';
     el.dataset.index = String(index);
+    el.href = `milestone.html?id=${encodeURIComponent(item.slug)}`;
+    el.setAttribute('aria-label', `${item.year} — ${item.title[lang] || item.title.ru}`);
     el.innerHTML = `
       <div class="timeline-item-year">${item.year}</div>
       <h3 class="timeline-item-title">${item.title[lang] || item.title.ru}</h3>
       <p class="timeline-item-text">${item.text[lang] || item.text.ru}</p>
+      <span class="timeline-item-more">${lang === 'en' ? 'Details →' : 'Подробнее →'}</span>
     `;
     container.append(el);
   });

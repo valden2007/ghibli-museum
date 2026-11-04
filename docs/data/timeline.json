@@ -1,56 +1,185 @@
 [
   {
     "year": 1985,
-    "title": { "ru": "Основание студии", "en": "Studio founded" },
-    "text": { "ru": "Хаяо Миядзаки и Исао Такахата основывают Studio Ghibli после успеха «Навсикаи».", "en": "Hayao Miyazaki and Isao Takahata found Studio Ghibli after the success of Nausicaä." },
-    "accent": "#2f5d3a"
+    "title": {
+      "ru": "Основание студии",
+      "en": "Studio founded"
+    },
+    "text": {
+      "ru": "Хаяо Миядзаки и Исао Такахата основывают Studio Ghibli после успеха «Навсикаи».",
+      "en": "Hayao Miyazaki and Isao Takahata found Studio Ghibli after the success of Nausicaä."
+    },
+    "accent": "#2f5d3a",
+    "slug": "1985-founding",
+    "detail": {
+      "ru": "Студия основана Хаяо Миядзаки и Исао Такахатой после успеха Навсикаи. Начало пути, который приведёт к собственному музею и мировому признанию.",
+      "en": "The studio is founded by Hayao Miyazaki and Isao Takahata after the success of Nausicaa. The beginning of a path that will lead to its own museum and worldwide recognition."
+    },
+    "relatedFilms": [],
+    "image": null
   },
   {
     "year": 1988,
-    "title": { "ru": "«Тоторо» и «Могила светлячков»", "en": "Totoro and Grave of the Fireflies" },
-    "text": { "ru": "Двойной показ двух классиков: тёплая сказка и трагедия войны.", "en": "A double bill of two classics: a warm fairy tale and a war tragedy." },
-    "accent": "#6b8f4e"
+    "title": {
+      "ru": "«Тоторо» и «Могила светлячков»",
+      "en": "Totoro and Grave of the Fireflies"
+    },
+    "text": {
+      "ru": "Двойной показ двух классиков: тёплая сказка и трагедия войны.",
+      "en": "A double bill of two classics: a warm fairy tale and a war tragedy."
+    },
+    "accent": "#6b8f4e",
+    "slug": "1988-totoro-grave",
+    "detail": {
+      "ru": "Двойной показ двух классик: тёплая сказка и военная трагедия. Этот год стал символом студии, Тоторо стал её талисманом.",
+      "en": "A double bill of two classics: a warm fairy tale and a war tragedy. This year became a symbol of the studio, Totoro became its mascot."
+    },
+    "relatedFilms": [
+      "totoro"
+    ],
+    "image": null
   },
   {
     "year": 2001,
-    "title": { "ru": "Музей Гибли в Митаке", "en": "Ghibli Museum in Mitaka" },
-    "text": { "ru": "Открывается музей студии в парке Инокасира, Токио.", "en": "The studio's museum opens in Inokashira Park, Tokyo." },
-    "accent": "#c9a227"
+    "title": {
+      "ru": "Музей Гибли в Митаке",
+      "en": "Ghibli Museum in Mitaka"
+    },
+    "text": {
+      "ru": "Открывается музей студии в парке Инокасира, Токио.",
+      "en": "The studio's museum opens in Inokashira Park, Tokyo."
+    },
+    "accent": "#c9a227",
+    "slug": "2001-ghibli-museum",
+    "detail": {
+      "ru": "Открывается музей студии в парке Инокасира в Токио, место, где можно прикоснуться к миру анимации.",
+      "en": "The studio museum opens in Inokashira Park in Tokyo, a place to touch the world of animation."
+    },
+    "relatedFilms": [],
+    "image": null
   },
   {
     "year": 2001,
-    "title": { "ru": "«Унесённые призраками»", "en": "Spirited Away" },
-    "text": { "ru": "Выходит фильм, ставший визитной карточкой студии.", "en": "The film that became the studio's calling card is released." },
-    "accent": "#6b1a2b"
+    "title": {
+      "ru": "«Унесённые призраками»",
+      "en": "Spirited Away"
+    },
+    "text": {
+      "ru": "Выходит фильм, ставший визитной карточкой студии.",
+      "en": "The film that became the studio's calling card is released."
+    },
+    "accent": "#6b1a2b",
+    "slug": "2001-spirited",
+    "detail": {
+      "ru": "Выходит фильм, ставший визитной карточкой студии. История о девочке в мире духов покорила зрителей по всему миру.",
+      "en": "The film that became the studio calling card is released. A story of a girl in a spirit world captivated audiences worldwide."
+    },
+    "relatedFilms": [
+      "spirited-away"
+    ],
+    "image": null
   },
   {
     "year": 2003,
-    "title": { "ru": "Оскар за «Унесённых»", "en": "Oscar for Spirited Away" },
-    "text": { "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм (церемония 2003).", "en": "The film wins the Academy Award for Best Animated Feature (2003 ceremony)." },
-    "accent": "#1a2a4a"
+    "title": {
+      "ru": "Оскар за «Унесённых»",
+      "en": "Oscar for Spirited Away"
+    },
+    "text": {
+      "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм (церемония 2003).",
+      "en": "The film wins the Academy Award for Best Animated Feature (2003 ceremony)."
+    },
+    "accent": "#1a2a4a",
+    "slug": "2003-oscar-spirited",
+    "detail": {
+      "ru": "Фильм получает премию Оскар за лучший анимационный полнометражный фильм на церемонии 2003 года.",
+      "en": "The film wins the Academy Award for Best Animated Feature at the 2003 ceremony."
+    },
+    "relatedFilms": [
+      "spirited-away"
+    ],
+    "image": null
   },
   {
     "year": 2013,
-    "title": { "ru": "«Ветер крепчает»", "en": "The Wind Rises" },
-    "text": { "ru": "Фильм, который Миядзаки назвал своим последним.", "en": "The film Miyazaki called his last." },
-    "accent": "#6fa8dc"
+    "title": {
+      "ru": "«Ветер крепчает»",
+      "en": "The Wind Rises"
+    },
+    "text": {
+      "ru": "Фильм, который Миядзаки назвал своим последним.",
+      "en": "The film Miyazaki called his last."
+    },
+    "accent": "#6fa8dc",
+    "slug": "2013-wind",
+    "detail": {
+      "ru": "Фильм, который Миядзаки назвал своим последним. История авиаконструктора, тихая и печальная.",
+      "en": "The film Miyazaki called his last. A quiet, sad story of an aircraft designer."
+    },
+    "relatedFilms": [
+      "wind-rises"
+    ],
+    "image": null
   },
   {
     "year": 2022,
-    "title": { "ru": "Ghibli Park", "en": "Ghibli Park" },
-    "text": { "ru": "Открывается тематический парк в префектуре Айти.", "en": "A theme park opens in Aichi Prefecture." },
-    "accent": "#9fc9a0"
+    "title": {
+      "ru": "Ghibli Park",
+      "en": "Ghibli Park"
+    },
+    "text": {
+      "ru": "Открывается тематический парк в префектуре Айти.",
+      "en": "A theme park opens in Aichi Prefecture."
+    },
+    "accent": "#9fc9a0",
+    "slug": "2022-ghibli-park",
+    "detail": {
+      "ru": "В префектуре Айти открывается тематический парк, посвящённый мирам студии.",
+      "en": "A theme park dedicated to the studio worlds opens in Aichi Prefecture."
+    },
+    "relatedFilms": [],
+    "image": null
   },
   {
     "year": 2023,
-    "title": { "ru": "«Мальчик и птица»", "en": "The Boy and the Heron" },
-    "text": { "ru": "Новый фильм Миядзаки после долгого перерыва.", "en": "Miyazaki's new film after a long break." },
-    "accent": "#c96a2a"
+    "title": {
+      "ru": "«Мальчик и птица»",
+      "en": "The Boy and the Heron"
+    },
+    "text": {
+      "ru": "Новый фильм Миядзаки после долгого перерыва.",
+      "en": "Miyazaki's new film after a long break."
+    },
+    "accent": "#c96a2a",
+    "slug": "2023-boy-heron",
+    "detail": {
+      "ru": "Новый фильм Миядзаки после долгого перерыва. Медитативная и загадочная история о горе и принятии.",
+      "en": "Miyazaki new film after a long break. A meditative and mysterious story of grief and acceptance."
+    },
+    "relatedFilms": [
+      "boy-heron"
+    ],
+    "image": null
   },
   {
     "year": 2024,
-    "title": { "ru": "Оскар за «Мальчика и птицу»", "en": "Oscar for The Boy and the Heron" },
-    "text": { "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм.", "en": "The film wins the Academy Award for Best Animated Feature." },
-    "accent": "#4a6a8a"
+    "title": {
+      "ru": "Оскар за «Мальчика и птицу»",
+      "en": "Oscar for The Boy and the Heron"
+    },
+    "text": {
+      "ru": "Фильм получает премию «Оскар» за лучший анимационный фильм.",
+      "en": "The film wins the Academy Award for Best Animated Feature."
+    },
+    "accent": "#4a6a8a",
+    "slug": "2024-oscar-boy-heron",
+    "detail": {
+      "ru": "Фильм получает премию Оскар за лучший анимационный полнометражный фильм.",
+      "en": "The film wins the Academy Award for Best Animated Feature."
+    },
+    "relatedFilms": [
+      "boy-heron"
+    ],
+    "image": null
   }
 ]
