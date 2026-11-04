@@ -701,6 +701,30 @@
   pointer-events: none;
 }
 
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100%;
+  min-width: 177.78vh;
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-bg { display: none; }
+}
+
 .hero-train {
   mix-blend-mode: multiply;
   opacity: 0;
