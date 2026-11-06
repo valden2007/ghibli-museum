@@ -1,5 +1,6 @@
 import { get as getSettings, set as setSettings } from './settings.js';
 import { setLang, getLang } from './i18n.js';
+import * as audio from './audio.js';
 
 const SESSION_KEY = 'ghibli.gate.seen';
 
@@ -203,16 +204,37 @@ export async function initGate() {
 
   // enter
   enterBtn.addEventListener('click', () => {
-    // save settings
     setSettings({ lang: selectedLang, sound: selectedSound, effects: selectedEffects });
     markGateSeen();
-    // open transition
-    overlay.classList.add('gate-opening');
+    // audio init by gesture
+    audio.init();
+    audio.setEnabled(selectedSound);
+    audio.setVolume(getSettings().volume || 0.5);
+    if (selectedSound) setTimeout(() => audio.playAmbient(), 300);
+    if (selectedEffects === 'off') {
+      overlay.style.transition = 'opacity 0.2s ease';
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.remove();
+        document.body.style.overflow = '';
+        document.dispatchEvent(new CustomEvent('gate:done'));
+      }, 220);
+      return;
+    }
+    const rect = enterBtn.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const maxR = Math.hypot(Math.max(cx, window.innerWidth - cx), Math.max(cy, window.innerHeight - cy));
+    overlay.style.clipPath = `circle(0px at ${cx}px ${cy}px)`;
+    overlay.style.transition = 'clip-path 1.2s cubic-bezier(0.4,0,0.2,1)';
+    requestAnimationFrame(() => {
+      overlay.style.clipPath = `circle(${maxR}px at ${cx}px ${cy}px)`;
+    });
     setTimeout(() => {
       overlay.remove();
       document.body.style.overflow = '';
       document.dispatchEvent(new CustomEvent('gate:done'));
-    }, 1200);
+    }, 1300);
   });
 
   // focus first group

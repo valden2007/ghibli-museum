@@ -1009,6 +1009,105 @@
   }
 }
 
+.settings-btn {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--font-size-small);
+  position: relative;
+}
+
+.settings-panel {
+  position: absolute;
+  top: 100%;
+  right: var(--space-4);
+  margin-top: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  min-width: 240px;
+  z-index: 100;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-small);
+}
+
+.settings-opts {
+  display: flex;
+  gap: 4px;
+}
+
+.settings-opt {
+  background: var(--color-bg);
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.7rem;
+}
+
+.settings-opt.active {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+}
+
+.settings-toggle {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.7rem;
+}
+
+.settings-toggle.active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.settings-indicator {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.settings-indicator i {
+  display: inline-block;
+  width: 2px;
+  height: 8px;
+  background: var(--color-muted);
+  border-radius: 1px;
+}
+
+.settings-indicator.playing i {
+  animation: eq 0.6s ease-in-out infinite;
+}
+
+.settings-indicator.playing i:nth-child(2) { animation-delay: 0.1s; }
+.settings-indicator.playing i:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes eq {
+  0%, 100% { height: 4px; }
+  50% { height: 10px; }
+}
+
 @keyframes hintPulse {
   0%, 100% { transform: translateY(0); opacity: 0.7; }
   50% { transform: translateY(6px); opacity: 1; }
