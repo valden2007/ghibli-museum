@@ -161,6 +161,10 @@ function render() {
       img.alt = current.title[lang] || current.title.ru;
       img.loading = 'lazy';
       img.decoding = 'async';
+      img.addEventListener('load', () => {
+        const hb = document.querySelector('#milestone-hero-bg');
+        if (hb) hb.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+      }, { once: true });
       img.addEventListener('error', () => {
         console.log(`missing milestone image: ${current.image}`);
         img.remove();

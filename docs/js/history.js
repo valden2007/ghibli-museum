@@ -64,6 +64,9 @@ function renderMilestoneInlay(ms) {
     img.alt = ms.title[lang] || ms.title.ru;
     img.loading = 'lazy';
     img.decoding = 'async';
+    img.addEventListener('load', () => {
+      imgWrap.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+    }, { once: true });
     img.addEventListener('error', () => {
       console.log(`missing milestone image: ${ms.image}`);
       img.remove();
