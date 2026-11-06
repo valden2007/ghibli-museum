@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/catalog-card.css">
   <style>
     @view-transition { navigation: auto; }
   </style>
@@ -40,22 +41,88 @@
       <div class="container film-hero-content">
         <h1 class="film-title" id="film-title" data-reveal><span>Загрузка…</span></h1>
         <p class="film-meta" id="film-meta"></p>
+        <p class="film-tagline" id="film-tagline"></p>
       </div>
     </section>
 
+    <nav class="film-subnav" id="film-subnav" aria-label="Sections">
+      <a href="#world" data-i18n="film.world">Мир фильма</a>
+      <a href="#plot" data-i18n="film.plot">Сюжет</a>
+      <a href="#characters" data-i18n="film.characters">Персонажи</a>
+      <a href="#creation" data-i18n="film.creation">История создания</a>
+      <a href="#inspiration" data-i18n="film.inspiration">Вдохновение</a>
+      <a href="#crew" data-i18n="film.crew">Музыка и создатели</a>
+      <a href="#facts" data-i18n="film.facts">Факты</a>
+      <a href="#themes" data-i18n="film.themes">Темы</a>
+      <a href="#gallery" data-i18n="film.gallery">Галерея</a>
+      <a href="#opinion" data-i18n="film.opinion">Мнение автора</a>
+      <a href="#trailer" data-i18n="film.trailer">Трейлер</a>
+      <a href="#sources" data-i18n="film.sources">Источники</a>
+    </nav>
+
     <section class="container film-body" id="film-content" hidden>
-      <h2 data-i18n="film.synopsis">Синопсис</h2>
-      <p id="film-synopsis"></p>
+      <section id="world" class="film-section" hidden>
+        <h2 data-i18n="film.world">Мир фильма</h2>
+        <p id="film-world"></p>
+      </section>
 
-      <h2 data-i18n="film.facts">Факты</h2>
-      <ul id="film-facts"></ul>
+      <section id="plot" class="film-section" hidden>
+        <h2 data-i18n="film.plot">Сюжет</h2>
+        <p id="film-plot"></p>
+      </section>
 
+      <section id="characters" class="film-section" hidden>
+        <h2 data-i18n="film.characters">Персонажи</h2>
+        <div id="film-characters" class="film-characters"></div>
+      </section>
 
-      <div id="film-player-slot" class="player-slot">
-        <p class="muted">Трейлер скоро.</p>
-      </div>
+      <section id="creation" class="film-section" hidden>
+        <h2 data-i18n="film.creation">История создания</h2>
+        <div id="film-creation"></div>
+      </section>
 
-      <div id="film-characters-slot" hidden></div>
+      <section id="inspiration" class="film-section" hidden>
+        <h2 data-i18n="film.inspiration">Вдохновение</h2>
+        <div id="film-inspiration" class="film-inspiration"></div>
+      </section>
+
+      <section id="crew" class="film-section" hidden>
+        <h2 data-i18n="film.crew">Музыка и создатели</h2>
+        <p id="film-music"></p>
+        <p id="film-notes"></p>
+      </section>
+
+      <section id="facts" class="film-section" hidden>
+        <h2 data-i18n="film.facts">Факты</h2>
+        <ul id="film-facts"></ul>
+      </section>
+
+      <section id="themes" class="film-section" hidden>
+        <h2 data-i18n="film.themes">Темы</h2>
+        <div id="film-themes" class="film-themes"></div>
+      </section>
+
+      <section id="gallery" class="film-section" hidden>
+        <h2 data-i18n="film.gallery">Галерея</h2>
+        <div id="film-gallery" class="film-gallery"></div>
+      </section>
+
+      <section id="opinion" class="film-section" hidden>
+        <h2 data-i18n="film.opinion">Мнение автора</h2>
+        <blockquote id="film-opinion"></blockquote>
+      </section>
+
+      <section id="trailer" class="film-section">
+        <h2 data-i18n="film.trailer">Трейлер</h2>
+        <div id="film-player-slot" class="player-slot">
+          <p class="muted">Трейлер скоро.</p>
+        </div>
+      </section>
+
+      <section id="sources" class="film-section" hidden>
+        <h2 data-i18n="film.sources">Источники</h2>
+        <ul id="film-sources"></ul>
+      </section>
 
       <nav class="film-neighbors">
         <a id="prev-film" href="index.html#films">← Предыдущий</a>

@@ -122,5 +122,49 @@
   "film.charactersTitle": {
     "ru": "Герои мира",
     "en": "Heroes of the world"
+  },
+  "film.world": {
+    "ru": "Мир фильма",
+    "en": "The World of the Film"
+  },
+  "film.plot": {
+    "ru": "Сюжет",
+    "en": "Plot"
+  },
+  "film.characters": {
+    "ru": "Персонажи",
+    "en": "Characters"
+  },
+  "film.creation": {
+    "ru": "История создания",
+    "en": "Creation"
+  },
+  "film.inspiration": {
+    "ru": "Вдохновение",
+    "en": "Inspiration"
+  },
+  "film.crew": {
+    "ru": "Музыка и создатели",
+    "en": "Music and Creators"
+  },
+  "film.themes": {
+    "ru": "Темы",
+    "en": "Themes"
+  },
+  "film.gallery": {
+    "ru": "Галерея",
+    "en": "Gallery"
+  },
+  "film.opinion": {
+    "ru": "Мнение автора",
+    "en": "Author’s Note"
+  },
+  "film.trailer": {
+    "ru": "Трейлер",
+    "en": "Trailer"
+  },
+  "film.sources": {
+    "ru": "Источники",
+    "en": "Sources"
   }
 }

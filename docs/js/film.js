@@ -7,11 +7,9 @@ import { mountPlayer } from './player/index.js';
 
 const titleEl = document.querySelector('#film-title');
 const metaEl = document.querySelector('#film-meta');
+const taglineEl = document.querySelector('#film-tagline');
 const contentEl = document.querySelector('#film-content');
 const emptyEl = document.querySelector('#film-empty');
-const synopsisEl = document.querySelector('#film-synopsis');
-const factsEl = document.querySelector('#film-facts');
-
 const heroEl = document.querySelector('#film-hero');
 const heroBg = document.querySelector('#film-hero-bg');
 const prevLink = document.querySelector('#prev-film');
@@ -22,41 +20,243 @@ let imagesData = {};
 let currentFilm = null;
 let motifHandle = null;
 
+const sectionIds = ['world', 'plot', 'characters', 'creation', 'inspiration', 'crew', 'facts', 'themes', 'gallery', 'opinion', 'trailer', 'sources'];
+
 function applyPalette(film) {
-  film.palette.forEach((c, i) => {
+  (film.palette || []).forEach((c, i) => {
     document.documentElement.style.setProperty(`--c${i + 1}`, c);
   });
-  // page background tint
-  document.body.style.background = `radial-gradient(ellipse at top, ${film.palette[0]}22, var(--color-bg) 60%)`;
-  if (heroEl) {
-    heroEl.style.background = `linear-gradient(135deg, ${film.palette.join(', ')})`;
-  }
+  if (heroEl) heroEl.style.background = `linear-gradient(135deg, ${(film.palette || []).join(', ')})`;
+}
+
+function showSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.hidden = false;
+  const navLink = document.querySelector(`.film-subnav a[href="#${id}"]`);
+  if (navLink) navLink.hidden = false;
+}
+
+function hideSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.hidden = true;
+  const navLink = document.querySelector(`.film-subnav a[href="#${id}"]`);
+  if (navLink) navLink.hidden = true;
 }
 
 function renderText() {
   if (!currentFilm) return;
   const lang = getLang();
+  const film = currentFilm;
+
   if (titleEl) {
     const span = titleEl.querySelector('span');
-    if (span) span.textContent = currentFilm.title[lang] || currentFilm.title.ru;
-    else titleEl.textContent = currentFilm.title[lang] || currentFilm.title.ru;
+    if (span) span.textContent = film.title[lang] || film.title.ru;
+    else titleEl.textContent = film.title[lang] || film.title.ru;
   }
-  if (metaEl) {
-    metaEl.textContent = `${currentFilm.year} · ${currentFilm.director}`;
+  if (metaEl) metaEl.textContent = `${film.year} · ${film.director}`;
+  if (taglineEl) {
+    const tg = film.tagline && (film.tagline[lang] || film.tagline.ru);
+    taglineEl.textContent = tg || '';
+    taglineEl.hidden = !tg;
   }
-  if (synopsisEl) synopsisEl.textContent = currentFilm.synopsis[lang] || currentFilm.synopsis.ru;
-  if (factsEl) {
+
+  // world
+  const worldEl = document.getElementById('film-world');
+  const worldText = film.world && (film.world[lang] || film.world.ru);
+  if (worldText) { worldEl.textContent = worldText; showSection('world'); } else hideSection('world');
+
+  // plot
+  const plotEl = document.getElementById('film-plot');
+  const plotText = film.plot && (film.plot[lang] || film.plot.ru);
+  if (plotText) { plotEl.textContent = plotText; showSection('plot'); } else hideSection('plot');
+
+  // characters
+  const charsEl = document.getElementById('film-characters');
+  const chars = Array.isArray(film.characters) ? film.characters : [];
+  if (chars.length) {
+    charsEl.innerHTML = '';
+    chars.forEach((ch) => {
+      const card = document.createElement('div');
+      card.className = 'film-character';
+      if (ch.image) {
+        const img = document.createElement('img');
+        img.src = ch.image;
+        img.alt = (ch.name && (ch.name[lang] || ch.name.ru)) || '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.addEventListener('error', () => { img.remove(); }, { once: true });
+        card.append(img);
+      } else {
+        const ph = document.createElement('div');
+        ph.className = 'film-character-silhouette';
+        ph.setAttribute('aria-hidden', 'true');
+        const initial = ((ch.name && (ch.name[lang] || ch.name.ru)) || '?').charAt(0).toUpperCase();
+        ph.textContent = initial;
+        card.append(ph);
+      }
+      const name = document.createElement('strong');
+      name.textContent = (ch.name && (ch.name[lang] || ch.name.ru)) || '';
+      const role = document.createElement('p');
+      role.textContent = (ch.role && (ch.role[lang] || ch.role.ru)) || '';
+      const desc = document.createElement('p');
+      desc.textContent = (ch.description && (ch.description[lang] || ch.description.ru)) || '';
+      card.append(name, role, desc);
+      charsEl.append(card);
+    });
+    showSection('characters');
+  } else hideSection('characters');
+
+  // creation
+  const creationEl = document.getElementById('film-creation');
+  const creationText = film.creation && (film.creation[lang] || film.creation.ru);
+  if (creationText) {
+    creationEl.innerHTML = '';
+    creationText.split('\n\n').forEach((para) => {
+      const p = document.createElement('p');
+      p.textContent = para.trim();
+      creationEl.append(p);
+    });
+    showSection('creation');
+  } else hideSection('creation');
+
+  // inspiration
+  const inspEl = document.getElementById('film-inspiration');
+  const insp = Array.isArray(film.inspiration) ? film.inspiration : [];
+  if (insp.length) {
+    inspEl.innerHTML = '';
+    insp.forEach((item) => {
+      const div = document.createElement('div');
+      div.className = 'film-inspiration-item';
+      const h = document.createElement('h3');
+      h.textContent = (item.title && (item.title[lang] || item.title.ru)) || '';
+      const p = document.createElement('p');
+      p.textContent = (item.text && (item.text[lang] || item.text.ru)) || '';
+      div.append(h, p);
+      inspEl.append(div);
+    });
+    showSection('inspiration');
+  } else hideSection('inspiration');
+
+  // crew
+  const musicEl = document.getElementById('film-music');
+  const notesEl = document.getElementById('film-notes');
+  const musicText = film.crew && film.crew.music && (film.crew.music[lang] || film.crew.music.ru);
+  const notesText = film.crew && film.crew.notes && (film.crew.notes[lang] || film.crew.notes.ru);
+  if (musicText || notesText) {
+    if (musicEl) { musicEl.textContent = musicText || ''; musicEl.hidden = !musicText; }
+    if (notesEl) { notesEl.textContent = notesText || ''; notesEl.hidden = !notesText; }
+    showSection('crew');
+  } else hideSection('crew');
+
+  // facts
+  const factsEl = document.getElementById('film-facts');
+  const facts = Array.isArray(film.facts) ? film.facts : [];
+  if (facts.length) {
     factsEl.innerHTML = '';
-    (currentFilm.facts || []).forEach((f) => {
+    facts.forEach((f) => {
       const li = document.createElement('li');
       li.textContent = f[lang] || f.ru;
       factsEl.append(li);
     });
+    showSection('facts');
+  } else hideSection('facts');
+
+  // themes
+  const themesEl = document.getElementById('film-themes');
+  const themes = Array.isArray(film.themes) ? film.themes : [];
+  if (themes.length) {
+    themesEl.innerHTML = '';
+    themes.forEach((th) => {
+      const span = document.createElement('span');
+      span.className = 'theme-pill';
+      span.textContent = th[lang] || th.ru;
+      themesEl.append(span);
+    });
+    showSection('themes');
+  } else hideSection('themes');
+
+  // gallery
+  const galleryEl = document.getElementById('film-gallery');
+  const images = Array.isArray(film.images) ? film.images : [];
+  if (images.length) {
+    galleryEl.innerHTML = '';
+    images.forEach((im) => {
+      const figure = document.createElement('figure');
+      const img = document.createElement('img');
+      img.src = im.file;
+      img.alt = (im.alt && (im.alt[lang] || im.alt.ru)) || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      if (im.file) {
+        // no width/height known; skip
+      }
+      figure.append(img);
+      if (im.caption) {
+        const cap = document.createElement('figcaption');
+        cap.textContent = im.caption[lang] || im.caption.ru;
+        figure.append(cap);
+      }
+      if (im.credit) {
+        const cr = document.createElement('p');
+        cr.className = 'muted';
+        cr.textContent = im.credit;
+        figure.append(cr);
+      }
+      galleryEl.append(figure);
+    });
+    showSection('gallery');
+  } else hideSection('gallery');
+
+  // opinion
+  const opinionEl = document.getElementById('film-opinion');
+  const opinion = film.opinion;
+  const opinionText = opinion && (opinion[lang] || opinion.ru);
+  if (opinionText) {
+    opinionEl.textContent = opinionText;
+    showSection('opinion');
+  } else hideSection('opinion');
+
+  // sources
+  const sourcesEl = document.getElementById('film-sources');
+  const sources = Array.isArray(film.sources) ? film.sources : [];
+  if (sources.length) {
+    sourcesEl.innerHTML = '';
+    sources.forEach((s) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = s.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = s.label;
+      li.append(a);
+      sourcesEl.append(li);
+    });
+    showSection('sources');
+  } else hideSection('sources');
+
+  // trailer
+  const slot = document.querySelector('#film-player-slot');
+  if (slot) {
+    slot.innerHTML = '';
+    if (film.trailerId) {
+      mountPlayer(slot, { adapter: 'youtube', videoId: film.trailerId, palette: film.palette });
+    } else {
+      const p = document.createElement('p');
+      p.className = 'muted';
+      p.textContent = 'Трейлер скоро.';
+      const a = document.createElement('a');
+      a.className = 'btn';
+      a.href = `https://www.youtube.com/results?search_query=${encodeURIComponent((film.title.en || film.title.ru) + ' trailer')}`;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = 'Поискать трейлер на YouTube';
+      slot.append(p, a);
+    }
   }
 
   // neighbors
   const sorted = [...films].sort((a, b) => a.year - b.year);
-  const idx = sorted.findIndex((f) => f.id === currentFilm.id);
+  const idx = sorted.findIndex((f) => f.id === film.id);
   const prev = idx > 0 ? sorted[idx - 1] : null;
   const next = idx < sorted.length - 1 ? sorted[idx + 1] : null;
   if (prevLink) {
@@ -64,18 +264,14 @@ function renderText() {
       prevLink.href = `film.html?id=${encodeURIComponent(prev.id)}`;
       prevLink.textContent = `← ${prev.title[lang] || prev.title.ru}`;
       prevLink.hidden = false;
-    } else {
-      prevLink.hidden = true;
-    }
+    } else prevLink.hidden = true;
   }
   if (nextLink) {
     if (next) {
       nextLink.href = `film.html?id=${encodeURIComponent(next.id)}`;
       nextLink.textContent = `${next.title[lang] || next.title.ru} →`;
       nextLink.hidden = false;
-    } else {
-      nextLink.hidden = true;
-    }
+    } else nextLink.hidden = true;
   }
 }
 
@@ -89,55 +285,6 @@ function initLangSwitch() {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
   });
-}
-
-function renderCharacters(film) {
-  const slot = document.querySelector('#film-characters-slot');
-  if (!slot) return;
-  slot.innerHTML = '';
-  if (!film || !Array.isArray(film.characters) || film.characters.length === 0) {
-    slot.hidden = true;
-    return;
-  }
-  slot.hidden = false;
-  const h = document.createElement('h2');
-  h.textContent = t('film.charactersTitle') || 'Герои мира';
-  const list = document.createElement('div');
-  list.className = 'film-characters';
-  film.characters.forEach((ch) => {
-    const card = document.createElement('div');
-    card.className = 'film-character';
-    const name = document.createElement('strong');
-    name.textContent = (ch.name && (ch.name[getLang()] || ch.name.ru)) || '';
-    const role = document.createElement('p');
-    role.textContent = (ch.role && (ch.role[getLang()] || ch.role.ru)) || '';
-    const mood = document.createElement('p');
-    mood.className = 'muted';
-    mood.textContent = (ch.mood && (ch.mood[getLang()] || ch.mood.ru)) || '';
-    card.append(name, role, mood);
-    if (ch.image) {
-      const img = document.createElement('img');
-      img.src = ch.image;
-      img.alt = name.textContent;
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.addEventListener('error', () => {
-        img.remove();
-        const ph = document.createElement('div');
-        ph.className = 'film-character-silhouette';
-        ph.setAttribute('aria-hidden', 'true');
-        card.prepend(ph);
-      }, { once: true });
-      card.prepend(img);
-    } else {
-      const ph = document.createElement('div');
-      ph.className = 'film-character-silhouette';
-      ph.setAttribute('aria-hidden', 'true');
-      card.prepend(ph);
-    }
-    list.append(card);
-  });
-  slot.append(h, list);
 }
 
 async function init() {
@@ -192,7 +339,6 @@ async function init() {
     if (types.length) {
       motifHandle = mountCombined(heroBg, types, film.palette, params);
     }
-    // decor slot
     const decorInfo = imagesData?.[film.id]?.decor;
     if (decorInfo && decorInfo.file) {
       const dimg = document.createElement('img');
@@ -228,8 +374,6 @@ async function init() {
 
   if (contentEl) contentEl.hidden = false;
   if (emptyEl) emptyEl.hidden = true;
-
-  renderCharacters(currentFilm);
 
   renderText();
   onLangChange(renderText);

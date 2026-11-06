@@ -70,38 +70,169 @@
         "colorHint": "#3a6b4a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "nausicaa",
+        "name": {
+          "ru": "Навсикая",
+          "en": "Nausicaä"
+        },
+        "role": {
+          "ru": "принцесса Долины ветров",
+          "en": "princess of the Valley of the Wind"
+        },
+        "description": {
+          "ru": "Понимает язык природы и стремится к миру.",
+          "en": "Understands the language of nature and seeks peace."
+        },
+        "image": null
+      },
+      {
+        "id": "asbel",
+        "name": {
+          "ru": "Асбел",
+          "en": "Asbel"
+        },
+        "role": {
+          "ru": "принц Педжите",
+          "en": "prince of Pejite"
+        },
+        "description": {
+          "ru": "Союзник Навсикаи, ищет справедливость.",
+          "en": "Nausicaa's ally, seeking justice."
+        },
+        "image": null
+      },
+      {
+        "id": "kushana",
+        "name": {
+          "ru": "Кушана",
+          "en": "Kushana"
+        },
+        "role": {
+          "ru": "командующая",
+          "en": "commander"
+        },
+        "description": {
+          "ru": "Желает уничтожить лес, но не лишена чести.",
+          "en": "Wants to destroy the forest, but is not without honor."
+        },
+        "image": null
+      },
+      {
+        "id": "yupa",
+        "name": {
+          "ru": "Юпа",
+          "en": "Yupa"
+        },
+        "role": {
+          "ru": "наставник",
+          "en": "mentor"
+        },
+        "description": {
+          "ru": "Опытный воин и учитель Навсикаи.",
+          "en": "Experienced warrior and Nausicaa's teacher."
+        },
+        "image": null
+      },
+      {
+        "id": "ohmu",
+        "name": {
+          "ru": "Ом",
+          "en": "Ohmu"
+        },
+        "role": {
+          "ru": "стражи леса",
+          "en": "guardians of the forest"
+        },
+        "description": {
+          "ru": "Гигантские насекомые, хранящие баланс мира.",
+          "en": "Giant insects that guard the world's balance."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Ветер несёт не только семена, но и надежду.",
+      "en": "The wind carries not only seeds, but hope."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — далёкое будущее, где Земля покрыта токсичным лесом, а гигантские насекомые живут по своим законам. Пустынные равнины и странные растения создают ощущение чужого, но живого мира.",
+      "en": "The world of the film is a distant future where Earth is covered by a toxic forest and giant insects live by their own laws. Desert plains and strange plants create a sense of an alien yet living world."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Юная принцесса Навсикая пытается понять природу токсичного леса и найти мир между людьми и природой. Её путь — борьба за выживание и надежда на примирение. Фильм не спешит к развязке, давая зрителю почувствовать масштаб мира.",
+      "en": "Young princess Nausicaa tries to understand the nature of the toxic forest and find peace between humans and nature. Her path is a struggle for survival and a hope for reconciliation. The film does not rush to its resolution, letting the viewer feel the scale of the world."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Фильм вышел до основания Studio Ghibli, но именно он задал тон будущим работам. Режиссёр сам написал оригинальную мангу. Производство велось студией Topcraft, а музыку написал Дзё Хисаиси.",
+      "en": "The film was released before Studio Ghibli was founded, but it set the tone for future works. The director wrote the original manga himself. Production was handled by Topcraft, and the music was composed by Joe Hisaishi."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Манга Миядзаки",
+          "en": "Miyazaki's manga"
+        },
+        "text": {
+          "ru": "Оригинальная манга стала источником сюжета.",
+          "en": "The original manga was the source of the story."
+        }
+      },
+      {
+        "title": {
+          "ru": "Пустынные пейзажи",
+          "en": "Desert landscapes"
+        },
+        "text": {
+          "ru": "Реальные ландшафты вдохновили визуальный язык.",
+          "en": "Real landscapes inspired the visual language."
+        }
+      },
+      {
+        "title": {
+          "ru": "Природа",
+          "en": "Nature"
+        },
+        "text": {
+          "ru": "Тема примирения с природой сквозная для студии.",
+          "en": "The theme of reconciliation with nature runs through the studio."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт ощущение чужого, но живого мира.",
+        "en": "Joe Hisaishi — the music creates a sense of an alien yet living world."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки; сценарий по собственной манге.",
+        "en": "Director — Hayao Miyazaki; screenplay based on his own manga."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "природа",
+        "en": "nature"
+      },
+      {
+        "ru": "примирение",
+        "en": "reconciliation"
+      },
+      {
+        "ru": "выживание",
+        "en": "survival"
+      },
+      {
+        "ru": "ответственность",
+        "en": "responsibility"
+      }
+    ],
     "opinion": null,
     "images": [],
-    "verify": [],
+    "verify": [
+      "транскрипция имён персонажей"
+    ],
     "sources": []
   },
   {
@@ -175,35 +306,148 @@
         "colorHint": "#4a6fa5"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "sheeta",
+        "name": {
+          "ru": "Шита",
+          "en": "Sheeta"
+        },
+        "role": {
+          "ru": "девушка с кристаллом",
+          "en": "girl with the crystal"
+        },
+        "description": {
+          "ru": "Хранительница древней силы.",
+          "en": "Keeper of an ancient power."
+        },
+        "image": null
+      },
+      {
+        "id": "pazu",
+        "name": {
+          "ru": "Пазу",
+          "en": "Pazu"
+        },
+        "role": {
+          "ru": "мальчик-шахтёр",
+          "en": "miner boy"
+        },
+        "description": {
+          "ru": "Мечтает найти Лапуту.",
+          "en": "Dreams of finding Laputa."
+        },
+        "image": null
+      },
+      {
+        "id": "dola",
+        "name": {
+          "ru": "Дола",
+          "en": "Dola"
+        },
+        "role": {
+          "ru": "глава пиратов",
+          "en": "pirate captain"
+        },
+        "description": {
+          "ru": "Хитрая и добрая пиратка.",
+          "en": "Cunning and kind pirate."
+        },
+        "image": null
+      },
+      {
+        "id": "muska",
+        "name": {
+          "ru": "Муска",
+          "en": "Muska"
+        },
+        "role": {
+          "ru": "агент правительства",
+          "en": "government agent"
+        },
+        "description": {
+          "ru": "Ищет древнюю силу.",
+          "en": "Seeks ancient power."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Летающий остров хранит тайну.",
+      "en": "The flying island keeps a secret."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — небо, облака, парящие острова и руины древней цивилизации. Авиация и природа переплетаются, создавая ощущение приключения.",
+      "en": "The world of the film is sky, clouds, floating islands and ruins of an ancient civilization. Aviation and nature intertwine, creating a sense of adventure."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Девушка, упавшая с неба, и мальчик-шахтёр отправляются на поиски легендарного летающего острова. За ними гонятся пираты и солдаты. Приключение полно полётов, руин и тайн.",
+      "en": "A girl who fell from the sky and a miner boy set out to find a legendary flying island. Pirates and soldiers chase them. The adventure is full of flight, ruins and secrets."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Фильм построен на авантюрных мотивах. Название отсылает к Свифту. Производство Topcraft.",
+      "en": "The film is built on adventure motifs. The title refers to Swift. Production by Topcraft."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Роман Свифта",
+          "en": "Swift's novel"
+        },
+        "text": {
+          "ru": "Название отсылает к «Путешествиям Гулливера».",
+          "en": "The title refers to Gulliver's Travels."
+        }
+      },
+      {
+        "title": {
+          "ru": "Авиация",
+          "en": "Aviation"
+        },
+        "text": {
+          "ru": "Летающие машины и острова.",
+          "en": "Flying machines and islands."
+        }
+      },
+      {
+        "title": {
+          "ru": "Руины",
+          "en": "Ruins"
+        },
+        "text": {
+          "ru": "Древняя цивилизация и её наследие.",
+          "en": "Ancient civilization and its legacy."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт ощущение полёта и приключения.",
+        "en": "Joe Hisaishi — music creates a sense of flight and adventure."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "приключение",
+        "en": "adventure"
+      },
+      {
+        "ru": "дружба",
+        "en": "friendship"
+      },
+      {
+        "ru": "ответственность",
+        "en": "responsibility"
+      },
+      {
+        "ru": "технология",
+        "en": "technology"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -280,35 +524,164 @@
         "colorHint": "#2f5d3a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "satsuki",
+        "name": {
+          "ru": "Сацуки",
+          "en": "Satsuki"
+        },
+        "role": {
+          "ru": "старшая сестра",
+          "en": "older sister"
+        },
+        "description": {
+          "ru": "Заботливая и ответственная.",
+          "en": "Caring and responsible."
+        },
+        "image": null
+      },
+      {
+        "id": "mei",
+        "name": {
+          "ru": "Мэй",
+          "en": "Mei"
+        },
+        "role": {
+          "ru": "младшая сестра",
+          "en": "younger sister"
+        },
+        "description": {
+          "ru": "Любопытная и смелая.",
+          "en": "Curious and brave."
+        },
+        "image": null
+      },
+      {
+        "id": "totoro",
+        "name": {
+          "ru": "Тоторо",
+          "en": "Totoro"
+        },
+        "role": {
+          "ru": "лесной дух",
+          "en": "forest spirit"
+        },
+        "description": {
+          "ru": "Большой мохнатый хранитель леса.",
+          "en": "Big fluffy guardian of the forest."
+        },
+        "image": null
+      },
+      {
+        "id": "catbus",
+        "name": {
+          "ru": "Котобус",
+          "en": "Catbus"
+        },
+        "role": {
+          "ru": "дух-транспорт",
+          "en": "spirit transport"
+        },
+        "description": {
+          "ru": "Кот-автобус, перевозящий духов.",
+          "en": "Cat-bus that carries spirits."
+        },
+        "image": null
+      },
+      {
+        "id": "father",
+        "name": {
+          "ru": "Отец",
+          "en": "Father"
+        },
+        "role": {
+          "ru": "отец сестёр",
+          "en": "father of the sisters"
+        },
+        "description": {
+          "ru": "Добрый и поддерживающий.",
+          "en": "Kind and supportive."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "В лесу живут добрые духи.",
+      "en": "Kind spirits live in the forest."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — японская деревня, лес, дождь и детское восприятие. Тихая сказка без конфликта.",
+      "en": "The world of the film is a Japanese village, forest, rain and childlike perception. A quiet fairy tale without conflict."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Две сестры переезжают в деревню и встречают лесных духов, включая Тоторо. Спокойные наблюдения за детством, природой и семьёй.",
+      "en": "Two sisters move to the countryside and meet forest spirits, including Totoro. Calm observations of childhood, nature and family."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Вышел в двойном показе с «Могилой светлячков». Тоторо стал талисманом студии.",
+      "en": "Released as a double feature with Grave of the Fireflies. Totoro became the studio's mascot."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Японская деревня",
+          "en": "Japanese village"
+        },
+        "text": {
+          "ru": "Реальные пейзажи вдохновили мир фильма.",
+          "en": "Real landscapes inspired the film's world."
+        }
+      },
+      {
+        "title": {
+          "ru": "Лес",
+          "en": "Forest"
+        },
+        "text": {
+          "ru": "Лес как живой персонаж.",
+          "en": "Forest as a living character."
+        }
+      },
+      {
+        "title": {
+          "ru": "Детство",
+          "en": "Childhood"
+        },
+        "text": {
+          "ru": "Детское восприятие мира.",
+          "en": "Child's perception of the world."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт ощущение живого леса.",
+        "en": "Joe Hisaishi — music creates a sense of a living forest."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "детство",
+        "en": "childhood"
+      },
+      {
+        "ru": "природа",
+        "en": "nature"
+      },
+      {
+        "ru": "семья",
+        "en": "family"
+      },
+      {
+        "ru": "тишина",
+        "en": "stillness"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -385,35 +758,164 @@
         "colorHint": "#6b4a7a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "kiki",
+        "name": {
+          "ru": "Кики",
+          "en": "Kiki"
+        },
+        "role": {
+          "ru": "юная ведьма",
+          "en": "young witch"
+        },
+        "description": {
+          "ru": "Ищет своё призвание.",
+          "en": "Seeks her calling."
+        },
+        "image": null
+      },
+      {
+        "id": "jiji",
+        "name": {
+          "ru": "Дзи-дзи",
+          "en": "Jiji"
+        },
+        "role": {
+          "ru": "чёрный кот",
+          "en": "black cat"
+        },
+        "description": {
+          "ru": "Компаньон Кики.",
+          "en": "Kiki's companion."
+        },
+        "image": null
+      },
+      {
+        "id": "tombo",
+        "name": {
+          "ru": "Томбо",
+          "en": "Tombo"
+        },
+        "role": {
+          "ru": "мальчик",
+          "en": "boy"
+        },
+        "description": {
+          "ru": "Увлекается авиацией.",
+          "en": "Interested in aviation."
+        },
+        "image": null
+      },
+      {
+        "id": "osono",
+        "name": {
+          "ru": "Осоно",
+          "en": "Osono"
+        },
+        "role": {
+          "ru": "хозяйка пекарни",
+          "en": "bakery owner"
+        },
+        "description": {
+          "ru": "Поддерживает Кики.",
+          "en": "Supports Kiki."
+        },
+        "image": null
+      },
+      {
+        "id": "ursula",
+        "name": {
+          "ru": "Урсула",
+          "en": "Ursula"
+        },
+        "role": {
+          "ru": "художница",
+          "en": "artist"
+        },
+        "description": {
+          "ru": "Помогает Кики понять себя.",
+          "en": "Helps Kiki understand herself."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Ведьма на метле ищет своё место.",
+      "en": "A witch on a broom seeks her place."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — приморский город, ветер, море и самостоятельность. История взросления.",
+      "en": "The world of the film is a seaside town, wind, sea and independence. A story of growing up."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Юная ведьма уезжает из дома, чтобы прожить год самостоятельно. Начинает службу доставки на метле.",
+      "en": "A young witch leaves home to live independently for a year. She starts a delivery service on a broom."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Основан на романе Эйко Кадоно. Миядзаки взял постановку на себя.",
+      "en": "Based on a novel by Eiko Kadono. Miyazaki took over directing."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Роман Кадоно",
+          "en": "Kadono's novel"
+        },
+        "text": {
+          "ru": "Источник сюжета.",
+          "en": "Source of the story."
+        }
+      },
+      {
+        "title": {
+          "ru": "Приморский город",
+          "en": "Seaside town"
+        },
+        "text": {
+          "ru": "Атмосфера приморского города.",
+          "en": "Atmosphere of a seaside town."
+        }
+      },
+      {
+        "title": {
+          "ru": "Взросление",
+          "en": "Growing up"
+        },
+        "text": {
+          "ru": "Тема самостоятельности.",
+          "en": "Theme of independence."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт ощущение морского ветра.",
+        "en": "Joe Hisaishi — music creates a sense of sea breeze."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "независимость",
+        "en": "independence"
+      },
+      {
+        "ru": "выгорание",
+        "en": "burnout"
+      },
+      {
+        "ru": "взросление",
+        "en": "growing up"
+      },
+      {
+        "ru": "свобода",
+        "en": "freedom"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
