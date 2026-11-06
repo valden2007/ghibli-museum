@@ -48,6 +48,59 @@ function renderMilestoneInlay(ms) {
   wrap.className = 'history-milestone-inlay';
   wrap.id = ms.slug;
 
+  // palette for duotone
+  const fid = ms.relatedFilms && ms.relatedFilms[0];
+  const film = fid ? films.find((f) => f.id === fid) : null;
+  const tones = film && Array.isArray(film.palette) ? film.palette : ['#2f5d3a', '#6b8f4e', '#a8c09a', '#d9c9a3', '#7a6a55'];
+  tones.forEach((tone, i) => wrap.style.setProperty(`--tone-${i + 1}`, tone));
+
+  // frame 3:4
+  const frame = document.createElement('div');
+  frame.className = 'history-frame';
+  frame.setAttribute('aria-label', ms.title[lang] || ms.title.ru);
+
+  const hasImage = Boolean(ms.image);
+  if (hasImage) {
+    const img = document.createElement('img');
+    img.className = 'history-frame-img';
+    img.alt = ms.title[lang] || ms.title.ru;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    // crop
+    const crop = ms.crop || {};
+    const scale = typeof crop.scale === 'number' ? crop.scale : 1;
+    const posY = crop.positionY || 'center';
+    const posX = crop.positionX || 'center';
+    if (scale && scale !== 1) img.style.transform = `scale(${scale})`;
+    img.style.objectPosition = `${posX} ${posY}`;
+    img.addEventListener('error', () => {
+      console.log(`missing milestone image: ${ms.image}`);
+      img.remove();
+      const ph = document.createElement('div');
+      ph.className = 'milestone-placeholder';
+      ph.textContent = lang === 'en' ? 'Image expected' : 'Изображение ожидается';
+      frame.append(ph);
+    }, { once: true });
+    img.src = ms.image;
+    frame.append(img);
+
+    // print filter layers
+    const duotone = document.createElement('span');
+    duotone.className = 'history-duotone';
+    duotone.setAttribute('aria-hidden', 'true');
+    const print = document.createElement('span');
+    print.className = 'history-print';
+    print.setAttribute('aria-hidden', 'true');
+    frame.append(duotone, print);
+  } else {
+    console.log(`missing milestone image: docs/img/milestones/${ms.slug}.webp`);
+    const ph = document.createElement('div');
+    ph.className = 'milestone-placeholder';
+    ph.textContent = lang === 'en' ? 'Image expected' : 'Изображение ожидается';
+    frame.append(ph);
+  }
+
+  // passport on same paper
   const year = document.createElement('p');
   year.className = 'history-year';
   year.textContent = ms.year;
@@ -56,58 +109,9 @@ function renderMilestoneInlay(ms) {
   title.className = 'history-title';
   title.textContent = ms.title[lang] || ms.title.ru;
 
-  const imgWrap = document.createElement('div');
-  imgWrap.className = 'history-image';
-  if (ms.image) {
-    const img = document.createElement('img');
-    img.alt = ms.title[lang] || ms.title.ru;
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    const setAspect = () => {
-      if (img.naturalWidth && img.naturalHeight) {
-        imgWrap.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
-      }
-    };
-    img.addEventListener('load', setAspect, { once: true });
-    img.src = ms.image;
-    if (img.complete) setAspect();
-    img.addEventListener('error', () => {
-      console.log(`missing milestone image: ${ms.image}`);
-      img.remove();
-      const ph = document.createElement('div');
-      ph.className = 'milestone-placeholder';
-      ph.textContent = lang === 'en' ? 'Image expected' : 'Изображение ожидается';
-      imgWrap.append(ph);
-    }, { once: true });
-    imgWrap.append(img);
-    if (img.complete) setAspect();
-  } else {
-    console.log(`missing milestone image: docs/img/milestones/${ms.slug}.webp`);
-    const ph = document.createElement('div');
-    ph.className = 'milestone-placeholder';
-    ph.textContent = lang === 'en' ? 'Image expected' : 'Изображение ожидается';
-    imgWrap.append(ph);
-  }
-
   const detail = document.createElement('p');
   detail.className = 'history-detail';
   detail.textContent = ms.detail[lang] || ms.detail.ru;
-
-  const creature = ms.creature;
-  if (creature && creature.file) {
-    const img = document.createElement('img');
-    img.className = 'history-creature';
-    img.src = creature.file;
-    img.alt = creature.alt ? (creature.alt[lang] || creature.alt.ru) : '';
-    img.setAttribute('aria-hidden', 'true');
-    img.addEventListener('error', () => {
-      console.log(`missing creature: ${creature.file}`);
-      img.remove();
-    }, { once: true });
-    // static image, no animation
-  } else if (creature && (creature.file === null || creature.file === undefined)) {
-    console.log(`missing creature: docs/img/milestones/creatures/${ms.slug}.png`);
-  }
 
   const related = document.createElement('div');
   related.className = 'history-related';
@@ -122,7 +126,7 @@ function renderMilestoneInlay(ms) {
     related.append(a);
   });
 
-  wrap.append(year, title, imgWrap, detail, related);
+  wrap.append(frame, year, title, detail, related);
   return wrap;
 }
 

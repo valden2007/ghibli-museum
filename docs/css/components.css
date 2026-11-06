@@ -1148,20 +1148,87 @@
   margin: 0 0 var(--space-4);
 }
 
-.history-image {
-  margin: var(--space-4) 0;
-  max-width: 720px;
-  aspect-ratio: 4 / 5;
+.history-frame {
+  position: relative;
   overflow: hidden;
+  aspect-ratio: 3 / 4;
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  margin: var(--space-4) 0;
+  max-width: 480px;
+  background: #e8e4d7;
 }
 
-.history-image img {
+.history-frame-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  filter: saturate(0.68) contrast(0.9) brightness(0.96);
+}
+
+.history-duotone {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.5;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--tone-1) 22%, transparent), color-mix(in srgb, var(--tone-3) 18%, transparent));
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+.history-print {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.42;
+  background:
+    radial-gradient(ellipse at center, transparent 46%, rgba(26, 36, 29, 0.36) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.history-milestone-inlay {
+  background: #e8e4d7;
+  color: #202621;
+  padding: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(32, 38, 33, 0.14);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: var(--space-6) 0;
+  scroll-margin-top: 80px;
+}
+
+.history-milestone-inlay .history-year {
+  color: #586157;
+  font-weight: 300;
+}
+
+.history-milestone-inlay .history-title {
+  color: #202621;
+  font: 900 clamp(1.2rem, 4vw, 1.6rem)/0.92 system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.075em;
+}
+
+.history-milestone-inlay .history-detail {
+  color: #202621;
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+
+.history-milestone-inlay .history-related .btn {
+  background: #e8e4d7;
+  color: #202621;
+  border: 1px solid rgba(32, 38, 33, 0.18);
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .history-detail {
@@ -1237,14 +1304,6 @@
   line-height: 1.7;
 }
 
-.history-milestone-inlay {
-  margin: var(--space-6) 0;
-  padding: var(--space-6);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  scroll-margin-top: 80px;
-}
 
 .history-chapter {
   padding: var(--space-8) 0;
