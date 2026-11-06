@@ -1912,35 +1912,164 @@
         "colorHint": "#c94a3a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "ponyo",
+        "name": {
+          "ru": "Поньо",
+          "en": "Ponyo"
+        },
+        "role": {
+          "ru": "золотая рыбка",
+          "en": "goldfish"
+        },
+        "description": {
+          "ru": "Мечтает стать человеком.",
+          "en": "Dreams of becoming human."
+        },
+        "image": null
+      },
+      {
+        "id": "sosuke",
+        "name": {
+          "ru": "Сосукэ",
+          "en": "Sosuke"
+        },
+        "role": {
+          "ru": "мальчик",
+          "en": "boy"
+        },
+        "description": {
+          "ru": "Друг Поньо.",
+          "en": "Ponyo's friend."
+        },
+        "image": null
+      },
+      {
+        "id": "lisa",
+        "name": {
+          "ru": "Лиза",
+          "en": "Lisa"
+        },
+        "role": {
+          "ru": "мать Сосукэ",
+          "en": "Sosuke's mother"
+        },
+        "description": {
+          "ru": "Заботливая мать.",
+          "en": "Caring mother."
+        },
+        "image": null
+      },
+      {
+        "id": "fujimoto",
+        "name": {
+          "ru": "Фудзимото",
+          "en": "Fujimoto"
+        },
+        "role": {
+          "ru": "морской волшебник",
+          "en": "sea wizard"
+        },
+        "description": {
+          "ru": "Отец Поньо.",
+          "en": "Ponyo's father."
+        },
+        "image": null
+      },
+      {
+        "id": "granmamare",
+        "name": {
+          "ru": "Гранмамаре",
+          "en": "Granmamare"
+        },
+        "role": {
+          "ru": "морская богиня",
+          "en": "sea goddess"
+        },
+        "description": {
+          "ru": "Мать Поньо.",
+          "en": "Ponyo's mother."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Рыбка мечтает стать человеком.",
+      "en": "A fish dreams of becoming human."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — море, волны и детство. Яркий, детский и бесконечно добрый мир.",
+      "en": "The world of the film is sea, waves and childhood. A bright, childlike and endlessly kind world."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Поньо — золотая рыбка и дочь морского волшебника — мечтает стать человеком и убегает к мальчику Сосукэ. Её магия нарушает баланс моря, поднимая волны и наводнения.",
+      "en": "Ponyo, a goldfish and daughter of a sea wizard, dreams of becoming human and escapes to boy Sosuke. Her magic upsets the sea's balance, raising waves and floods."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "История вдохновлена «Русалочкой». Вода — главный персонаж фильма, нарисована вручную.",
+      "en": "The story is inspired by The Little Mermaid. Water is the film's main character, hand-drawn."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Русалочка",
+          "en": "The Little Mermaid"
+        },
+        "text": {
+          "ru": "Источник вдохновения.",
+          "en": "Source of inspiration."
+        }
+      },
+      {
+        "title": {
+          "ru": "Вода",
+          "en": "Water"
+        },
+        "text": {
+          "ru": "Главный персонаж.",
+          "en": "Main character."
+        }
+      },
+      {
+        "title": {
+          "ru": "Детство",
+          "en": "Childhood"
+        },
+        "text": {
+          "ru": "Детское восприятие магии.",
+          "en": "Child's perception of magic."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт яркость и доброту.",
+        "en": "Joe Hisaishi — music creates brightness and kindness."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "доброта",
+        "en": "kindness"
+      },
+      {
+        "ru": "магия",
+        "en": "magic"
+      },
+      {
+        "ru": "вода",
+        "en": "water"
+      },
+      {
+        "ru": "детство",
+        "en": "childhood"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -2017,35 +2146,148 @@
         "colorHint": "#d9c98a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "jiro",
+        "name": {
+          "ru": "Дзиро",
+          "en": "Jiro"
+        },
+        "role": {
+          "ru": "авиаконструктор",
+          "en": "aircraft designer"
+        },
+        "description": {
+          "ru": "Мечтает о красивых самолётах.",
+          "en": "Dreams of beautiful airplanes."
+        },
+        "image": null
+      },
+      {
+        "id": "nahoko",
+        "name": {
+          "ru": "Наоко",
+          "en": "Nahoko"
+        },
+        "role": {
+          "ru": "жена Дзиро",
+          "en": "Jiro's wife"
+        },
+        "description": {
+          "ru": "Поддерживает мужа.",
+          "en": "Supports her husband."
+        },
+        "image": null
+      },
+      {
+        "id": "caproni",
+        "name": {
+          "ru": "Капрони",
+          "en": "Caproni"
+        },
+        "role": {
+          "ru": "итальянский авиаконструктор",
+          "en": "Italian aircraft designer"
+        },
+        "description": {
+          "ru": "Вдохновляет Дзиро.",
+          "en": "Inspires Jiro."
+        },
+        "image": null
+      },
+      {
+        "id": "kurokawa",
+        "name": {
+          "ru": "Курокава",
+          "en": "Kurokawa"
+        },
+        "role": {
+          "ru": "коллега",
+          "en": "colleague"
+        },
+        "description": {
+          "ru": "Работает с Дзиро.",
+          "en": "Works with Jiro."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Мечта о полёте и цена творения.",
+      "en": "A dream of flight and the cost of creation."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — авиация, ветер и межвоенная Япония. Тихий и печальный мир.",
+      "en": "The world of the film is aviation, wind and interwar Japan. A quiet and sad world."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "История авиаконструктора Дзиро Хорикоси, который мечтает о красивых самолётах. Его мечты сталкиваются с реальностью войны и хрупкостью жизни.",
+      "en": "The story of aircraft designer Jiro Horikoshi, who dreams of beautiful airplanes. His dreams collide with the reality of war and the fragility of life."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Рассказывает об авиаконструкторе. Назван по стихотворению Поля Валери. Красота и цена творения — центральная тема.",
+      "en": "It tells of an aircraft designer. Named after a poem by Paul Valery. The beauty and cost of creation is the central theme."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Авиаконструктор Хорикоси",
+          "en": "Designer Horikoshi"
+        },
+        "text": {
+          "ru": "Реальный человек.",
+          "en": "Real person."
+        }
+      },
+      {
+        "title": {
+          "ru": "Ветер",
+          "en": "Wind"
+        },
+        "text": {
+          "ru": "Образ, связывающий мечту и реальность.",
+          "en": "Image connecting dream and reality."
+        }
+      },
+      {
+        "title": {
+          "ru": "Стихотворение Валери",
+          "en": "Valery's poem"
+        },
+        "text": {
+          "ru": "Источник названия.",
+          "en": "Source of the title."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт тихую печаль.",
+        "en": "Joe Hisaishi — music creates quiet sadness."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "мечта",
+        "en": "dream"
+      },
+      {
+        "ru": "война",
+        "en": "war"
+      },
+      {
+        "ru": "творение",
+        "en": "creation"
+      },
+      {
+        "ru": "ветер",
+        "en": "wind"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -2122,35 +2364,164 @@
         "colorHint": "#1a1a2a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "mahito",
+        "name": {
+          "ru": "Махито",
+          "en": "Mahito"
+        },
+        "role": {
+          "ru": "мальчик",
+          "en": "boy"
+        },
+        "description": {
+          "ru": "Потерял мать.",
+          "en": "Lost his mother."
+        },
+        "image": null
+      },
+      {
+        "id": "heron",
+        "name": {
+          "ru": "Цапля",
+          "en": "Heron"
+        },
+        "role": {
+          "ru": "серая цапля",
+          "en": "grey heron"
+        },
+        "description": {
+          "ru": "Зовёт Махито.",
+          "en": "Calls Mahito."
+        },
+        "image": null
+      },
+      {
+        "id": "himiko",
+        "name": {
+          "ru": "Химико",
+          "en": "Himiko"
+        },
+        "role": {
+          "ru": "мать",
+          "en": "mother"
+        },
+        "description": {
+          "ru": "Мать Махито.",
+          "en": "Mahito's mother."
+        },
+        "image": null
+      },
+      {
+        "id": "kiriko",
+        "name": {
+          "ru": "Кирико",
+          "en": "Kiriko"
+        },
+        "role": {
+          "ru": "помощница",
+          "en": "helper"
+        },
+        "description": {
+          "ru": "Помогает Махито.",
+          "en": "Helps Mahito."
+        },
+        "image": null
+      },
+      {
+        "id": "pelican",
+        "name": {
+          "ru": "Пеликан",
+          "en": "Pelican"
+        },
+        "role": {
+          "ru": "птица",
+          "en": "bird"
+        },
+        "description": {
+          "ru": "Живёт в мире духов.",
+          "en": "Lives in the spirit world."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Мальчик и цапля в мире между живыми и мёртвыми.",
+      "en": "A boy and a heron in a world between living and dead."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — заброшенная башня, мир духов и медитация. Таинственный и смелый визуально.",
+      "en": "The world of the film is an abandoned tower, a spirit world and meditation. Mysterious and visually bold."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Мальчик Махито, потерявший мать, переезжает в деревню и находит заброшенную башню, где серая цапля зовёт его. За порогом — мир, где живые и мёртвые переплетаются.",
+      "en": "Boy Mahito, who lost his mother, moves to the countryside and finds an abandoned tower where a grey heron calls him. Beyond the threshold lies a world where the living and the dead intertwine."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Фильм вышел после долгого перерыва режиссёра. Тема горя и принятия через путешествие. Визуальный язык — самый экспериментальный у студии.",
+      "en": "The film came after the director's long break. Themes of grief and acceptance through a journey. The visual language is the studio's most experimental."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Башня",
+          "en": "Tower"
+        },
+        "text": {
+          "ru": "Заброшенная башня.",
+          "en": "Abandoned tower."
+        }
+      },
+      {
+        "title": {
+          "ru": "Мир духов",
+          "en": "Spirit world"
+        },
+        "text": {
+          "ru": "Переплетение живого и мёртвого.",
+          "en": "Intertwining of living and dead."
+        }
+      },
+      {
+        "title": {
+          "ru": "Гора",
+          "en": "Grief"
+        },
+        "text": {
+          "ru": "Тема принятия.",
+          "en": "Theme of acceptance."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт медитативную атмосферу.",
+        "en": "Joe Hisaishi — music creates a meditative atmosphere."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "горе",
+        "en": "grief"
+      },
+      {
+        "ru": "принятие",
+        "en": "acceptance"
+      },
+      {
+        "ru": "путешествие",
+        "en": "journey"
+      },
+      {
+        "ru": "эксперимент",
+        "en": "experiment"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
