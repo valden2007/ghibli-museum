@@ -216,6 +216,7 @@ async function init() {
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
   }
+  window.__lenis = lenis;
 
   await initI18n();
   initNav(lenis);
@@ -233,6 +234,27 @@ async function init() {
 
   render();
   onLangChange(render);
+
+  function applyHashScroll() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (!h) return;
+    console.log('hash=', h, 'found=', !!document.getElementById(h));
+    const el = document.getElementById(h);
+    if (!el) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const lenis = window.__lenis;
+    const target = el.getBoundingClientRect().top + window.scrollY - 80;
+    if (lenis) {
+      try { lenis.resize(); } catch (e) { /* noop */ }
+      try { lenis.scrollTo(target, { immediate: true }); } catch (e) { /* fallback */ }
+    } else {
+      window.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' });
+    }
+  }
+
+  window.applyHashScroll = applyHashScroll;
+  applyHashScroll();
+  window.addEventListener('hashchange', applyHashScroll);
 }
 
 init().catch((error) => console.error(error));
