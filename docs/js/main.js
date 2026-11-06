@@ -1,5 +1,6 @@
 import { loadFilms, loadImages } from './data.js';
 import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
+import { get as getSettings, set as setSettings, subscribe as subscribeSettings } from './settings.js';
 import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initReveal } from './reveal.js';
@@ -162,9 +163,14 @@ function initLangSwitch() {
 
 async function init() {
   await initI18n();
+  window.__setLang = setLang;
+
+  const settings = getSettings();
+  if (settings.lang && settings.lang !== getLang()) setLang(settings.lang);
 
   let lenis = null;
-  if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (window.Lenis && !reduce && settings.effects !== 'off') {
     lenis = new window.Lenis({ lerp: 0.1, smoothWheel: true });
     function raf(time) {
       lenis.raf(time);
@@ -177,8 +183,16 @@ async function init() {
   initLangSwitch();
   initHero();
   initReveal();
-  initSoot();
+  if (settings.effects !== 'off') initSoot();
   initTimeline();
+
+  onLangChange((lang) => {
+    const s = getSettings();
+    if (s.lang !== lang) setSettings({ lang });
+  });
+  subscribeSettings((s) => {
+    if (s.lang && s.lang !== getLang()) setLang(s.lang);
+  });
 
   try {
     allFilms = await loadFilms();
