@@ -18,6 +18,13 @@ export async function loadTimeline() {
   return list;
 }
 
+export async function loadHistory() {
+  const response = await fetch('data/history.json');
+  if (!response.ok) throw new Error('Не удалось загрузить history.json');
+  const data = await response.json();
+  return Array.isArray(data) ? data : (data.chapters || []);
+}
+
 export async function loadImages() {
   const response = await fetch('data/images.json');
   if (!response.ok) throw new Error('Не удалось загрузить images.json');

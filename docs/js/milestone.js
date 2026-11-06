@@ -195,6 +195,11 @@ async function init() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
+  if (id) {
+    window.location.replace(`history.html#${encodeURIComponent(id)}`);
+    return;
+  }
+
   try {
     const tr = await fetch('data/timeline.json?v=2');
     milestones = tr.ok ? await tr.json() : await loadTimeline();

@@ -1124,6 +1124,51 @@
   margin-top: var(--space-4);
 }
 
+.history-chapter {
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.history-chapter-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 0 0 var(--space-4);
+}
+
+.history-chapter-body p {
+  max-width: 70ch;
+  line-height: 1.7;
+}
+
+.history-milestone-inlay {
+  margin: var(--space-6) 0;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.history-weather {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.history-creature {
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
+  height: 90px;
+  width: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .milestone-hero-bg img {
     transform: none;
