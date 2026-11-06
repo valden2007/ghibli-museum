@@ -992,35 +992,148 @@
         "colorHint": "#1a3a5a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "porco",
+        "name": {
+          "ru": "Порко",
+          "en": "Porco"
+        },
+        "role": {
+          "ru": "пилот",
+          "en": "pilot"
+        },
+        "description": {
+          "ru": "Ас, превращённый в свинью.",
+          "en": "Ace turned into a pig."
+        },
+        "image": null
+      },
+      {
+        "id": "gina",
+        "name": {
+          "ru": "Джина",
+          "en": "Gina"
+        },
+        "role": {
+          "ru": "певица",
+          "en": "singer"
+        },
+        "description": {
+          "ru": "Старая знакомая Порко.",
+          "en": "Porco's old acquaintance."
+        },
+        "image": null
+      },
+      {
+        "id": "fio",
+        "name": {
+          "ru": "Фио",
+          "en": "Fio"
+        },
+        "role": {
+          "ru": "инженер",
+          "en": "engineer"
+        },
+        "description": {
+          "ru": "Ремонтирует самолёт Порко.",
+          "en": "Repairs Porco's plane."
+        },
+        "image": null
+      },
+      {
+        "id": "curtis",
+        "name": {
+          "ru": "Кёртис",
+          "en": "Curtis"
+        },
+        "role": {
+          "ru": "соперник",
+          "en": "rival"
+        },
+        "description": {
+          "ru": "Американский пилот, соперник Порко.",
+          "en": "American pilot, Porco's rival."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Пилот, превращённый в свинью, охотится на пиратов.",
+      "en": "A pilot turned into a pig hunts pirates."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — Адриатика, самолёты, море и романтика межвоенной эпохи. Ностальгия и меланхолия.",
+      "en": "The world of the film is the Adriatic, airplanes, sea and the romance of the interwar era. Nostalgia and melancholy."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Ас, превратившийся в свинью, охотится на воздушных пиратов над Адриатикой. Вокруг него старые друзья, соперники и тени прошлого. Фильм сочетает приключение, ностальгию и мягкую меланхолию.",
+      "en": "An ace pilot turned into a pig hunts air pirates over the Adriatic. Around him are old friends, rivals and shadows of the past. The film blends adventure, nostalgia and gentle melancholy."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Заказывался как фильм для авиарейсов Japan Airlines, вырос до полнометражного кино. Действие разворачивается над Адриатикой.",
+      "en": "Commissioned as a film for Japan Airlines flights, it grew into a feature. The story takes place over the Adriatic Sea."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Адриатика",
+          "en": "Adriatic Sea"
+        },
+        "text": {
+          "ru": "Море и авиация создают ритм.",
+          "en": "Sea and aviation create rhythm."
+        }
+      },
+      {
+        "title": {
+          "ru": "Межвоенная эпоха",
+          "en": "Interwar era"
+        },
+        "text": {
+          "ru": "Романтика и ностальгия.",
+          "en": "Romance and nostalgia."
+        }
+      },
+      {
+        "title": {
+          "ru": "Авиация",
+          "en": "Aviation"
+        },
+        "text": {
+          "ru": "Самолёты как символ свободы.",
+          "en": "Airplanes as a symbol of freedom."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт меланхолию и ностальгию.",
+        "en": "Joe Hisaishi — music creates melancholy and nostalgia."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "ностальгия",
+        "en": "nostalgia"
+      },
+      {
+        "ru": "приключение",
+        "en": "adventure"
+      },
+      {
+        "ru": "меланхолия",
+        "en": "melancholy"
+      },
+      {
+        "ru": "свобода",
+        "en": "freedom"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -1097,35 +1210,164 @@
         "colorHint": "#6b1a1a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "ashitaka",
+        "name": {
+          "ru": "Аситака",
+          "en": "Ashitaka"
+        },
+        "role": {
+          "ru": "проклятый принц",
+          "en": "cursed prince"
+        },
+        "description": {
+          "ru": "Ищет исцеление и мир.",
+          "en": "Seeks healing and peace."
+        },
+        "image": null
+      },
+      {
+        "id": "san",
+        "name": {
+          "ru": "Сан (Мононоке)",
+          "en": "San (Mononoke)"
+        },
+        "role": {
+          "ru": "девушка, выросшая среди волков",
+          "en": "girl raised by wolves"
+        },
+        "description": {
+          "ru": "Ненавидит людей, но не может от них отвернуться.",
+          "en": "Hates humans but cannot turn away."
+        },
+        "image": null
+      },
+      {
+        "id": "eboshi",
+        "name": {
+          "ru": "Эбоси",
+          "en": "Eboshi"
+        },
+        "role": {
+          "ru": "лидер поселения",
+          "en": "leader of the settlement"
+        },
+        "description": {
+          "ru": "Строит город, вырубая лес.",
+          "en": "Builds a town by cutting the forest."
+        },
+        "image": null
+      },
+      {
+        "id": "moro",
+        "name": {
+          "ru": "Моро",
+          "en": "Moro"
+        },
+        "role": {
+          "ru": "волчица",
+          "en": "wolf"
+        },
+        "description": {
+          "ru": "Приёмная мать Сан.",
+          "en": "San's adoptive mother."
+        },
+        "image": null
+      },
+      {
+        "id": "shishigami",
+        "name": {
+          "ru": "Шисигами",
+          "en": "Shishigami"
+        },
+        "role": {
+          "ru": "дух леса",
+          "en": "forest spirit"
+        },
+        "description": {
+          "ru": "Хранитель леса, дарующий жизнь и смерть.",
+          "en": "Guardian of the forest, giver of life and death."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Человек и природа в войне без победителей.",
+      "en": "Humans and nature at war with no winners."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — средневековая Япония, лес, духи и люди, вырубающие лес. Суровый и эпичный мир без простых злодеев.",
+      "en": "The world of the film is medieval Japan, forest, spirits and humans cutting the forest. A harsh and epic world without simple villains."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Проклятый принц Аситака ищет исцеление и оказывается в центре войны между людьми и духами природы. Мононоке, выросшая среди волков, ненавидит людей, но не может полностью от них отвернуться. Конфликт не имеет лёгкого разрешения.",
+      "en": "Cursed prince Ashitaka seeks healing and finds himself in the middle of a war between humans and nature spirits. Mononoke, raised by wolves, hates humans yet cannot fully turn away from them. The conflict has no easy resolution."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Действие происходит в средневековой Японии. Фильм исследует конфликт человека и природы. Нет однозначных злодеев.",
+      "en": "The story is set in medieval Japan. The film explores the conflict between humans and nature. There are no clear villains."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Средневековая Япония",
+          "en": "Medieval Japan"
+        },
+        "text": {
+          "ru": "Историческая эпоха.",
+          "en": "Historical era."
+        }
+      },
+      {
+        "title": {
+          "ru": "Конфликт человека и природы",
+          "en": "Human-nature conflict"
+        },
+        "text": {
+          "ru": "Главная тема фильма.",
+          "en": "Main theme of the film."
+        }
+      },
+      {
+        "title": {
+          "ru": "Духи леса",
+          "en": "Forest spirits"
+        },
+        "text": {
+          "ru": "Японская мифология.",
+          "en": "Japanese mythology."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт эпичность и суровость.",
+        "en": "Joe Hisaishi — music creates epicness and harshness."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "природа",
+        "en": "nature"
+      },
+      {
+        "ru": "война",
+        "en": "war"
+      },
+      {
+        "ru": "баланс",
+        "en": "balance"
+      },
+      {
+        "ru": "ответственность",
+        "en": "responsibility"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -1202,35 +1444,164 @@
         "colorHint": "#1a2a4a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "chihiro",
+        "name": {
+          "ru": "Тихиро",
+          "en": "Chihiro"
+        },
+        "role": {
+          "ru": "девочка",
+          "en": "girl"
+        },
+        "description": {
+          "ru": "Взрослеет через труд.",
+          "en": "Grows up through labor."
+        },
+        "image": null
+      },
+      {
+        "id": "haku",
+        "name": {
+          "ru": "Хаку",
+          "en": "Haku"
+        },
+        "role": {
+          "ru": "дух-помощник",
+          "en": "spirit helper"
+        },
+        "description": {
+          "ru": "Помогает Тихиро.",
+          "en": "Helps Chihiro."
+        },
+        "image": null
+      },
+      {
+        "id": "yubaba",
+        "name": {
+          "ru": "Юбаба",
+          "en": "Yubaba"
+        },
+        "role": {
+          "ru": "хозяйка бани",
+          "en": "bathhouse owner"
+        },
+        "description": {
+          "ru": "Владелица бани духов.",
+          "en": "Owner of the spirit bathhouse."
+        },
+        "image": null
+      },
+      {
+        "id": "no-face",
+        "name": {
+          "ru": "Безликий",
+          "en": "No-Face"
+        },
+        "role": {
+          "ru": "странное существо",
+          "en": "strange being"
+        },
+        "description": {
+          "ru": "Ищет признание.",
+          "en": "Seeks recognition."
+        },
+        "image": null
+      },
+      {
+        "id": "zeniba",
+        "name": {
+          "ru": "Дзениба",
+          "en": "Zeniba"
+        },
+        "role": {
+          "ru": "сестра Юбабы",
+          "en": "Yubaba's sister"
+        },
+        "description": {
+          "ru": "Добрая ведьма.",
+          "en": "Kind witch."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Девочка в мире духов взрослеет через труд.",
+      "en": "A girl grows up through labor in a spirit world."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — баня духов, магия и опасности. Тёплый свет фонарей создаёт атмосферу.",
+      "en": "The world of the film is a spirit bathhouse, magic and dangers. Warm lantern light creates the atmosphere."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Десятилетняя Тихиро попадает в мир духов и должна работать в бане, чтобы спасти родителей. Её путь — взросление через труд, память и доброту.",
+      "en": "Ten-year-old Chihiro enters a spirit world and must work in a bathhouse to save her parents. Her journey is growing up through labor, memory and kindness."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Действие разворачивается в бане духов. Тема труда и памяти как путь взросления. Мир духов показан как рабочая среда.",
+      "en": "The story takes place in a spirit bathhouse. Themes of labor and memory as a path to growing up. The spirit world is shown as a workplace."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Баня духов",
+          "en": "Spirit bathhouse"
+        },
+        "text": {
+          "ru": "Место действия.",
+          "en": "Setting of the story."
+        }
+      },
+      {
+        "title": {
+          "ru": "Труд",
+          "en": "Labor"
+        },
+        "text": {
+          "ru": "Путь взросления.",
+          "en": "Path to growing up."
+        }
+      },
+      {
+        "title": {
+          "ru": "Память",
+          "en": "Memory"
+        },
+        "text": {
+          "ru": "Важная тема.",
+          "en": "Important theme."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт тёплую атмосферу.",
+        "en": "Joe Hisaishi — music creates a warm atmosphere."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "взросление",
+        "en": "growing up"
+      },
+      {
+        "ru": "труд",
+        "en": "labor"
+      },
+      {
+        "ru": "память",
+        "en": "memory"
+      },
+      {
+        "ru": "доброта",
+        "en": "kindness"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
@@ -1307,35 +1678,164 @@
         "colorHint": "#2a2a4a"
       }
     },
-    "characters": [],
+    "characters": [
+      {
+        "id": "sophie",
+        "name": {
+          "ru": "Софи",
+          "en": "Sophie"
+        },
+        "role": {
+          "ru": "шляпница",
+          "en": "hatter"
+        },
+        "description": {
+          "ru": "Превращается в старуху.",
+          "en": "Turned into an old woman."
+        },
+        "image": null
+      },
+      {
+        "id": "howl",
+        "name": {
+          "ru": "Хаул",
+          "en": "Howl"
+        },
+        "role": {
+          "ru": "волшебник",
+          "en": "wizard"
+        },
+        "description": {
+          "ru": "Владелец замка.",
+          "en": "Owner of the castle."
+        },
+        "image": null
+      },
+      {
+        "id": "calcifer",
+        "name": {
+          "ru": "Кальцифер",
+          "en": "Calcifer"
+        },
+        "role": {
+          "ru": "огненный демон",
+          "en": "fire demon"
+        },
+        "description": {
+          "ru": "Двигает замок.",
+          "en": "Moves the castle."
+        },
+        "image": null
+      },
+      {
+        "id": "markl",
+        "name": {
+          "ru": "Маркл",
+          "en": "Markl"
+        },
+        "role": {
+          "ru": "ученик",
+          "en": "apprentice"
+        },
+        "description": {
+          "ru": "Помощник Хаула.",
+          "en": "Howl's assistant."
+        },
+        "image": null
+      },
+      {
+        "id": "turnip",
+        "name": {
+          "ru": "Репка",
+          "en": "Turnip"
+        },
+        "role": {
+          "ru": "пугало",
+          "en": "scarecrow"
+        },
+        "description": {
+          "ru": "Говорящее пугало.",
+          "en": "Talking scarecrow."
+        },
+        "image": null
+      }
+    ],
     "tagline": {
-      "ru": "",
-      "en": ""
+      "ru": "Волшебник, проклятие и война.",
+      "en": "A wizard, a curse and a war."
     },
     "world": {
-      "ru": "",
-      "en": ""
+      "ru": "Мир фильма — ходячий замок, война и магия. Капризная и прекрасная магия.",
+      "en": "The world of the film is a walking castle, war and magic. Capricious and beautiful magic."
     },
     "plot": {
-      "ru": "",
-      "en": ""
+      "ru": "Юная шляпница Софи превращается в старуху и находит приют в ходячем замке волшебника Хаула. Снаружи бушует война, внутри живут огненный демон и говорящее пугало. История любви, трусости и смелости.",
+      "en": "Young hatter Sophie is turned into an old woman and finds refuge in the wizard Howl's walking castle. War rages outside, while a fire demon and a talking scarecrow live inside. A story of love, cowardice and courage."
     },
     "creation": {
-      "ru": "",
-      "en": ""
+      "ru": "Основан на романе Дианы Уинн Джонс. В центре — проклятие, превращающее героиню в старуху. Война на фоне личной истории. Замок — живой персонаж.",
+      "en": "Based on a novel by Diana Wynne Jones. At the center is a curse turning the heroine into an old woman. War against a personal story. The castle is a living character."
     },
-    "inspiration": [],
+    "inspiration": [
+      {
+        "title": {
+          "ru": "Роман Джонс",
+          "en": "Jones's novel"
+        },
+        "text": {
+          "ru": "Источник сюжета.",
+          "en": "Source of the story."
+        }
+      },
+      {
+        "title": {
+          "ru": "Война",
+          "en": "War"
+        },
+        "text": {
+          "ru": "Фон личной истории.",
+          "en": "Backdrop of personal story."
+        }
+      },
+      {
+        "title": {
+          "ru": "Магия",
+          "en": "Magic"
+        },
+        "text": {
+          "ru": "Капризная и прекрасная.",
+          "en": "Capricious and beautiful."
+        }
+      }
+    ],
     "crew": {
       "music": {
-        "ru": "",
-        "en": ""
+        "ru": "Дзё Хисаиси — музыка создаёт капризную и прекрасную атмосферу.",
+        "en": "Joe Hisaishi — music creates a capricious and beautiful atmosphere."
       },
       "notes": {
-        "ru": "",
-        "en": ""
+        "ru": "Режиссёр — Хаяо Миядзаки.",
+        "en": "Director — Hayao Miyazaki."
       }
     },
-    "themes": [],
+    "themes": [
+      {
+        "ru": "любовь",
+        "en": "love"
+      },
+      {
+        "ru": "трусость",
+        "en": "cowardice"
+      },
+      {
+        "ru": "смелость",
+        "en": "courage"
+      },
+      {
+        "ru": "магия",
+        "en": "magic"
+      }
+    ],
     "opinion": null,
     "images": [],
     "verify": [],
