@@ -1,7 +1,7 @@
-import { loadFilms } from './data.js';
+import { loadFilms, loadImages } from './data.js';
 import { initI18n, getLang, onLangChange, setLang, t } from './i18n.js';
 import { initNav } from './nav.js';
-import { mountMotif } from './motifs/index.js';
+import { mountMotif, mountCombined } from './motifs/index.js';
 import { initReveal } from './reveal.js';
 import { mountPlayer } from './player/index.js';
 
@@ -11,13 +11,14 @@ const contentEl = document.querySelector('#film-content');
 const emptyEl = document.querySelector('#film-empty');
 const synopsisEl = document.querySelector('#film-synopsis');
 const factsEl = document.querySelector('#film-facts');
-const watchEl = document.querySelector('#film-watch');
+
 const heroEl = document.querySelector('#film-hero');
 const heroBg = document.querySelector('#film-hero-bg');
 const prevLink = document.querySelector('#prev-film');
 const nextLink = document.querySelector('#next-film');
 
 let films = [];
+let imagesData = {};
 let currentFilm = null;
 let motifHandle = null;
 
@@ -52,25 +53,7 @@ function renderText() {
       factsEl.append(li);
     });
   }
-  if (watchEl) {
-    watchEl.innerHTML = '';
-    if (!currentFilm.watch || currentFilm.watch.length === 0) {
-      const p = document.createElement('p');
-      p.className = 'muted';
-      p.textContent = t('film.watch.empty') || 'Скоро';
-      watchEl.append(p);
-    } else {
-      currentFilm.watch.forEach((w) => {
-        const a = document.createElement('a');
-        a.className = 'btn';
-        a.href = w.url;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.textContent = w.region || w.url;
-        watchEl.append(a);
-      });
-    }
-  }
+
   // neighbors
   const sorted = [...films].sort((a, b) => a.year - b.year);
   const idx = sorted.findIndex((f) => f.id === currentFilm.id);
@@ -126,6 +109,7 @@ async function init() {
 
   try {
     films = await loadFilms();
+    imagesData = await loadImages();
   } catch (error) {
     console.error(error);
     if (titleEl) titleEl.textContent = 'Не удалось загрузить данные';
@@ -149,7 +133,29 @@ async function init() {
 
   if (heroBg) {
     if (motifHandle) motifHandle.destroy();
-    motifHandle = mountMotif(heroBg, film.motif, film.palette);
+    motifHandle = null;
+    const fx = film.fx || {};
+    const types = [];
+    const params = [];
+    if (fx.base) { types.push(fx.base.type); params.push(fx.base.params); }
+    if (fx.accent) { types.push(fx.accent.type); params.push(fx.accent.params); }
+    if (fx.silhouette) { types.push(fx.silhouette.type); params.push(fx.silhouette.params); }
+    if (types.length) {
+      motifHandle = mountCombined(heroBg, types, film.palette, params);
+    }
+    // decor slot
+    const decorInfo = imagesData?.[film.id]?.decor;
+    if (decorInfo && decorInfo.file) {
+      const dimg = document.createElement('img');
+      dimg.className = 'film-decor';
+      dimg.src = decorInfo.file;
+      dimg.alt = decorInfo.alt || '';
+      dimg.addEventListener('error', () => {
+        console.log(`missing decor: ${decorInfo.file}`);
+        dimg.remove();
+      }, { once: true });
+      heroBg.append(dimg);
+    }
   }
 
   const slot = document.querySelector('#film-player-slot');

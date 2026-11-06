@@ -5,6 +5,7 @@ import createLeaves from './leaves.js';
 import createClouds from './clouds.js';
 import createSea from './sea.js';
 import createStars from './stars.js';
+import { PRIMITIVES, mountMotif as mountNew, mountCombined as mountCombinedNew } from '../motifs.js';
 
 const registry = {
   rain: createRain,
@@ -17,18 +18,35 @@ const registry = {
   none: null,
 };
 
+// merge new primitives
+Object.keys(PRIMITIVES).forEach((k) => {
+  if (!registry[k]) registry[k] = PRIMITIVES[k];
+});
+
 export function getMotifFactory(type) {
+  const f = registry[type];
+  if (typeof f === 'function' && f.prototype === undefined) {
+    // PRIMITIVES entries are factories already; return as-is
+  }
   return registry[type] || null;
 }
 
-export function mountMotif(container, type, palette) {
+// mountMotif: if type is new primitive, use mountNew; else existing logic
+export function mountCombined(container, types, palette, paramsList) {
+  return mountCombinedNew(container, types, palette, paramsList);
+}
+
+export function mountMotif(container, type, palette, params) {
+  if (PRIMITIVES[type]) {
+    return mountNew(container, type, palette, params);
+  }
+  // existing logic for original motifs
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
-  const factory = getMotifFactory(type);
+  const factory = registry[type];
   if (!factory || !container) return null;
   const canvas = document.createElement('canvas');
   canvas.className = 'motif-canvas';
   container.append(canvas);
-
   const motif = factory(canvas, palette);
   let io = null;
   if ('IntersectionObserver' in window) {
@@ -42,11 +60,9 @@ export function mountMotif(container, type, palette) {
   } else {
     motif.start();
   }
-
   const onResize = () => motif.resize();
   window.addEventListener('resize', onResize, { passive: true });
   motif.resize();
-
   return {
     canvas,
     motif,

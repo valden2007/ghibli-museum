@@ -40,7 +40,36 @@
     ],
     "era": "1980s",
     "motif": "leaves",
-    "note": "Обрати внимание на тишину между сценами — она работает как дыхание леса."
+    "note": "Обрати внимание на тишину между сценами — она работает как дыхание леса.",
+    "fx": {
+      "base": {
+        "type": "spores",
+        "params": {
+          "count": 40,
+          "speed": 0.3,
+          "size": 2
+        },
+        "colorHint": "#a8d5a2"
+      },
+      "accent": {
+        "type": "wind-gusts",
+        "params": {
+          "count": 12,
+          "speed": 0.8,
+          "size": 1
+        },
+        "colorHint": "#7fb069"
+      },
+      "silhouette": {
+        "type": "ohmu-silhouette",
+        "params": {
+          "count": 1,
+          "speed": 0,
+          "size": 60
+        },
+        "colorHint": "#3a6b4a"
+      }
+    }
   },
   {
     "id": "laputa",
@@ -83,7 +112,36 @@
     ],
     "era": "1980s",
     "motif": "clouds",
-    "note": "Смотри на руины: они говорят о цивилизации, которая умела летать, но не умела жить."
+    "note": "Смотри на руины: они говорят о цивилизации, которая умела летать, но не умела жить.",
+    "fx": {
+      "base": {
+        "type": "clouds",
+        "params": {
+          "count": 30,
+          "speed": 0.2,
+          "size": 3
+        },
+        "colorHint": "#c9d6e8"
+      },
+      "accent": {
+        "type": "light-rays",
+        "params": {
+          "count": 8,
+          "speed": 0.1,
+          "size": 2
+        },
+        "colorHint": "#8fb3d9"
+      },
+      "silhouette": {
+        "type": "floating-island",
+        "params": {
+          "count": 1,
+          "speed": 0,
+          "size": 80
+        },
+        "colorHint": "#4a6fa5"
+      }
+    }
   },
   {
     "id": "totoro",
@@ -126,7 +184,36 @@
     ],
     "era": "1980s",
     "motif": "rain",
-    "note": "Слушай дождь: он звучит как дыхание леса."
+    "note": "Слушай дождь: он звучит как дыхание леса.",
+    "fx": {
+      "base": {
+        "type": "rain",
+        "params": {
+          "count": 60,
+          "speed": 0.6,
+          "size": 1.5
+        },
+        "colorHint": "#a8c09a"
+      },
+      "accent": {
+        "type": "glass-drops",
+        "params": {
+          "count": 20,
+          "speed": 0.4,
+          "size": 2
+        },
+        "colorHint": "#d9c9a3"
+      },
+      "silhouette": {
+        "type": "catbus",
+        "params": {
+          "count": 1,
+          "speed": 0.3,
+          "size": 50
+        },
+        "colorHint": "#2f5d3a"
+      }
+    }
   },
   {
     "id": "kiki",
@@ -169,7 +256,36 @@
     ],
     "era": "1980s",
     "motif": "wind",
-    "note": "Заметь, как тишина после полёта меняет настроение сцены."
+    "note": "Заметь, как тишина после полёта меняет настроение сцены.",
+    "fx": {
+      "base": {
+        "type": "seagulls",
+        "params": {
+          "count": 15,
+          "speed": 0.5,
+          "size": 3
+        },
+        "colorHint": "#8fa8d9"
+      },
+      "accent": {
+        "type": "wind",
+        "params": {
+          "count": 20,
+          "speed": 0.7,
+          "size": 1
+        },
+        "colorHint": "#f0d9a0"
+      },
+      "silhouette": {
+        "type": "flying-figure-broom",
+        "params": {
+          "count": 1,
+          "speed": 0.4,
+          "size": 40
+        },
+        "colorHint": "#6b4a7a"
+      }
+    }
   },
   {
     "id": "porco-rosso",
@@ -212,7 +328,36 @@
     ],
     "era": "1990s",
     "motif": "sea",
-    "note": "Смотри на закаты: они как память о прошлом."
+    "note": "Смотри на закаты: они как память о прошлом.",
+    "fx": {
+      "base": {
+        "type": "seaplanes",
+        "params": {
+          "count": 6,
+          "speed": 0.3,
+          "size": 4
+        },
+        "colorHint": "#4a7a8a"
+      },
+      "accent": {
+        "type": "clouds",
+        "params": {
+          "count": 25,
+          "speed": 0.2,
+          "size": 3
+        },
+        "colorHint": "#d9b08a"
+      },
+      "silhouette": {
+        "type": "distant-fleet",
+        "params": {
+          "count": 1,
+          "speed": 0,
+          "size": 70
+        },
+        "colorHint": "#1a3a5a"
+      }
+    }
   },
   {
     "id": "mononoke",
@@ -255,7 +400,36 @@
     ],
     "era": "1990s",
     "motif": "leaves",
-    "note": "Обрати внимание на туман: он скрывает границу между мирами."
+    "note": "Обрати внимание на туман: он скрывает границу между мирами.",
+    "fx": {
+      "base": {
+        "type": "kodama",
+        "params": {
+          "count": 25,
+          "speed": 0.3,
+          "size": 3
+        },
+        "colorHint": "#4a6b3a"
+      },
+      "accent": {
+        "type": "leaves",
+        "params": {
+          "count": 30,
+          "speed": 0.5,
+          "size": 2
+        },
+        "colorHint": "#c9a227"
+      },
+      "silhouette": {
+        "type": "boar-god",
+        "params": {
+          "count": 1,
+          "speed": 0,
+          "size": 80
+        },
+        "colorHint": "#6b1a1a"
+      }
+    }
   },
   {
     "id": "spirited-away",
@@ -298,7 +472,36 @@
     ],
     "era": "2000s",
     "motif": "lanterns",
-    "note": "Смотри на тени: они живут своей жизнью."
+    "note": "Смотри на тени: они живут своей жизнью.",
+    "fx": {
+      "base": {
+        "type": "soot-sprites",
+        "params": {
+          "count": 30,
+          "speed": 0.4,
+          "size": 3
+        },
+        "colorHint": "#e8d9a0"
+      },
+      "accent": {
+        "type": "lanterns",
+        "params": {
+          "count": 12,
+          "speed": 0.2,
+          "size": 4
+        },
+        "colorHint": "#c9a227"
+      },
+      "silhouette": {
+        "type": "train",
+        "params": {
+          "count": 1,
+          "speed": 0.2,
+          "size": 60
+        },
+        "colorHint": "#1a2a4a"
+      }
+    }
   },
   {
     "id": "howl",
@@ -341,7 +544,36 @@
     ],
     "era": "2000s",
     "motif": "stars",
-    "note": "Замок дышит: следи за тем, как он меняется."
+    "note": "Замок дышит: следи за тем, как он меняется.",
+    "fx": {
+      "base": {
+        "type": "embers",
+        "params": {
+          "count": 40,
+          "speed": 0.3,
+          "size": 2
+        },
+        "colorHint": "#e8d9a0"
+      },
+      "accent": {
+        "type": "stars",
+        "params": {
+          "count": 20,
+          "speed": 0.1,
+          "size": 2
+        },
+        "colorHint": "#8a9ac9"
+      },
+      "silhouette": {
+        "type": "walking-castle",
+        "params": {
+          "count": 1,
+          "speed": 0.1,
+          "size": 90
+        },
+        "colorHint": "#2a2a4a"
+      }
+    }
   },
   {
     "id": "ponyo",
@@ -384,7 +616,36 @@
     ],
     "era": "2000s",
     "motif": "sea",
-    "note": "Смотри на волны: они рисованы кадр за кадром."
+    "note": "Смотри на волны: они рисованы кадр за кадром.",
+    "fx": {
+      "base": {
+        "type": "bubbles",
+        "params": {
+          "count": 35,
+          "speed": 0.4,
+          "size": 3
+        },
+        "colorHint": "#8ad0d0"
+      },
+      "accent": {
+        "type": "waves",
+        "params": {
+          "count": 8,
+          "speed": 0.6,
+          "size": 2
+        },
+        "colorHint": "#4aa8a8"
+      },
+      "silhouette": {
+        "type": "fish",
+        "params": {
+          "count": 1,
+          "speed": 0.2,
+          "size": 50
+        },
+        "colorHint": "#c94a3a"
+      }
+    }
   },
   {
     "id": "wind-rises",
@@ -427,7 +688,36 @@
     ],
     "era": "2010s",
     "motif": "wind",
-    "note": "Слушай ветер: он говорит о мечте."
+    "note": "Слушай ветер: он говорит о мечте.",
+    "fx": {
+      "base": {
+        "type": "wind-grass",
+        "params": {
+          "count": 25,
+          "speed": 0.5,
+          "size": 2
+        },
+        "colorHint": "#9fc9a0"
+      },
+      "accent": {
+        "type": "blueprint-lines",
+        "params": {
+          "count": 15,
+          "speed": 0.2,
+          "size": 1
+        },
+        "colorHint": "#6fa8dc"
+      },
+      "silhouette": {
+        "type": "fighters",
+        "params": {
+          "count": 1,
+          "speed": 0.3,
+          "size": 60
+        },
+        "colorHint": "#d9c98a"
+      }
+    }
   },
   {
     "id": "boy-heron",
@@ -470,6 +760,35 @@
     ],
     "era": "2020s",
     "motif": "stars",
-    "note": "Смотри на цаплю: она не то, чем кажется."
+    "note": "Смотри на цаплю: она не то, чем кажется.",
+    "fx": {
+      "base": {
+        "type": "feather",
+        "params": {
+          "count": 20,
+          "speed": 0.3,
+          "size": 3
+        },
+        "colorHint": "#d9b080"
+      },
+      "accent": {
+        "type": "stars",
+        "params": {
+          "count": 25,
+          "speed": 0.1,
+          "size": 2
+        },
+        "colorHint": "#4a6a8a"
+      },
+      "silhouette": {
+        "type": "heron",
+        "params": {
+          "count": 1,
+          "speed": 0.2,
+          "size": 70
+        },
+        "colorHint": "#1a1a2a"
+      }
+    }
   }
 ]
