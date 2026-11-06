@@ -60,13 +60,17 @@ function renderMilestoneInlay(ms) {
   imgWrap.className = 'history-image';
   if (ms.image) {
     const img = document.createElement('img');
-    img.src = ms.image;
     img.alt = ms.title[lang] || ms.title.ru;
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.addEventListener('load', () => {
-      imgWrap.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
-    }, { once: true });
+    const setAspect = () => {
+      if (img.naturalWidth && img.naturalHeight) {
+        imgWrap.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+      }
+    };
+    img.addEventListener('load', setAspect, { once: true });
+    img.src = ms.image;
+    if (img.complete) setAspect();
     img.addEventListener('error', () => {
       console.log(`missing milestone image: ${ms.image}`);
       img.remove();
@@ -76,6 +80,7 @@ function renderMilestoneInlay(ms) {
       imgWrap.append(ph);
     }, { once: true });
     imgWrap.append(img);
+    if (img.complete) setAspect();
   } else {
     console.log(`missing milestone image: docs/img/milestones/${ms.slug}.webp`);
     const ph = document.createElement('div');

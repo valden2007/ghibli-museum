@@ -161,10 +161,12 @@ function render() {
       img.alt = current.title[lang] || current.title.ru;
       img.loading = 'lazy';
       img.decoding = 'async';
-      img.addEventListener('load', () => {
+      const setAspect = () => {
         const hb = document.querySelector('#milestone-hero-bg');
-        if (hb) hb.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
-      }, { once: true });
+        if (hb && img.naturalWidth && img.naturalHeight) hb.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+      };
+      img.addEventListener('load', setAspect, { once: true });
+      if (img.complete) setAspect();
       img.addEventListener('error', () => {
         console.log(`missing milestone image: ${current.image}`);
         img.remove();
