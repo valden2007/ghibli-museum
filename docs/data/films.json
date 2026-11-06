@@ -70,7 +70,39 @@
         "colorHint": "#3a6b4a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "laputa",
@@ -143,7 +175,39 @@
         "colorHint": "#4a6fa5"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "totoro",
@@ -216,7 +280,39 @@
         "colorHint": "#2f5d3a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "kiki",
@@ -289,7 +385,39 @@
         "colorHint": "#6b4a7a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "porco-rosso",
@@ -362,7 +490,39 @@
         "colorHint": "#1a3a5a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "mononoke",
@@ -435,7 +595,39 @@
         "colorHint": "#6b1a1a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "spirited-away",
@@ -508,7 +700,39 @@
         "colorHint": "#1a2a4a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "howl",
@@ -581,7 +805,39 @@
         "colorHint": "#2a2a4a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "ponyo",
@@ -654,7 +910,39 @@
         "colorHint": "#c94a3a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "wind-rises",
@@ -727,7 +1015,39 @@
         "colorHint": "#d9c98a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   },
   {
     "id": "boy-heron",
@@ -800,6 +1120,38 @@
         "colorHint": "#1a1a2a"
       }
     },
-    "characters": []
+    "characters": [],
+    "tagline": {
+      "ru": "",
+      "en": ""
+    },
+    "world": {
+      "ru": "",
+      "en": ""
+    },
+    "plot": {
+      "ru": "",
+      "en": ""
+    },
+    "creation": {
+      "ru": "",
+      "en": ""
+    },
+    "inspiration": [],
+    "crew": {
+      "music": {
+        "ru": "",
+        "en": ""
+      },
+      "notes": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "themes": [],
+    "opinion": null,
+    "images": [],
+    "verify": [],
+    "sources": []
   }
 ]
