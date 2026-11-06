@@ -132,10 +132,21 @@
 
 .catalog-prototype__heading {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   margin: 16px 0 13px;
+}
+
+.catalog-prototype__heading .catalog-prototype__title {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.catalog-prototype__heading .catalog-prototype__year {
+  align-self: flex-start;
+  flex: 0 0 auto;
+  margin-top: 2px;
 }
 
 .catalog-prototype__title {

@@ -69,7 +69,8 @@
         },
         "colorHint": "#3a6b4a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "laputa",
@@ -141,7 +142,8 @@
         },
         "colorHint": "#4a6fa5"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "totoro",
@@ -213,7 +215,8 @@
         },
         "colorHint": "#2f5d3a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "kiki",
@@ -285,7 +288,8 @@
         },
         "colorHint": "#6b4a7a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "porco-rosso",
@@ -357,7 +361,8 @@
         },
         "colorHint": "#1a3a5a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "mononoke",
@@ -429,7 +434,8 @@
         },
         "colorHint": "#6b1a1a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "spirited-away",
@@ -501,7 +507,8 @@
         },
         "colorHint": "#1a2a4a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "howl",
@@ -573,7 +580,8 @@
         },
         "colorHint": "#2a2a4a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "ponyo",
@@ -645,7 +653,8 @@
         },
         "colorHint": "#c94a3a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "wind-rises",
@@ -717,7 +726,8 @@
         },
         "colorHint": "#d9c98a"
       }
-    }
+    },
+    "characters": []
   },
   {
     "id": "boy-heron",
@@ -789,6 +799,7 @@
         },
         "colorHint": "#1a1a2a"
       }
-    }
+    },
+    "characters": []
   }
 ]

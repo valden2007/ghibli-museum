@@ -118,5 +118,9 @@
   "history.specialTitles": {
     "ru": "Особые позиции",
     "en": "Special titles"
+  },
+  "film.charactersTitle": {
+    "ru": "Герои мира",
+    "en": "Heroes of the world"
   }
 }

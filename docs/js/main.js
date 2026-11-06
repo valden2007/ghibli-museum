@@ -5,7 +5,7 @@ import { initHero } from './hero.js';
 import { initReveal } from './reveal.js';
 import { initSoot } from './soot.js';
 import { initTimeline } from './timeline.js';
-import { mountPlayer } from './player/index.js';
+
 import { mountMotif } from './motifs/index.js';
 import { createCatalogCard } from './catalog-card.js';
 
@@ -179,10 +179,6 @@ async function init() {
   initReveal();
   initSoot();
   initTimeline();
-  const showcase = document.querySelector('#player-showcase');
-  if (showcase) {
-    mountPlayer(showcase, { adapter: 'canvas', palette: ['#6fa8dc', '#b8d4e8', '#d9c98a', '#9fc9a0'] });
-  }
 
   try {
     allFilms = await loadFilms();

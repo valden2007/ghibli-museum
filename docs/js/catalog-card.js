@@ -114,26 +114,7 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   appendField(passport, lang === 'en' ? 'Director' : 'Режиссёр', film.director);
   appendField(passport, lang === 'en' ? 'Era' : 'Период', film.era);
   appendField(passport, lang === 'en' ? 'Atmosphere' : 'Атмосфера', atmosphereLabels[film.motif]?.[lang] || film.motif);
-  if (tones.length) {
-    const toneField = document.createElement('div');
-    const dt = document.createElement('dt');
-    dt.textContent = lang === 'en' ? 'Palette' : 'Палитра';
-    const dd = document.createElement('dd');
-    dd.textContent = `${tones.length} ${lang === 'en' ? 'tones' : 'цветов'} `;
-    const chips = document.createElement('span');
-    chips.className = 'catalog-prototype__tones';
-    chips.setAttribute('aria-label', tones.join(', '));
-    tones.forEach((color) => {
-      const chip = document.createElement('span');
-      chip.className = 'catalog-prototype__tone';
-      chip.style.backgroundColor = color;
-      chip.setAttribute('aria-hidden', 'true');
-      chips.append(chip);
-    });
-    dd.append(chips);
-    toneField.append(dt, dd);
-    passport.append(toneField);
-  }
+
 
   card.append(frame, heading, passport);
 

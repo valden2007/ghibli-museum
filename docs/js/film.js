@@ -91,6 +91,55 @@ function initLangSwitch() {
   });
 }
 
+function renderCharacters(film) {
+  const slot = document.querySelector('#film-characters-slot');
+  if (!slot) return;
+  slot.innerHTML = '';
+  if (!film || !Array.isArray(film.characters) || film.characters.length === 0) {
+    slot.hidden = true;
+    return;
+  }
+  slot.hidden = false;
+  const h = document.createElement('h2');
+  h.textContent = t('film.charactersTitle') || 'Герои мира';
+  const list = document.createElement('div');
+  list.className = 'film-characters';
+  film.characters.forEach((ch) => {
+    const card = document.createElement('div');
+    card.className = 'film-character';
+    const name = document.createElement('strong');
+    name.textContent = (ch.name && (ch.name[getLang()] || ch.name.ru)) || '';
+    const role = document.createElement('p');
+    role.textContent = (ch.role && (ch.role[getLang()] || ch.role.ru)) || '';
+    const mood = document.createElement('p');
+    mood.className = 'muted';
+    mood.textContent = (ch.mood && (ch.mood[getLang()] || ch.mood.ru)) || '';
+    card.append(name, role, mood);
+    if (ch.image) {
+      const img = document.createElement('img');
+      img.src = ch.image;
+      img.alt = name.textContent;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.addEventListener('error', () => {
+        img.remove();
+        const ph = document.createElement('div');
+        ph.className = 'film-character-silhouette';
+        ph.setAttribute('aria-hidden', 'true');
+        card.prepend(ph);
+      }, { once: true });
+      card.prepend(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'film-character-silhouette';
+      ph.setAttribute('aria-hidden', 'true');
+      card.prepend(ph);
+    }
+    list.append(card);
+  });
+  slot.append(h, list);
+}
+
 async function init() {
   let lenis = null;
   if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -179,6 +228,8 @@ async function init() {
 
   if (contentEl) contentEl.hidden = false;
   if (emptyEl) emptyEl.hidden = true;
+
+  renderCharacters(currentFilm);
 
   renderText();
   onLangChange(renderText);
