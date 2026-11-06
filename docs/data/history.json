@@ -147,5 +147,307 @@
       },
       "milestoneSlugs": []
     }
+  ],
+  "filmography": [
+    {
+      "year": 1986,
+      "title": {
+        "ru": "Небесный замок Лапута",
+        "en": "Castle in the Sky"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 1988,
+      "title": {
+        "ru": "Мой сосед Тоторо",
+        "en": "My Neighbor Totoro"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 1988,
+      "title": {
+        "ru": "Могила светлячков",
+        "en": "Grave of the Fireflies"
+      },
+      "director": {
+        "ru": "Исао Такахата",
+        "en": "Isao Takahata"
+      }
+    },
+    {
+      "year": 1989,
+      "title": {
+        "ru": "Ведьмина служба доставки",
+        "en": "Kiki's Delivery Service"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 1991,
+      "title": {
+        "ru": "Только вчера",
+        "en": "Only Yesterday"
+      },
+      "director": {
+        "ru": "Исао Такахата",
+        "en": "Isao Takahata"
+      }
+    },
+    {
+      "year": 1992,
+      "title": {
+        "ru": "Порко Россо",
+        "en": "Porco Rosso"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 1993,
+      "title": {
+        "ru": "Шёпот океана (ТВ)",
+        "en": "Ocean Waves (TV)"
+      },
+      "director": {
+        "ru": "Томоми Мотидзуки",
+        "en": "Tomomi Mochizuki"
+      }
+    },
+    {
+      "year": 1994,
+      "title": {
+        "ru": "Помпоко",
+        "en": "Pom Poko"
+      },
+      "director": {
+        "ru": "Исао Такахата",
+        "en": "Isao Takahata"
+      }
+    },
+    {
+      "year": 1995,
+      "title": {
+        "ru": "Шёпот сердца",
+        "en": "Whisper of the Heart"
+      },
+      "director": {
+        "ru": "Ёсифуми Кондо",
+        "en": "Yoshifumi Kondo"
+      }
+    },
+    {
+      "year": 1997,
+      "title": {
+        "ru": "Принцесса Мононоке",
+        "en": "Princess Mononoke"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 1999,
+      "title": {
+        "ru": "Мои соседи Ямада",
+        "en": "My Neighbors the Yamadas"
+      },
+      "director": {
+        "ru": "Исао Такахата",
+        "en": "Isao Takahata"
+      }
+    },
+    {
+      "year": 2001,
+      "title": {
+        "ru": "Унесённые призраками",
+        "en": "Spirited Away"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 2002,
+      "title": {
+        "ru": "Возвращение кота",
+        "en": "The Cat Returns"
+      },
+      "director": {
+        "ru": "Хироюки Морита",
+        "en": "Hiroyuki Morita"
+      }
+    },
+    {
+      "year": 2004,
+      "title": {
+        "ru": "Ходячий замок",
+        "en": "Howl's Moving Castle"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 2006,
+      "title": {
+        "ru": "Сказания Земноморья",
+        "en": "Tales from Earthsea"
+      },
+      "director": {
+        "ru": "Горо Миядзаки",
+        "en": "Goro Miyazaki"
+      }
+    },
+    {
+      "year": 2008,
+      "title": {
+        "ru": "Рыбка Поньо на утёсе",
+        "en": "Ponyo"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 2010,
+      "title": {
+        "ru": "Ариэтти из страны лилипутов",
+        "en": "Arrietty"
+      },
+      "director": {
+        "ru": "Хиромаса Ёнэбаяси",
+        "en": "Hiromasa Yonebayashi"
+      }
+    },
+    {
+      "year": 2011,
+      "title": {
+        "ru": "С холма Кокурико",
+        "en": "From Up on Poppy Hill"
+      },
+      "director": {
+        "ru": "Горо Миядзаки",
+        "en": "Goro Miyazaki"
+      }
+    },
+    {
+      "year": 2013,
+      "title": {
+        "ru": "Ветер крепчает",
+        "en": "The Wind Rises"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    },
+    {
+      "year": 2013,
+      "title": {
+        "ru": "Сказание о принцессе Кагуя",
+        "en": "The Tale of the Princess Kaguya"
+      },
+      "director": {
+        "ru": "Исао Такахата",
+        "en": "Isao Takahata"
+      }
+    },
+    {
+      "year": 2014,
+      "title": {
+        "ru": "Воспоминания о Марни",
+        "en": "When Marnie Was There"
+      },
+      "director": {
+        "ru": "Хиромаса Ёнэбаяси",
+        "en": "Hiromasa Yonebayashi"
+      }
+    },
+    {
+      "year": 2020,
+      "title": {
+        "ru": "Ая и ведьма",
+        "en": "Aya and the Witch"
+      },
+      "director": {
+        "ru": "Горо Миядзаки",
+        "en": "Goro Miyazaki"
+      }
+    },
+    {
+      "year": 2023,
+      "title": {
+        "ru": "Мальчик и птица",
+        "en": "The Boy and the Heron"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      }
+    }
+  ],
+  "filmographySpecial": [
+    {
+      "year": 1984,
+      "title": {
+        "ru": "Навсикая из Долины ветров",
+        "en": "Nausicaa of the Valley of the Wind"
+      },
+      "director": {
+        "ru": "Хаяо Миядзаки",
+        "en": "Hayao Miyazaki"
+      },
+      "note": {
+        "ru": "Topcraft, до основания студии — предтеча.",
+        "en": "Topcraft, before the studio's founding — the precursor."
+      }
+    },
+    {
+      "year": 2016,
+      "title": {
+        "ru": "Красная черепаха",
+        "en": "The Red Turtle"
+      },
+      "director": {
+        "ru": "Михаэль Дюдок де Вит",
+        "en": "Michael Dudok de Wit"
+      },
+      "note": {
+        "ru": "Совместная работа с внешним режиссёром.",
+        "en": "Co-production with an outside director."
+      }
+    },
+    {
+      "year": 2026,
+      "title": {
+        "ru": "Ночь в Долине ведьм",
+        "en": "Night in the Witch's Valley"
+      },
+      "director": {
+        "ru": "Горо Миядзаки и Акихико Ямасита",
+        "en": "Goro Miyazaki & Akihiko Yamashita"
+      },
+      "note": {
+        "ru": "Короткометр, показывается только в Ghibli Park.",
+        "en": "Short, screens only at Ghibli Park."
+      }
+    }
   ]
 }

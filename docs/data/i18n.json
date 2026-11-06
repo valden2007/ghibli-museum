@@ -98,5 +98,25 @@
   "history.introTitle": {
     "ru": "Введение",
     "en": "Introduction"
+  },
+  "history.filmographyTitle": {
+    "ru": "Фильмография студии",
+    "en": "Studio Filmography"
+  },
+  "table.year": {
+    "ru": "Год",
+    "en": "Year"
+  },
+  "table.film": {
+    "ru": "Фильм",
+    "en": "Film"
+  },
+  "table.director": {
+    "ru": "Режиссёр",
+    "en": "Director"
+  },
+  "history.specialTitles": {
+    "ru": "Особые позиции",
+    "en": "Special titles"
   }
 }

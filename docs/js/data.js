@@ -22,7 +22,12 @@ export async function loadHistory() {
   const response = await fetch('data/history.json');
   if (!response.ok) throw new Error('Не удалось загрузить history.json');
   const data = await response.json();
-  return Array.isArray(data) ? data : (data.chapters || []);
+  const list = Array.isArray(data) ? data : (data.chapters || []);
+  if (!Array.isArray(data)) {
+    if (data.filmography) list.filmography = data.filmography;
+    if (data.filmographySpecial) list.filmographySpecial = data.filmographySpecial;
+  }
+  return list;
 }
 
 export async function loadImages() {

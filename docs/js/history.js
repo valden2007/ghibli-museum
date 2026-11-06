@@ -148,6 +148,65 @@ function render() {
 
     listEl.append(section);
   });
+
+  // filmography table
+  const filmog = chapters.filmography || [];
+  if (filmog.length) {
+    const section = document.createElement('section');
+    section.className = 'history-filmography';
+    section.id = 'filmography';
+
+    const h = document.createElement('h2');
+    h.textContent = t('history.filmographyTitle') || (lang === 'en' ? 'Studio Filmography' : 'Фильмография студии');
+    section.append(h);
+
+    const table = document.createElement('table');
+    table.className = 'history-table';
+    const thead = document.createElement('thead');
+    const hr = document.createElement('tr');
+    const thYear = document.createElement('th');
+    thYear.textContent = t('table.year') || (lang === 'en' ? 'Year' : 'Год');
+    const thFilm = document.createElement('th');
+    thFilm.textContent = t('table.film') || (lang === 'en' ? 'Film' : 'Фильм');
+    const thDir = document.createElement('th');
+    thDir.textContent = t('table.director') || (lang === 'en' ? 'Director' : 'Режиссёр');
+    hr.append(thYear, thFilm, thDir);
+    thead.append(hr);
+    table.append(thead);
+
+    const tbody = document.createElement('tbody');
+    filmog.forEach((row) => {
+      const tr = document.createElement('tr');
+      const tdYear = document.createElement('td');
+      tdYear.textContent = row.year;
+      const tdFilm = document.createElement('td');
+      tdFilm.textContent = row.title[lang] || row.title.ru;
+      const tdDir = document.createElement('td');
+      tdDir.textContent = row.director[lang] || row.director.ru;
+      tr.append(tdYear, tdFilm, tdDir);
+      tbody.append(tr);
+    });
+    table.append(tbody);
+    section.append(table);
+
+    // footnote special
+    const special = chapters.filmographySpecial || [];
+    if (special.length) {
+      const foot = document.createElement('div');
+      foot.className = 'history-special';
+      const fh = document.createElement('h3');
+      fh.textContent = t('history.specialTitles') || (lang === 'en' ? 'Special titles' : 'Особые позиции');
+      foot.append(fh);
+      special.forEach((row) => {
+        const p = document.createElement('p');
+        p.textContent = `${row.year} — ${row.title[lang] || row.title.ru} (${row.director[lang] || row.director.ru}) — ${row.note[lang] || row.note.ru}`;
+        foot.append(p);
+      });
+      section.append(foot);
+    }
+
+    listEl.append(section);
+  }
 }
 
 async function init() {
