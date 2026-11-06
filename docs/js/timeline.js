@@ -28,7 +28,8 @@ export async function initTimeline() {
   let films = [];
   try {
     const tr = await fetch('data/timeline.json?v=3');
-    items = tr.ok ? await tr.json() : await loadTimeline();
+    const data = tr.ok ? await tr.json() : null;
+    items = Array.isArray(data) ? data : (data && data.milestones) ? data.milestones : await loadTimeline();
     films = await loadFilms();
   } catch (e) {
     console.error(e);

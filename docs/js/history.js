@@ -2,7 +2,7 @@ import { loadTimeline, loadFilms, loadHistory } from './data.js';
 import { initI18n, getLang, onLangChange, setLang, t } from './i18n.js';
 import { initNav } from './nav.js';
 import { initReveal } from './reveal.js';
-import { mountMotif } from './motifs/index.js';
+
 
 const listEl = document.querySelector('#history-list');
 
@@ -85,29 +85,18 @@ function renderMilestoneInlay(ms) {
   detail.className = 'history-detail';
   detail.textContent = ms.detail[lang] || ms.detail.ru;
 
-  const weather = document.createElement('div');
-  weather.className = 'history-weather';
-  weather.setAttribute('aria-hidden', 'true');
-  const pal = paletteFor(ms.slug);
-  const motifType = PRIMARY_MOTIF[ms.slug];
-  if (motifType) {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduced) mountMotif(weather, motifType, pal);
-  }
-
   const creature = ms.creature;
   if (creature && creature.file) {
-    const img = new Image();
-    img.onload = () => {
-      const c = document.createElement('img');
-      c.className = 'history-creature';
-      c.src = creature.file;
-      c.alt = creature.alt ? (creature.alt[lang] || creature.alt.ru) : '';
-      c.setAttribute('aria-hidden', 'true');
-      weather.append(c);
-    };
-    img.onerror = () => console.log(`missing creature: ${creature.file}`);
+    const img = document.createElement('img');
+    img.className = 'history-creature';
     img.src = creature.file;
+    img.alt = creature.alt ? (creature.alt[lang] || creature.alt.ru) : '';
+    img.setAttribute('aria-hidden', 'true');
+    img.addEventListener('error', () => {
+      console.log(`missing creature: ${creature.file}`);
+      img.remove();
+    }, { once: true });
+    // static image, no animation
   } else if (creature && (creature.file === null || creature.file === undefined)) {
     console.log(`missing creature: docs/img/milestones/creatures/${ms.slug}.png`);
   }
@@ -125,7 +114,7 @@ function renderMilestoneInlay(ms) {
     related.append(a);
   });
 
-  wrap.append(year, title, imgWrap, detail, weather, related);
+  wrap.append(year, title, imgWrap, detail, related);
   return wrap;
 }
 
