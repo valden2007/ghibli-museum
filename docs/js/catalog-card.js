@@ -1,5 +1,3 @@
-import { mountMotif } from './motifs/index.js';
-
 const atmosphereLabels = {
   rain: { ru: 'Дождь', en: 'Rain' },
   lanterns: { ru: 'Фонарики', en: 'Lanterns' },
@@ -49,10 +47,6 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   frame.className = 'catalog-prototype__frame';
   frame.setAttribute('aria-label', film.title[lang] || film.title.ru);
 
-  const ambient = document.createElement('span');
-  ambient.className = 'catalog-prototype__ambient';
-  ambient.setAttribute('aria-hidden', 'true');
-
   const hasImage = Boolean(imageInfo?.file);
   if (hasImage) {
     const img = document.createElement('img');
@@ -94,10 +88,7 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
   const print = document.createElement('span');
   print.className = 'catalog-prototype__print';
   print.setAttribute('aria-hidden', 'true');
-  const motif = document.createElement('span');
-  motif.className = 'catalog-prototype__motif';
-  motif.setAttribute('aria-hidden', 'true');
-  frame.append(ambient, duotone, print, motif);
+  frame.append(duotone, print);
 
   const heading = document.createElement('div');
   heading.className = 'catalog-prototype__heading';
@@ -118,42 +109,10 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
 
   card.append(frame, heading, passport);
 
-  let motifHandle = null;
   let intersecting = true;
   let hovered = false;
   let focused = false;
 
-  const baseType = (film.fx && film.fx.base && film.fx.base.type) || film.motif;
-  const baseCap = { count: 5, speed: 0.5, size: 2 };
-  const capMap = {
-    'soot-sprites': { count: 4 },
-    'kodama': { count: 3 },
-    'bubbles': { count: 5 },
-    'embers': { count: 5 },
-    'spores': { count: 6 },
-    'seagulls': { count: 3 },
-    'seaplanes': { count: 2 },
-    'fighters': { count: 2 },
-    'feather': { count: 2 },
-    'fish': { count: 3 },
-    'rain': { count: 12 },
-    'clouds': { count: 8 },
-    'wind': { count: 8 },
-    'lanterns': { count: 6 },
-    'stars': { count: 8 },
-    'leaves': { count: 10 },
-    'wind-grass': { count: 8 },
-  };
-  const cap = Object.assign({}, baseCap, capMap[baseType] || {});
-  const baseParams = Object.assign({}, cap, film.fx && film.fx.base && film.fx.base.params ? film.fx.base.params : {});
-  // enforce cap on count
-  if (film.fx && film.fx.base && film.fx.base.params && film.fx.base.params.count) {
-    baseParams.count = Math.min(film.fx.base.params.count, cap.count);
-  } else {
-    baseParams.count = cap.count;
-  }
-  baseParams.colorHint = (film.fx && film.fx.base && film.fx.base.colorHint) || (tones[0] || '#ffffff');
-  console.log(film.id, 'cardType=', baseType, 'fxBase=', (film.fx && film.fx.base && film.fx.base.type) || null, 'cap=', JSON.stringify({ opacity: 0.22, maxParticles: baseParams.count }));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const observer = 'IntersectionObserver' in window
@@ -182,11 +141,6 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
         detail: { id: film.id, palette: tones, motif: film.motif, era: film.era, fxBase: (film.fx && film.fx.base && film.fx.base.type) || null },
       }));
     }
-    if (active && !motifHandle) motifHandle = mountMotif(motif, baseType, tones, baseParams);
-    if (!active && motifHandle) {
-      motifHandle.destroy();
-      motifHandle = null;
-    }
   }
 
   card.addEventListener('pointerenter', () => { hovered = true; syncMotif(); });
@@ -200,7 +154,6 @@ export function createCatalogCard(film, imageInfo, lang = 'ru') {
     element: card,
     destroy() {
       observer?.disconnect();
-      motifHandle?.destroy();
       reducedMotion.removeEventListener?.('change', syncMotif);
       finePointer.removeEventListener?.('change', syncMotif);
     },

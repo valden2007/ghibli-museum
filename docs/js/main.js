@@ -5,10 +5,8 @@ import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initGate, shouldShowGate } from './gate.js';
 import { initReveal } from './reveal.js';
-import { initSoot } from './soot.js';
 import { initTimeline } from './timeline.js';
 
-import { mountMotif } from './motifs/index.js';
 import { createCatalogCard } from './catalog-card.js';
 
 const grid = document.querySelector('#film-grid');
@@ -19,25 +17,18 @@ const sceneBackdrop = document.createElement('div');
 sceneBackdrop.className = 'scene-backdrop';
 filmsSection?.prepend(sceneBackdrop);
 
-const filmsWeatherHost = document.createElement('div');
-filmsWeatherHost.className = 'films-weather';
-filmsSection?.prepend(filmsWeatherHost);
-
 const filmsDecor = document.createElement('img');
 filmsDecor.className = 'films-decor';
 filmsDecor.alt = '';
 filmsDecor.setAttribute('aria-hidden', 'true');
 filmsSection?.append(filmsDecor);
 
-let filmsWeatherHandle = null;
 let decorLoaded = false;
 
 function applyIdle() {
   if (filmsSection) filmsSection.classList.remove('is-world');
   sceneBackdrop.classList.remove('is-active');
   sceneBackdrop.style.background = '';
-  if (filmsWeatherHandle) { filmsWeatherHandle.destroy(); filmsWeatherHandle = null; }
-  filmsWeatherHost.innerHTML = '';
   filmsDecor.style.opacity = '0';
   filmsDecor.removeAttribute('src');
   decorLoaded = false;
@@ -54,13 +45,6 @@ function applyWorld(detail) {
   if (palette.length) {
     sceneBackdrop.style.background = `radial-gradient(ellipse at 30% 20%, ${palette[0]}33, transparent 60%), radial-gradient(ellipse at 70% 80%, ${palette[2] || palette[0]}22, transparent 60%)`;
     sceneBackdrop.classList.add('is-active');
-  }
-  // weather motif
-  if (filmsWeatherHandle) { filmsWeatherHandle.destroy(); filmsWeatherHandle = null; }
-  filmsWeatherHost.innerHTML = '';
-  if (detail.motif) {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduced) filmsWeatherHandle = mountMotif(filmsWeatherHost, detail.motif, palette);
   }
   // decor slot
   const decorInfo = imagesData[detail.id]?.decor;
@@ -192,7 +176,6 @@ async function init() {
 
   initHero();
   initReveal();
-  if (settings.effects !== 'off') initSoot();
   initTimeline();
 
   onLangChange((lang) => {

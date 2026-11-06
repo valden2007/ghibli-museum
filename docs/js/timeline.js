@@ -1,18 +1,5 @@
 import { loadTimeline, loadFilms } from './data.js';
 import { getLang, onLangChange } from './i18n.js';
-import { mountMotif } from './motifs/index.js';
-
-const PRIMARY_MOTIF = {
-  '1985-founding': 'clouds',
-  '1988-totoro-grave': 'rain',
-  '2001-ghibli-museum': 'clouds',
-  '2001-spirited': 'lanterns',
-  '2003-oscar-spirited': 'lanterns',
-  '2013-wind': 'wind',
-  '2022-ghibli-park': 'leaves',
-  '2023-boy-heron': 'stars',
-  '2024-oscar-boy-heron': 'stars',
-};
 
 const NEUTRAL_PALETTE = ['#2f5d3a', '#6b8f4e', '#a8c09a', '#d9c9a3', '#7a6a55'];
 
@@ -47,7 +34,6 @@ export async function initTimeline() {
     weatherHost.setAttribute('aria-hidden', 'true');
     section.prepend(weatherHost);
   }
-  let weatherHandle = null;
   let creatureEl = null;
 
   function paletteFor(item) {
@@ -60,16 +46,8 @@ export async function initTimeline() {
     const pal = paletteFor(item);
     pal.forEach((c, i) => section.style.setProperty(`--c${i + 1}`, c));
 
-    // weather motif: destroy previous, mount new
-    if (weatherHandle) { weatherHandle.destroy(); weatherHandle = null; }
+    // Keep the era palette and optional static image slot; home stays calm.
     weatherHost.innerHTML = '';
-    const motifType = PRIMARY_MOTIF[item.slug];
-    if (motifType) weatherHandle = mountMotif(weatherHost, motifType, pal);
-
-    // secondary weather hint via CSS class
-    section.classList.remove('weather-wind', 'weather-clouds', 'weather-leaves');
-    if (item.slug === '1985-founding' || item.slug === '2013-wind') section.classList.add('weather-wind');
-    if (item.slug === '2022-ghibli-park') section.classList.add('weather-leaves');
 
     // creature
     if (creatureEl) { creatureEl.remove(); creatureEl = null; }
