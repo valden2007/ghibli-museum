@@ -3,6 +3,7 @@ import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
 import { get as getSettings, set as setSettings, subscribe as subscribeSettings } from './settings.js';
 import { initNav } from './nav.js';
 import { initHero } from './hero.js';
+import { initGate, shouldShowGate } from './gate.js';
 import { initReveal } from './reveal.js';
 import { initSoot } from './soot.js';
 import { initTimeline } from './timeline.js';
@@ -181,6 +182,14 @@ async function init() {
 
   initNav(lenis);
   initLangSwitch();
+
+  const gateShown = await initGate();
+  if (gateShown) {
+    await new Promise((resolve) => {
+      document.addEventListener('gate:done', resolve, { once: true });
+    });
+  }
+
   initHero();
   initReveal();
   if (settings.effects !== 'off') initSoot();
