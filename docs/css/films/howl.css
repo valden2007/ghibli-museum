@@ -1,0 +1,3 @@
+body.film-page[data-film-world="howl"] { --film-scene-accent:#d9c9e8; --film-card-radius:6px; }
+body.film-page[data-film-world="howl"] .film-section h2 { border-bottom:1px double #c9a227; }
+body.film-page[data-film-world="howl"] .film-character { border-color:color-mix(in srgb,#c9a227 45%,var(--color-border)); }

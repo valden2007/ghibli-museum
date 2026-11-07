@@ -1,0 +1,3 @@
+body.film-page[data-film-world="wind-rises"] { --film-scene-accent:#6fa8dc; --film-card-radius:2px; }
+body.film-page[data-film-world="wind-rises"] .film-section h2 { border-bottom:1px solid #6fa8dc; font-style:italic; }
+body.film-page[data-film-world="wind-rises"] .film-character { border-top:1px solid #6fa8dc; }

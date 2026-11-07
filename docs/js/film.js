@@ -1,10 +1,15 @@
 import { loadFilms, loadImages } from './data.js';
 import { initI18n, getLang, onLangChange, setLang, t } from './i18n.js';
 import { initNav } from './nav.js';
-import { mountMotif, mountCombined } from './motifs/index.js';
+import { mountCombined } from './motifs/index.js';
 import { initReveal } from './reveal.js';
 import { mountPlayer } from './player/index.js';
 import { mountMusicPlayer } from './music-player.js';
+import { get as getSettings, subscribe as subscribeSettings } from './settings.js';
+import * as sceneAudio from './audio.js';
+import * as sceneKit from './scenes/kit.js';
+import { sceneModules } from './scenes/manifest.js';
+import { createMotionController } from './motion.js';
 
 const titleEl = document.querySelector('#film-title');
 const metaEl = document.querySelector('#film-meta');
@@ -19,10 +24,14 @@ const nextLink = document.querySelector('#next-film');
 let films = [];
 let imagesData = {};
 let currentFilm = null;
-let motifHandle = null;
 let musicPlayerHandle = null;
 let galleryImages = [];
 let galleryIndex = 0;
+let activeScene = null;
+let sceneFallback = null;
+let activeSceneModule = null;
+let sceneThemeLink = null;
+let sceneDebugTimer = 0;
 
 const sectionIds = ['world', 'plot', 'characters', 'creation', 'inspiration', 'crew', 'facts', 'themes', 'gallery', 'opinion', 'trailer', 'sources'];
 
@@ -79,6 +88,94 @@ document.addEventListener('keydown', (event) => {
   else if (event.key === 'ArrowLeft') moveLightbox(-1);
   else if (event.key === 'ArrowRight') moveLightbox(1);
 });
+
+function loadFilmTheme(id) {
+  if (sceneThemeLink) sceneThemeLink.remove();
+  sceneThemeLink = document.createElement('link');
+  sceneThemeLink.rel = 'stylesheet';
+  sceneThemeLink.href = `css/films/${id}.css`;
+  sceneThemeLink.dataset.filmTheme = id;
+  document.head.append(sceneThemeLink);
+}
+
+function resetScene() {
+  activeScene?.unmount?.();
+  activeScene?.destroy?.();
+  activeScene = null;
+  sceneFallback?.destroy?.();
+  sceneFallback = null;
+}
+
+async function mountFilmScene(film) {
+  if (!heroBg) return;
+  resetScene();
+  document.body.classList.add('film-page');
+  document.body.dataset.filmWorld = film.id;
+  heroBg.classList.add('film-scene-root');
+  if (heroBg.parentElement !== document.body) document.body.prepend(heroBg);
+  heroBg.style.background = `linear-gradient(155deg, ${(film.palette || []).join(', ')})`;
+  loadFilmTheme(film.id);
+
+  const settings = getSettings();
+  const effectLevel = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : settings.effects;
+  if (sceneModules[film.id]) {
+    try {
+      const module = await import(sceneModules[film.id]);
+      activeSceneModule = module.default || module;
+      const ctx = { root: heroBg, palette: film.palette, settings: getSettings(), audio: sceneAudio, kit: sceneKit };
+      const result = await activeSceneModule.mount(ctx);
+      activeScene = result || activeSceneModule;
+      activeScene?.onEffects?.(effectLevel);
+    } catch (error) {
+      console.error(`Film scene failed: ${film.id}`, error);
+      activeSceneModule = null;
+    }
+  }
+
+  if (!activeSceneModule) {
+    const fx = film.fx || {};
+    const types = [];
+    const params = [];
+    if (fx.base) { types.push(fx.base.type); params.push(fx.base.params); }
+    if (fx.accent) { types.push(fx.accent.type); params.push(fx.accent.params); }
+    if (fx.silhouette) { types.push(fx.silhouette.type); params.push(fx.silhouette.params); }
+    if (types.length) sceneFallback = mountCombined(heroBg, types, film.palette, params, { effects: effectLevel });
+    const slot = imagesData?.[film.id]?.decor;
+    const creatureFile = slot && slot.file;
+    if (creatureFile) {
+      const decor = document.createElement('img');
+      decor.className = 'film-decor';
+      decor.src = creatureFile;
+      decor.alt = slot.alt || '';
+      decor.setAttribute('aria-hidden', 'true');
+      decor.addEventListener('error', () => { console.log(`missing decor: ${creatureFile}`); decor.remove(); }, { once: true });
+      heroBg.append(decor);
+    } else {
+      console.log(`missing film scene creature: docs/img/film-creatures/${film.id}.png`);
+    }
+  }
+
+  if (new URLSearchParams(location.search).has('debug')) mountSceneDebug();
+}
+
+function mountSceneDebug() {
+  if (sceneDebugTimer) clearInterval(sceneDebugTimer);
+  const debug = document.createElement('pre');
+  debug.className = 'scene-debug';
+  debug.textContent = 'scene debug';
+  document.body.append(debug);
+  window.__sceneStats = () => ({
+    film: document.body.dataset.filmWorld,
+    canvas: heroBg?.querySelectorAll('canvas').length || 0,
+    effects: getSettings().effects,
+    module: Boolean(activeSceneModule),
+    ...sceneKit.getStats(),
+  });
+  const update = () => { debug.textContent = JSON.stringify(window.__sceneStats(), null, 2); };
+  update();
+  sceneDebugTimer = setInterval(update, 500);
+  window.addEventListener('pagehide', () => clearInterval(sceneDebugTimer), { once: true });
+}
 
 function applyPalette(film) {
   (film.palette || []).forEach((c, i) => {
@@ -373,15 +470,11 @@ function initLangSwitch() {
 }
 
 async function init() {
-  let lenis = null;
-  if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    lenis = new window.Lenis({ lerp: 0.1, smoothWheel: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-  }
-
   await initI18n();
-  initNav(lenis);
+  const motion = createMotionController();
+  const initialSettings = getSettings();
+  const initialEffects = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : initialSettings.effects;
+  initNav(motion.setEffects(initialEffects));
   initLangSwitch();
   initReveal();
 
@@ -412,31 +505,13 @@ async function init() {
   currentFilm = film;
   applyPalette(film);
 
-  if (heroBg) {
-    if (motifHandle) motifHandle.destroy();
-    motifHandle = null;
-    const fx = film.fx || {};
-    const types = [];
-    const params = [];
-    if (fx.base) { types.push(fx.base.type); params.push(fx.base.params); }
-    if (fx.accent) { types.push(fx.accent.type); params.push(fx.accent.params); }
-    if (fx.silhouette) { types.push(fx.silhouette.type); params.push(fx.silhouette.params); }
-    if (types.length) {
-      motifHandle = mountCombined(heroBg, types, film.palette, params);
-    }
-    const decorInfo = imagesData?.[film.id]?.decor;
-    if (decorInfo && decorInfo.file) {
-      const dimg = document.createElement('img');
-      dimg.className = 'film-decor';
-      dimg.src = decorInfo.file;
-      dimg.alt = decorInfo.alt || '';
-      dimg.addEventListener('error', () => {
-        console.log(`missing decor: ${decorInfo.file}`);
-        dimg.remove();
-      }, { once: true });
-      heroBg.append(dimg);
-    }
-  }
+  await mountFilmScene(film);
+  subscribeSettings((settings) => {
+    const effectLevel = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : settings.effects;
+    motion.setEffects(effectLevel);
+    if (activeScene) activeScene.onEffects?.(effectLevel);
+    else sceneFallback?.motif?.setEffects?.(effectLevel);
+  });
 
   const slot = document.querySelector('#film-player-slot');
   if (slot) {

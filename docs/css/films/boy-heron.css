@@ -1,0 +1,3 @@
+body.film-page[data-film-world="boy-heron"] { --film-scene-accent:#c96a2a; --film-card-radius:4px; }
+body.film-page[data-film-world="boy-heron"] .film-section h2 { border-bottom:1px solid #c96a2a; }
+body.film-page[data-film-world="boy-heron"] .film-character { border-color:color-mix(in srgb,#c96a2a 35%,var(--color-border)); }

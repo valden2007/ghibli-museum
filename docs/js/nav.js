@@ -19,7 +19,8 @@ export function initNav(lenis) {
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      if (lenis) lenis.scrollTo(target, { offset: -60 });
+      const activeLenis = window.__lenis || lenis;
+      if (activeLenis) activeLenis.scrollTo(target, { offset: -60 });
       else target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
@@ -51,6 +52,7 @@ export function initNav(lenis) {
   sections.forEach((s) => observer.observe(s));
 
   window.addEventListener('scroll', updateProgress, { passive: true });
-  if (lenis) lenis.on('scroll', updateProgress);
+  const activeLenis = window.__lenis || lenis;
+  if (activeLenis) activeLenis.on('scroll', updateProgress);
   updateProgress();
 }

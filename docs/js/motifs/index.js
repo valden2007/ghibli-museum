@@ -32,8 +32,8 @@ export function getMotifFactory(type) {
 }
 
 // mountMotif: if type is new primitive, use mountNew; else existing logic
-export function mountCombined(container, types, palette, paramsList) {
-  return mountCombinedNew(container, types, palette, paramsList);
+export function mountCombined(container, types, palette, paramsList, options) {
+  return mountCombinedNew(container, types, palette, paramsList, options);
 }
 
 export function mountMotif(container, type, palette, params) {

@@ -1,6 +1,7 @@
 import { loadFilms, loadImages } from './data.js';
 import { initI18n, getLang, onLangChange, setLang } from './i18n.js';
 import { get as getSettings, set as setSettings, subscribe as subscribeSettings } from './settings.js';
+import { createMotionController } from './motion.js';
 import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initGate, shouldShowGate } from './gate.js';
@@ -153,16 +154,8 @@ async function init() {
   const settings = getSettings();
   if (settings.lang && settings.lang !== getLang()) setLang(settings.lang);
 
-  let lenis = null;
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (window.Lenis && !reduce && settings.effects !== 'off') {
-    lenis = new window.Lenis({ lerp: 0.1, smoothWheel: true });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
+  const motion = createMotionController();
+  const lenis = motion.setEffects(settings.effects);
 
   initNav(lenis);
   initLangSwitch();
@@ -184,6 +177,7 @@ async function init() {
   });
   subscribeSettings((s) => {
     if (s.lang && s.lang !== getLang()) setLang(s.lang);
+    motion.setEffects(s.effects);
   });
 
   try {

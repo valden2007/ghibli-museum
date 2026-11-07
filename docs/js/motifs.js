@@ -101,10 +101,13 @@ const SILHOUETTE = (ctx, w, h, t, items, p) => {
 };
 
 // combined factory: one canvas, one rAF, multiple primitive layers
-export function makeCombined(types, palette, paramsList) {
+export function makeCombined(types, palette, paramsList, options = {}) {
   return function (canvas, pal, _params) {
     const ctx = canvas.getContext('2d');
     let w = 0, h = 0, dpr = 1, raf = 0, running = false;
+    let effects = options.effects || 'full';
+    let fps = effects === 'lite' ? 30 : 60;
+    let lastFrame = 0;
     const layers = (types || []).map((type, idx) => {
       const draw = PRIMITIVE_DRAWS[type] || DOTS;
       const p = Object.assign({ count: 30, speed: 0.5, size: 2, colorHint: (palette && palette[idx % palette.length]) || '#ffffff' }, (paramsList && paramsList[idx]) || {});
@@ -116,7 +119,7 @@ export function makeCombined(types, palette, paramsList) {
           items.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * p.speed, vy: (Math.random() - 0.5) * p.speed, size: p.size * (0.5 + Math.random()), phase: Math.random() * Math.PI * 2, life: 1 });
         }
       }
-      return { type, draw, p, items, init };
+      return { type, draw, p, baseCount: p.count, items, init };
     });
 
     function resize() {
@@ -132,10 +135,14 @@ export function makeCombined(types, palette, paramsList) {
       layers.forEach((l) => { l.init(); });
     }
 
-    function frame(t) {
-      if (!running) return;
+    function drawFrame(t) {
       ctx.clearRect(0, 0, w, h);
       layers.forEach((l) => l.draw(ctx, w, h, t, l.items, l.p));
+    }
+
+    function frame(t) {
+      if (!running) return;
+      if (t - lastFrame >= 1000 / fps) { lastFrame = t; drawFrame(t); }
       raf = requestAnimationFrame(frame);
     }
 
@@ -144,9 +151,21 @@ export function makeCombined(types, palette, paramsList) {
     window.addEventListener('resize', onResize, { passive: true });
 
     return {
-      start() { if (running) return; running = true; raf = requestAnimationFrame(frame); },
+      start() {
+        if (effects === 'off') { drawFrame(performance.now()); return; }
+        if (running) return;
+        running = true;
+        raf = requestAnimationFrame(frame);
+      },
       stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; },
       resize() { resize(); },
+      setEffects(level) {
+        effects = level;
+        fps = level === 'lite' ? 30 : 60;
+        layers.forEach((l) => { l.p.count = level === 'lite' ? Math.max(1, Math.floor(l.baseCount * 0.4)) : l.baseCount; l.init(); });
+        this.stop();
+        if (level === 'off') drawFrame(performance.now()); else this.start();
+      },
       destroy() { this.stop(); window.removeEventListener('resize', onResize); if (canvas.parentNode) canvas.parentNode.removeChild(canvas); },
     };
   };
@@ -228,8 +247,8 @@ export function getMotifFactory(type) {
   return PRIMITIVES[type] || null;
 }
 
-export function mountCombined(container, types, palette, paramsList) {
-  const factory = makeCombined(types, palette, paramsList);
+export function mountCombined(container, types, palette, paramsList, options = {}) {
+  const factory = makeCombined(types, palette, paramsList, options);
   if (!factory || !container) return null;
   const canvas = document.createElement('canvas');
   canvas.className = 'motif-canvas';

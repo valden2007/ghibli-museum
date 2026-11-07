@@ -1,0 +1,3 @@
+body.film-page[data-film-world="porco-rosso"] { --film-scene-accent:#c97a4a; --film-card-radius:0; }
+body.film-page[data-film-world="porco-rosso"] .film-section h2 { border-bottom:1px solid #c97a4a; text-transform:uppercase; }
+body.film-page[data-film-world="porco-rosso"] .film-character { border-radius:0; }

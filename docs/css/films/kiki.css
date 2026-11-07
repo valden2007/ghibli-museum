@@ -1,0 +1,3 @@
+body.film-page[data-film-world="kiki"] { --film-scene-accent:#c94a4a; --film-card-radius:14px; }
+body.film-page[data-film-world="kiki"] .film-section h2 { border-bottom:2px dotted #c94a4a; }
+body.film-page[data-film-world="kiki"] .film-character { border-radius:14px; }

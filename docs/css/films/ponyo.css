@@ -1,0 +1,3 @@
+body.film-page[data-film-world="ponyo"] { --film-scene-accent:#4aa8a8; --film-card-radius:22px; }
+body.film-page[data-film-world="ponyo"] .film-section h2 { border-bottom:2px dotted #4aa8a8; }
+body.film-page[data-film-world="ponyo"] .film-character { border-radius:22px; }

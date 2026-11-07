@@ -256,6 +256,38 @@ export function sfx(name) {
   }
 }
 
+export function scene(name, opts = {}) {
+  if (!enabled) return;
+  const c = ensureCtx();
+  if (!c) return;
+  const now = c.currentTime;
+  const gain = c.createGain();
+  const osc = c.createOscillator();
+  const filter = c.createBiquadFilter();
+  const presets = {
+    rain: { type: 'noise', frequency: 900, duration: 1.2 },
+    wind: { type: 'noise', frequency: 320, duration: 2.5 },
+    water: { type: 'noise', frequency: 520, duration: 1.8 },
+    fire: { type: 'tone', frequency: 150, duration: 0.35 },
+    footsteps: { type: 'tone', frequency: 90, duration: 0.16 },
+    bells: { type: 'tone', frequency: 660, duration: 1.1 },
+  };
+  const preset = { ...(presets[name] || presets.wind), ...(opts || {}) };
+  const duration = preset.duration || 1;
+  gain.gain.setValueAtTime(0.0001, now);
+  gain.gain.linearRampToValueAtTime(Math.min(0.12, preset.volume ?? 0.045), now + 0.04);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+  filter.type = 'lowpass';
+  filter.frequency.value = preset.frequency;
+  osc.type = preset.type === 'noise' ? 'triangle' : 'sine';
+  osc.frequency.value = preset.frequency;
+  osc.connect(filter);
+  filter.connect(gain);
+  gain.connect(master || c.destination);
+  osc.start(now);
+  osc.stop(now + duration + 0.02);
+}
+
 document.addEventListener('visibilitychange', () => {
   if (!ctx) return;
   if (document.hidden) ctx.suspend();

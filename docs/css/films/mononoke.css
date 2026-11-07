@@ -1,0 +1,3 @@
+body.film-page[data-film-world="mononoke"] { --film-scene-accent:#c9a227; --film-card-radius:2px; }
+body.film-page[data-film-world="mononoke"] .film-section h2 { border-bottom:1px solid #8c3023; }
+body.film-page[data-film-world="mononoke"] .film-character { border-left:3px solid #8c3023; }
