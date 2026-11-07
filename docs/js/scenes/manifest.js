@@ -7,4 +7,5 @@ export const sceneModules = Object.freeze({
   totoro: './scenes/totoro.js',
   howl: './scenes/howl.js',
   ponyo: './scenes/ponyo.js',
+  nausicaa: './scenes/nausicaa.js',
 });

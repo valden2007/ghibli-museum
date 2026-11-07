@@ -1,3 +1,18 @@
-body.film-page[data-film-world="nausicaa"] { --film-scene-accent:#7fb069; --film-card-radius:3px; }
-body.film-page[data-film-world="nausicaa"] .film-section h2 { border-bottom:1px solid #7fb069; }
-body.film-page[data-film-world="nausicaa"] .film-character { border-left:2px solid #7fb069; }
+/* Nausicaa — turquoise / sand, sand texture, sharp lines */
+body.film-page[data-film-world="nausicaa"] {
+  --film-scene-accent: #7fb069;
+  --film-card-radius: 3px;
+}
+
+body.film-page[data-film-world="nausicaa"] .film-section h2 {
+  border-bottom: 1px solid #7fb069;
+}
+
+body.film-page[data-film-world="nausicaa"] .film-character {
+  border-left: 2px solid #7fb069;
+  border-radius: 3px;
+}
+
+body.film-page[data-film-world="nausicaa"] .film-body {
+  background-image: radial-gradient(circle at 20% 30%, rgba(127,176,105,0.06), transparent 40%);
+}
