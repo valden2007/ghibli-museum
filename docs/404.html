@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghibli Museum — тропа потерялась</title>
+  <link rel="icon" href="data:,">
+  <script>
+    (() => {
+      const githubPages = location.hostname.endsWith('.github.io');
+      const first = location.pathname.split('/').filter(Boolean)[0];
+      const basePath = githubPages && first ? `/${first}/` : '/';
+      document.write(`<base href="${location.origin}${basePath}">`);
+      const styles = ['css/tokens.css', 'css/base.css', 'css/components.css'];
+      styles.forEach((href) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePath}${href}`;
+        document.head.append(link);
+      });
+      const module = document.createElement('script');
+      module.type = 'module';
+      module.src = `${basePath}js/404.js`;
+      document.head.append(module);
+    })();
+  </script>
+  <style>
+    .lost-page { position: relative; min-height: 100svh; overflow: hidden; display: grid; place-items: center; padding: 24px; background: linear-gradient(180deg,#101d27,#193a42 58%,#34433c); }
+    .lost-page::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 18% 76%,rgba(201,162,39,.16),transparent 22%), radial-gradient(ellipse at 82% 64%,rgba(153,199,146,.14),transparent 20%), linear-gradient(0deg,rgba(8,13,16,.62),transparent 72%); pointer-events:none; }
+    .lost-lights { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    .lost-light { position:absolute; width:8px; height:8px; border-radius:50%; background:#f0cf83; box-shadow:0 0 22px 8px rgba(240,207,131,.45); animation: firefly 5s ease-in-out infinite alternate; }
+    .lost-light:nth-child(1){left:14%;top:54%;animation-delay:-1s}.lost-light:nth-child(2){left:78%;top:42%;animation-delay:-3s}.lost-light:nth-child(3){left:64%;top:72%;animation-delay:-2s}
+    @keyframes firefly { from { transform:translate3d(0,10px,0);opacity:.25 } to { transform:translate3d(14px,-14px,0);opacity:.9 } }
+    .lost-content { position:relative; z-index:1; width:min(760px,100%); text-align:center; }
+    .lost-content h1 { margin:0; font:300 clamp(2.7rem,8vw,5.5rem)/.98 var(--font-display,Georgia,serif); color:#f4efe1; text-shadow:0 3px 24px rgba(0,0,0,.5); }
+    .lost-content p { margin:18px auto 24px; max-width:48ch; color:#e4e4d9; text-shadow:0 2px 12px rgba(0,0,0,.8); }
+    .lost-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:28px 0; text-align:left; }
+    .lost-card { display:block; min-width:0; padding:10px; color:#202621; background:#e8e4d7; border:1px solid rgba(32,38,33,.2); text-decoration:none; }
+    .lost-card img { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; }
+    .lost-card strong { display:block; margin-top:8px; font-size:.78rem; line-height:1.15; text-transform:uppercase; }
+    .lost-card span { color:#586157; font-size:.75rem; }
+    .lost-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+    .lost-lang { color:#fff; background:rgba(0,0,0,.24); border:1px solid rgba(255,255,255,.4); border-radius:999px; padding:8px 12px; }
+    @media(max-width:560px){.lost-cards{gap:7px}.lost-card{padding:6px}.lost-card strong{font-size:.65rem}.lost-card span{font-size:.65rem}}
+    @media(prefers-reduced-motion:reduce){.lost-light{animation:none;opacity:.55}}
+  </style>
+</head>
+<body>
+  <main class="lost-page">
+    <div class="lost-lights" aria-hidden="true"><i class="lost-light"></i><i class="lost-light"></i><i class="lost-light"></i></div>
+    <section class="lost-content" aria-labelledby="lost-title">
+      <p class="lost-code">404 · <span data-i18n="lost.label">Потерянная тропа</span></p>
+      <h1 id="lost-title" data-i18n="lost.title">Эта тропа никуда не ведёт</h1>
+      <p data-i18n="lost.text">Кажется, лес повернул не туда. Вернись в музей или выбери знакомый мир.</p>
+      <div id="lost-cards" class="lost-cards" aria-label="Films"></div>
+      <div class="lost-actions">
+        <a class="btn btn-primary" href="index.html" data-i18n="lost.home">Вернуться в музей</a>
+        <button class="lost-lang" type="button" id="lost-lang">EN</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

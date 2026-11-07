@@ -19,6 +19,10 @@
     "ru": "О проекте",
     "en": "About"
   },
+  "lost.label": { "ru": "Потерянная тропа", "en": "A lost path" },
+  "lost.title": { "ru": "Эта тропа никуда не ведёт", "en": "This path leads nowhere" },
+  "lost.text": { "ru": "Кажется, лес повернул не туда. Вернись в музей или выбери знакомый мир.", "en": "It seems the forest took a wrong turn. Return to the museum or choose a familiar world." },
+  "lost.home": { "ru": "Вернуться в музей", "en": "Return to the museum" },
   "hero.title": {
     "ru": "Музей студии Гибли",
     "en": "Ghibli Museum"
