@@ -1,3 +1,46 @@
-body.film-page[data-film-world="spirited-away"] { --film-scene-accent:#c9a227; --film-card-radius:2px; }
-body.film-page[data-film-world="spirited-away"] .film-section h2 { border-bottom:1px solid #c9a227; }
-body.film-page[data-film-world="spirited-away"] .film-character { box-shadow:inset 0 0 0 1px rgba(201,162,39,.14); }
+/* Spirited Away — red / gold / night blue, seigaiha wave ornament, gold corners */
+body.film-page[data-film-world="spirited-away"] {
+  --film-scene-accent: #c94a4a;
+  --film-card-radius: 2px;
+}
+
+body.film-page[data-film-world="spirited-away"] .film-section h2 {
+  border-bottom: 1px solid #c9a227;
+  /* seigaiha-like scalloped underline */
+  background:
+    repeating-radial-gradient(circle at 10px 100%, transparent 0 8px, rgba(201,162,39,0.28) 8px 9px, transparent 9px 16px) bottom / 20px 10px repeat-x;
+  padding-bottom: 10px;
+}
+
+body.film-page[data-film-world="spirited-away"] .film-character {
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(201,162,39,0.14);
+  position: relative;
+}
+
+/* gold corner brackets on cards */
+body.film-page[data-film-world="spirited-away"] .film-character::before,
+body.film-page[data-film-world="spirited-away"] .film-character::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #c9a227;
+  border-style: solid;
+}
+
+body.film-page[data-film-world="spirited-away"] .film-character::before {
+  top: 6px;
+  right: 6px;
+  border-width: 0 2px 2px 0;
+}
+
+body.film-page[data-film-world="spirited-away"] .film-character::after {
+  bottom: 6px;
+  left: 6px;
+  border-width: 2px 0 0 2px;
+}
+
+body.film-page[data-film-world="spirited-away"] .music-track {
+  border-color: color-mix(in srgb, #c94a4a 55%, var(--color-border));
+}

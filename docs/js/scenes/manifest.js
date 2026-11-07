@@ -3,4 +3,5 @@
 // Value is resolved relative to docs/js/film.js.
 export const sceneModules = Object.freeze({
   mononoke: './scenes/mononoke.js',
+  'spirited-away': './scenes/spirited-away.js',
 });
