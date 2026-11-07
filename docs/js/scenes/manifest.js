@@ -12,4 +12,5 @@ export const sceneModules = Object.freeze({
   kiki: './scenes/kiki.js',
   'porco-rosso': './scenes/porco-rosso.js',
   'wind-rises': './scenes/wind-rises.js',
+  'boy-heron': './scenes/boy-heron.js',
 });
