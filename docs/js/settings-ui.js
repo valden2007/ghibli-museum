@@ -99,7 +99,9 @@ export function initSettingsUI() {
     indicator.classList.toggle('playing', s.sound);
   }
 
-  sync(getSettings());
+  const initialSettings = getSettings();
+  sync(initialSettings);
+  audio.setThemeTrack(initialSettings.themeTrack);
   subscribeSettings(sync);
 
   soundToggle.addEventListener('click', () => {
@@ -151,6 +153,7 @@ export function initSettingsUI() {
   subscribeSettings((s) => {
     audio.setEnabled(s.sound);
     audio.setVolume(s.volume);
+    audio.setThemeTrack(s.themeTrack);
     if (s.sound) audio.playAmbient();
     else audio.stopAmbient();
   });
@@ -160,9 +163,4 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initSettingsUI);
 } else {
   initSettingsUI();
-}
-
-function audioIsPlaying() {
-  // no direct API; assume playing if sound on
-  return getSettings().sound;
 }

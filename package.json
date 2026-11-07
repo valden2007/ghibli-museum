@@ -1,0 +1,30 @@
+{
+  "name": "ghibli-museum",
+  "version": "1.0.0",
+  "description": "Интерактивный музей-сайт студии Гибли: таймлайн, фильмография и плеер официальных трейлеров. Статический сайт на GitHub Pages.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "validate": "node tools/validate-data.mjs",
+    "add:images": "node tools/add-images.mjs",
+    "add:audio": "node tools/add-audio.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valden2007/ghibli-museum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/valden2007/ghibli-museum/issues"
+  },
+  "homepage": "https://github.com/valden2007/ghibli-museum#readme",
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

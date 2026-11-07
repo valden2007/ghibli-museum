@@ -573,6 +573,67 @@
   opacity: 0.4;
 }
 
+.film-music-player { display: grid; gap: 14px; }
+.music-track-list { margin: 0; padding-left: 1.25rem; }
+.music-track-list li { margin: 8px 0; }
+.music-track-list small { display: block; color: var(--color-muted); }
+.music-track, .music-continue {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+.music-dock {
+  position: fixed;
+  z-index: 45;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: min(980px, calc(100vw - 24px));
+  padding: 12px 16px;
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+.music-now { margin: 0 0 8px; font-weight: 600; }
+.music-controls { display: flex; align-items: center; gap: 8px; }
+.music-controls button { flex: 0 0 auto; }
+.music-controls input[type="range"]:not([aria-label="Volume"]) { flex: 1 1 auto; min-width: 40px; }
+.music-controls input[type="range"][aria-label="Volume"] { width: 90px; }
+.music-controls span { font-size: .75rem; font-variant-numeric: tabular-nums; }
+.film-gallery-item img { cursor: zoom-in; }
+.film-gallery-item img.is-blurred { filter: blur(12px); }
+.film-lightbox[hidden] { display: none; }
+.film-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 56px 24px 24px;
+  color: #fff;
+  background: rgba(7, 9, 12, .94);
+}
+.film-lightbox figure { margin: 0; justify-self: center; max-width: min(100%, 1100px); text-align: center; }
+.lightbox-image { display: block; max-width: 100%; max-height: 75vh; width: auto; height: auto; margin: auto; object-fit: contain; }
+.lightbox-caption { margin-top: 12px; }
+.lightbox-credit { margin: 4px 0 0; color: rgba(255,255,255,.65); font-size: .8rem; }
+.lightbox-close { position: absolute; top: 16px; right: 20px; font-size: 2rem; }
+.film-lightbox button { color: inherit; background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+body.lightbox-open { overflow: hidden; }
+@media (max-width: 600px) {
+  .music-controls { flex-wrap: wrap; }
+  .music-controls input[type="range"]:not([aria-label="Volume"]) { order: 5; flex-basis: 100%; }
+  .film-lightbox { padding: 54px 8px 16px; gap: 4px; }
+}
+
 .player {
   position: relative;
   background: #000;

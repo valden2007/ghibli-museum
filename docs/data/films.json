@@ -233,7 +233,8 @@
     "verify": [
       "транскрипция имён персонажей"
     ],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "laputa",
@@ -451,7 +452,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "totoro",
@@ -685,7 +687,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "kiki",
@@ -919,7 +922,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "porco-rosso",
@@ -1137,7 +1141,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "mononoke",
@@ -1371,7 +1376,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "spirited-away",
@@ -1605,7 +1611,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "howl",
@@ -1839,7 +1846,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "ponyo",
@@ -2073,7 +2081,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "wind-rises",
@@ -2291,7 +2300,8 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   },
   {
     "id": "boy-heron",
@@ -2525,6 +2535,7 @@
     "opinion": null,
     "images": [],
     "verify": [],
-    "sources": []
+    "sources": [],
+    "soundtrack": []
   }
 ]

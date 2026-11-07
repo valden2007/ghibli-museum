@@ -151,6 +151,18 @@
     "ru": "Музыка и создатели",
     "en": "Music and Creators"
   },
+  "film.music": {
+    "ru": "Музыка",
+    "en": "Music"
+  },
+  "film.music.play": { "ru": "Воспроизвести", "en": "Play" },
+  "film.music.pause": { "ru": "Пауза", "en": "Pause" },
+  "film.music.previous": { "ru": "Предыдущий трек", "en": "Previous track" },
+  "film.music.next": { "ru": "Следующий трек", "en": "Next track" },
+  "film.music.seek": { "ru": "Перемотка", "en": "Seek" },
+  "film.music.volume": { "ru": "Громкость", "en": "Volume" },
+  "film.music.theme": { "ru": "Сделать темой сайта", "en": "Make site theme" },
+  "film.music.continue": { "ru": "Продолжить прослушивание", "en": "Continue listening" },
   "film.themes": {
     "ru": "Темы",
     "en": "Themes"

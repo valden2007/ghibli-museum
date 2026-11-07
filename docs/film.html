@@ -52,6 +52,7 @@
       <a href="#creation" data-i18n="film.creation">История создания</a>
       <a href="#inspiration" data-i18n="film.inspiration">Вдохновение</a>
       <a href="#crew" data-i18n="film.crew">Музыка и создатели</a>
+      <a href="#music" data-i18n="film.music">Музыка</a>
       <a href="#facts" data-i18n="film.facts">Факты</a>
       <a href="#themes" data-i18n="film.themes">Темы</a>
       <a href="#gallery" data-i18n="film.gallery">Галерея</a>
@@ -92,6 +93,11 @@
         <p id="film-notes"></p>
       </section>
 
+      <section id="music" class="film-section" hidden>
+        <h2 data-i18n="film.music">Музыка</h2>
+        <div id="film-music-player"></div>
+      </section>
+
       <section id="facts" class="film-section" hidden>
         <h2 data-i18n="film.facts">Факты</h2>
         <ul id="film-facts"></ul>
@@ -106,6 +112,17 @@
         <h2 data-i18n="film.gallery">Галерея</h2>
         <div id="film-gallery" class="film-gallery"></div>
       </section>
+
+      <div id="film-lightbox" class="film-lightbox" role="dialog" aria-modal="true" aria-label="Gallery" hidden>
+        <button type="button" class="lightbox-close" aria-label="Close">×</button>
+        <button type="button" class="lightbox-prev" aria-label="Previous">‹</button>
+        <figure>
+          <img class="lightbox-image" alt="">
+          <figcaption class="lightbox-caption"></figcaption>
+          <p class="lightbox-credit"></p>
+        </figure>
+        <button type="button" class="lightbox-next" aria-label="Next">›</button>
+      </div>
 
       <section id="opinion" class="film-section" hidden>
         <h2 data-i18n="film.opinion">Мнение автора</h2>

@@ -11,6 +11,7 @@ const defaults = () => {
     volume: 0.5,
     effects,
     lang: (document.documentElement.lang === 'en') ? 'en' : 'ru',
+    themeTrack: null,
   };
 };
 

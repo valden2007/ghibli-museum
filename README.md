@@ -37,15 +37,28 @@ GitHub Pages: branch `main`, папка `/docs`.
 - Шрифты — системный стек, без внешних шрифтов
 - Демо-ролик в плеере — собственная процедурная canvas-анимация, без внешних медиа
 
-## Как добавить картинки и мнение
+## Как добавить картинки, музыку и мнение
 
-Картинки для фильмов: положи файлы в `docs/img/films/<id>/` и добавь элемент в поле `images` фильма в `docs/data/films.json`:
+Картинки оптимизируются локально через Sharp (dev dependency); оригиналы остаются вне репозитория. Укажи id фильма из `films.json`, источник и двуязычные подписи:
 
-```json
-{ "file": "img/films/<id>/frame.webp", "alt": { "ru": "...", "en": "..." }, "caption": { "ru": "...", "en": "..." }, "credit": "..." }
+```
+npm install
+node tools/add-images.mjs totoro ./photos/totoro-still.jpg --credit "Studio Ghibli" --alt-ru "Тоторо под дождём" --alt-en "Totoro in the rain" --caption-ru "..." --caption-en "..."
 ```
 
-Мнение автора: заполни поле `opinion` в `docs/data/films.json` объектом `{ "ru": "...", "en": "..." }`; если `null` — раздел скрыт.
+В `images[]` появится объект вида:
+
+```json
+{ "file": "img/films/totoro/totoro-still-1600.webp", "w": 1600, "h": 900, "alt": { "ru": "...", "en": "..." }, "caption": { "ru": "...", "en": "..." }, "credit": "...", "srcset": [{ "file": "img/films/totoro/totoro-still-480.webp", "w": 480 }], "blur": "data:image/webp;base64,..." }
+```
+
+Музыка фильма добавляется командой; если установлен ffmpeg, создаются mp3/ogg варианты:
+
+```
+node tools/add-audio.mjs totoro ./audio/totoro-theme.mp3 --title-ru "Тема Тоторо" --title-en "Totoro Theme" --credit "..."
+```
+
+Запись попадёт в `soundtrack[]` с относительным `file`, `credit` и длительностью (если доступен ffprobe). Мнение автора: заполни `opinion` как `{ "ru": "...", "en": "..." }`; при `null` раздел скрыт.
 
 ## Страница 404 и локальная проверка
 

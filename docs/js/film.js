@@ -4,6 +4,7 @@ import { initNav } from './nav.js';
 import { mountMotif, mountCombined } from './motifs/index.js';
 import { initReveal } from './reveal.js';
 import { mountPlayer } from './player/index.js';
+import { mountMusicPlayer } from './music-player.js';
 
 const titleEl = document.querySelector('#film-title');
 const metaEl = document.querySelector('#film-meta');
@@ -19,8 +20,65 @@ let films = [];
 let imagesData = {};
 let currentFilm = null;
 let motifHandle = null;
+let musicPlayerHandle = null;
+let galleryImages = [];
+let galleryIndex = 0;
 
 const sectionIds = ['world', 'plot', 'characters', 'creation', 'inspiration', 'crew', 'facts', 'themes', 'gallery', 'opinion', 'trailer', 'sources'];
+
+const lightbox = document.querySelector('#film-lightbox');
+let lightboxReturnFocus = null;
+
+function renderLightbox() {
+  if (!lightbox || !galleryImages.length) return;
+  const lang = getLang();
+  const item = galleryImages[galleryIndex];
+  const img = lightbox.querySelector('.lightbox-image');
+  img.src = item.file;
+  img.alt = (item.alt && (item.alt[lang] || item.alt.ru)) || '';
+  if (Array.isArray(item.srcset) && item.srcset.length) {
+    img.srcset = item.srcset.map((variant) => `${variant.file} ${variant.w}w`).join(', ');
+    img.sizes = '90vw';
+  } else img.removeAttribute('srcset');
+  if (item.w) img.width = item.w;
+  if (item.h) img.height = item.h;
+  lightbox.querySelector('.lightbox-caption').textContent = item.caption?.[lang] || item.caption?.ru || '';
+  lightbox.querySelector('.lightbox-credit').textContent = item.credit || '';
+}
+
+function openLightbox(index) {
+  if (!lightbox) return;
+  galleryIndex = index;
+  lightboxReturnFocus = document.activeElement;
+  renderLightbox();
+  lightbox.hidden = false;
+  document.body.classList.add('lightbox-open');
+  lightbox.querySelector('.lightbox-close')?.focus();
+}
+
+function closeLightbox() {
+  if (!lightbox || lightbox.hidden) return;
+  lightbox.hidden = true;
+  document.body.classList.remove('lightbox-open');
+  lightboxReturnFocus?.focus?.();
+}
+
+function moveLightbox(direction) {
+  if (!galleryImages.length) return;
+  galleryIndex = (galleryIndex + direction + galleryImages.length) % galleryImages.length;
+  renderLightbox();
+}
+
+lightbox?.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+lightbox?.querySelector('.lightbox-prev')?.addEventListener('click', () => moveLightbox(-1));
+lightbox?.querySelector('.lightbox-next')?.addEventListener('click', () => moveLightbox(1));
+lightbox?.addEventListener('click', (event) => { if (event.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (event) => {
+  if (!lightbox || lightbox.hidden) return;
+  if (event.key === 'Escape') closeLightbox();
+  else if (event.key === 'ArrowLeft') moveLightbox(-1);
+  else if (event.key === 'ArrowRight') moveLightbox(1);
+});
 
 function applyPalette(film) {
   (film.palette || []).forEach((c, i) => {
@@ -148,6 +206,20 @@ function renderText() {
     showSection('crew');
   } else hideSection('crew');
 
+  // soundtrack player
+  const soundtrack = Array.isArray(film.soundtrack) ? film.soundtrack : [];
+  const musicSlot = document.getElementById('film-music-player');
+  if (soundtrack.length && musicSlot) {
+    showSection('music');
+    if (!musicPlayerHandle) musicPlayerHandle = mountMusicPlayer(musicSlot, soundtrack, lang, () => {});
+    else musicPlayerHandle.setLang(lang);
+  } else {
+    hideSection('music');
+    if (musicSlot) musicSlot.replaceChildren();
+    musicPlayerHandle?.destroy();
+    musicPlayerHandle = null;
+  }
+
   // facts
   const factsEl = document.getElementById('film-facts');
   const facts = Array.isArray(film.facts) ? film.facts : [];
@@ -178,18 +250,29 @@ function renderText() {
   // gallery
   const galleryEl = document.getElementById('film-gallery');
   const images = Array.isArray(film.images) ? film.images : [];
+  galleryImages = images;
   if (images.length) {
     galleryEl.innerHTML = '';
-    images.forEach((im) => {
+    images.forEach((im, index) => {
       const figure = document.createElement('figure');
+      figure.className = 'film-gallery-item';
       const img = document.createElement('img');
-      img.src = im.file;
       img.alt = (im.alt && (im.alt[lang] || im.alt.ru)) || '';
       img.loading = 'lazy';
       img.decoding = 'async';
-      if (im.file) {
-        // no width/height known; skip
+      if (im.w) img.width = im.w;
+      if (im.h) img.height = im.h;
+      if (Array.isArray(im.srcset) && im.srcset.length) {
+        img.srcset = im.srcset.map((variant) => `${variant.file} ${variant.w}w`).join(', ');
+        img.sizes = '(max-width: 720px) 88vw, 720px';
       }
+      if (im.blur) {
+        img.style.backgroundImage = `url("${im.blur}")`;
+        img.classList.add('is-blurred');
+        img.addEventListener('load', () => img.classList.remove('is-blurred'), { once: true });
+      }
+      img.addEventListener('click', () => openLightbox(index));
+      img.src = im.file;
       figure.append(img);
       if (im.caption) {
         const cap = document.createElement('figcaption');
@@ -273,6 +356,8 @@ function renderText() {
       nextLink.hidden = false;
     } else nextLink.hidden = true;
   }
+
+  if (lightbox && !lightbox.hidden) renderLightbox();
 }
 
 function initLangSwitch() {

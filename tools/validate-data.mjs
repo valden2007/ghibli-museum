@@ -17,7 +17,7 @@ try {
 
 if (!Array.isArray(data)) { fail('films.json must be an array'); process.exit(); }
 
-const required = ['id','title','year','director','palette','era','motif','trailerId','watch','synopsis','facts','note','tagline','world','plot','characters','creation','inspiration','crew','themes','opinion','images','verify','sources'];
+const required = ['id','title','year','director','palette','era','motif','trailerId','watch','synopsis','facts','note','tagline','world','plot','characters','creation','inspiration','crew','themes','opinion','images','soundtrack','verify','sources'];
 let total = 0;
 for (const film of data) {
   total++;
@@ -41,6 +41,7 @@ for (const film of data) {
   if (!Array.isArray(film.inspiration)) fail(`${film.id}: inspiration not array`);
   if (!Array.isArray(film.themes)) fail(`${film.id}: themes not array`);
   if (!Array.isArray(film.images)) fail(`${film.id}: images not array`);
+  if (!Array.isArray(film.soundtrack)) fail(`${film.id}: soundtrack not array`);
   if (!Array.isArray(film.verify)) fail(`${film.id}: verify not array`);
   if (!Array.isArray(film.sources)) fail(`${film.id}: sources not array`);
   if (!Array.isArray(film.facts)) fail(`${film.id}: facts not array`);
@@ -73,6 +74,26 @@ for (const film of data) {
     if (im.file) {
       const imgPath = path.join(root, 'docs', im.file);
       if (!fs.existsSync(imgPath)) fail(`${film.id}: image file missing ${im.file}`);
+      if (!im.alt?.ru?.trim() || !im.alt?.en?.trim()) fail(`${film.id}: image alt must be filled in ru/en (${im.file})`);
+      if (!im.caption?.ru?.trim() || !im.caption?.en?.trim()) fail(`${film.id}: image caption must be filled in ru/en (${im.file})`);
+      for (const variant of im.srcset || []) {
+        const variantPath = path.join(root, 'docs', variant.file);
+        if (!fs.existsSync(variantPath)) fail(`${film.id}: srcset file missing ${variant.file}`);
+        if (variant.w >= 1600 && fs.existsSync(variantPath) && fs.statSync(variantPath).size > 400 * 1024) {
+          fail(`${film.id}: 1600px image exceeds 400 KB (${variant.file})`);
+        }
+      }
+      if (im.w && im.h && (im.w > 12000 || im.h > 12000)) fail(`${film.id}: unreasonable image dimensions ${im.w}x${im.h}`);
+    }
+  }
+  for (const track of film.soundtrack || []) {
+    if (!track.id || !track.file) fail(`${film.id}: soundtrack track needs id and file`);
+    if (!track.title?.ru?.trim() || !track.title?.en?.trim()) fail(`${film.id}: soundtrack title must be filled in ru/en (${track.id})`);
+    const audioFiles = [track.file, ...(track.alternatives || [])];
+    for (const audioFile of audioFiles) {
+      const audioPath = path.join(root, 'docs', audioFile);
+      if (!fs.existsSync(audioPath)) fail(`${film.id}: soundtrack file missing ${audioFile}`);
+      else if (fs.statSync(audioPath).size > 8 * 1024 * 1024) fail(`${film.id}: soundtrack file exceeds 8 MB (${audioFile})`);
     }
   }
   // sources
