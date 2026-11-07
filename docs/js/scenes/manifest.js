@@ -8,4 +8,5 @@ export const sceneModules = Object.freeze({
   howl: './scenes/howl.js',
   ponyo: './scenes/ponyo.js',
   nausicaa: './scenes/nausicaa.js',
+  laputa: './scenes/laputa.js',
 });
