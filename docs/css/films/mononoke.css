@@ -1,3 +1,51 @@
-body.film-page[data-film-world="mononoke"] { --film-scene-accent:#c9a227; --film-card-radius:2px; }
-body.film-page[data-film-world="mononoke"] .film-section h2 { border-bottom:1px solid #8c3023; }
-body.film-page[data-film-world="mononoke"] .film-character { border-left:3px solid #8c3023; }
+/* Mononoke — dark green / gold, angular runic dividers, ocher accent line */
+body.film-page[data-film-world="mononoke"] {
+  --film-scene-accent: #c9a227;
+  --film-card-radius: 2px;
+  --film-rule: linear-gradient(90deg, #8c3023, #c9a227 40%, transparent 90%);
+}
+
+body.film-page[data-film-world="mononoke"] .film-section h2 {
+  border-bottom: 1px solid #8c3023;
+  clip-path: polygon(0 0, 100% 0, 99% 100%, 0 60%); /* runic slanted edge */
+}
+
+body.film-page[data-film-world="mononoke"] .film-character { border-left: 3px solid #8c3023; }
+
+body.film-page[data-film-world="mononoke"] #creation { position: relative; }
+
+/* cursed tendrils creeping along the creation section edges */
+.curse-tendril {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 18%, #05070a 34%, transparent 36%),
+    radial-gradient(circle at 42% 44%, #0b0f14 30%, transparent 32%),
+    radial-gradient(circle at 58% 72%, #05070a 26%, transparent 28%),
+    linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.2));
+  filter: url(#scene-watercolor);
+  transform-origin: top;
+  animation: tendril-crawl 9s ease-in-out infinite;
+  opacity: 0.75;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  z-index: 3;
+}
+
+.curse-tendril--left { left: -4px; }
+.curse-tendril--right { right: -4px; animation-delay: -4.5s; }
+
+@keyframes tendril-crawl {
+  0%, 100% { transform: scaleY(0.25); }
+  45%, 60% { transform: scaleY(1); }
+}
+
+#creation:hover .curse-tendril,
+#creation:focus-within .curse-tendril {
+  transform: scaleY(0.12);
+  opacity: 0.25;
+}
+
+html[data-effects="off"] .curse-tendril { animation: none; transform: scaleY(0.6); }

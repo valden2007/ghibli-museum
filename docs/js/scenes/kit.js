@@ -141,3 +141,51 @@ export function effectsConfig(level) {
   if (level === 'lite') return { animate: true, particles: 0.4, fps: 30, pointer: false };
   return { animate: true, particles: 1, fps: 60, pointer: true };
 }
+
+export function seededRandom(seed) {
+  let value = seed >>> 0;
+  return () => {
+    value = (1664525 * value + 1013904223) >>> 0;
+    return value / 4294967296;
+  };
+}
+
+// Rolling hill silhouette band; offset shifts the whole band (parallax).
+export function drawHills(c, { w, h, y, amp, color, offset = 0, seed = 1 }) {
+  const rnd = seededRandom(seed);
+  const phases = Array.from({ length: 8 }, () => rnd() * 6);
+  c.fillStyle = color;
+  c.beginPath();
+  c.moveTo(-60, h + 20);
+  for (let i = 0; i <= 7; i++) {
+    const x = -60 + (i / 7) * (w + 120) + offset;
+    const yy = y + Math.sin(i * 1.7 + phases[i]) * amp;
+    if (i === 0) c.lineTo(x, yy);
+    else c.quadraticCurveTo(x - (w + 120) / 14, yy + amp * 0.6, x, yy);
+  }
+  c.lineTo(w + 60, h + 20);
+  c.closePath();
+  c.fill();
+}
+
+// Row of leaning tree silhouettes with canopy blobs.
+export function drawTreeRow(c, { w, base, top, count, color, offset = 0, seed = 3 }) {
+  const rnd = seededRandom(seed);
+  c.fillStyle = color;
+  for (let i = 0; i < count; i++) {
+    const x = ((i + rnd()) / count) * (w + 200) - 100 + offset;
+    const trunkW = 6 + rnd() * 12;
+    const height = base - top - rnd() * 46;
+    c.beginPath();
+    c.moveTo(x, base + 4);
+    c.quadraticCurveTo(x + trunkW * 0.4, base - height * 0.55, x + trunkW * 0.9, base - height);
+    c.lineTo(x + trunkW * 2.0, base - height);
+    c.quadraticCurveTo(x + trunkW * 1.7, base - height * 0.5, x + trunkW * 2.8, base + 4);
+    c.closePath();
+    c.fill();
+    c.beginPath();
+    c.arc(x + trunkW * 1.45, base - height, height * 0.2 + 14, 0, Math.PI * 2);
+    c.arc(x + trunkW * 0.5, base - height * 0.82, height * 0.13 + 8, 0, Math.PI * 2);
+    c.fill();
+  }
+}

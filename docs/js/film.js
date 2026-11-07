@@ -122,7 +122,7 @@ async function mountFilmScene(film) {
     try {
       const module = await import(sceneModules[film.id]);
       activeSceneModule = module.default || module;
-      const ctx = { root: heroBg, palette: film.palette, settings: getSettings(), audio: sceneAudio, kit: sceneKit };
+      const ctx = { root: heroBg, palette: film.palette, settings: { get: getSettings, subscribe: subscribeSettings }, audio: sceneAudio, kit: sceneKit };
       const result = await activeSceneModule.mount(ctx);
       activeScene = result || activeSceneModule;
       activeScene?.onEffects?.(effectLevel);

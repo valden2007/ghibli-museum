@@ -261,31 +261,56 @@ export function scene(name, opts = {}) {
   const c = ensureCtx();
   if (!c) return;
   const now = c.currentTime;
-  const gain = c.createGain();
-  const osc = c.createOscillator();
-  const filter = c.createBiquadFilter();
   const presets = {
-    rain: { type: 'noise', frequency: 900, duration: 1.2 },
-    wind: { type: 'noise', frequency: 320, duration: 2.5 },
-    water: { type: 'noise', frequency: 520, duration: 1.8 },
-    fire: { type: 'tone', frequency: 150, duration: 0.35 },
-    footsteps: { type: 'tone', frequency: 90, duration: 0.16 },
-    bells: { type: 'tone', frequency: 660, duration: 1.1 },
+    rain: { kind: 'noise', filter: 1400, duration: 1.6, volume: 0.04 },
+    wind: { kind: 'noise', filter: 380, duration: 2.6, volume: 0.035 },
+    water: { kind: 'noise', filter: 700, duration: 1.4, volume: 0.04 },
+    rustle: { kind: 'noise', filter: 2600, duration: 0.7, volume: 0.02 },
+    fire: { kind: 'tone', wave: 'triangle', frequency: 140, slide: 90, duration: 0.3, volume: 0.03 },
+    footsteps: { kind: 'tone', wave: 'sine', frequency: 92, slide: 60, duration: 0.16, volume: 0.05 },
+    bells: { kind: 'tone', wave: 'sine', frequency: 660, slide: 655, duration: 1.4, volume: 0.035 },
+    bell: { kind: 'tone', wave: 'sine', frequency: 1046, slide: 1040, duration: 1.8, volume: 0.028 },
+    click: { kind: 'tone', wave: 'square', frequency: 1100, slide: 760, duration: 0.05, volume: 0.04 },
+    clank: { kind: 'tone', wave: 'square', frequency: 320, slide: 210, duration: 0.14, volume: 0.05 },
+    drum: { kind: 'tone', wave: 'sine', frequency: 58, slide: 40, duration: 1.3, volume: 0.09 },
+    bird: { kind: 'tone', wave: 'sine', frequency: 2100, slide: 2900, duration: 0.22, volume: 0.022 },
+    hum: { kind: 'tone', wave: 'sine', frequency: 196, slide: 190, duration: 2.4, volume: 0.026 },
+    musicbox: { kind: 'tone', wave: 'triangle', frequency: 880, slide: 878, duration: 1.2, volume: 0.03 },
+    engine: { kind: 'noise', filter: 240, duration: 3.2, volume: 0.03 },
   };
   const preset = { ...(presets[name] || presets.wind), ...(opts || {}) };
-  const duration = preset.duration || 1;
+  const duration = Math.max(0.04, preset.duration);
+  const volume = Math.min(0.12, preset.volume ?? 0.04);
+  const gain = c.createGain();
   gain.gain.setValueAtTime(0.0001, now);
-  gain.gain.linearRampToValueAtTime(Math.min(0.12, preset.volume ?? 0.045), now + 0.04);
+  gain.gain.linearRampToValueAtTime(volume, now + Math.min(0.15, duration * 0.25));
   gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+  const filter = c.createBiquadFilter();
   filter.type = 'lowpass';
-  filter.frequency.value = preset.frequency;
-  osc.type = preset.type === 'noise' ? 'triangle' : 'sine';
-  osc.frequency.value = preset.frequency;
-  osc.connect(filter);
+  filter.frequency.value = preset.filter || 1600;
+  let source;
+  if (preset.kind === 'noise') {
+    const len = Math.max(1, Math.ceil(c.sampleRate * duration));
+    const buf = c.createBuffer(1, len, c.sampleRate);
+    const data = buf.getChannelData(0);
+    let brown = 0;
+    for (let i = 0; i < len; i++) {
+      brown = (brown + 0.03 * (Math.random() * 2 - 1)) / 1.03;
+      data[i] = brown * 3.2;
+    }
+    source = c.createBufferSource();
+    source.buffer = buf;
+  } else {
+    source = c.createOscillator();
+    source.type = preset.wave || 'sine';
+    source.frequency.setValueAtTime(preset.frequency, now);
+    if (preset.slide) source.frequency.exponentialRampToValueAtTime(preset.slide, now + duration);
+  }
+  source.connect(filter);
   filter.connect(gain);
   gain.connect(master || c.destination);
-  osc.start(now);
-  osc.stop(now + duration + 0.02);
+  source.start(now);
+  source.stop(now + duration + 0.02);
 }
 
 document.addEventListener('visibilitychange', () => {
