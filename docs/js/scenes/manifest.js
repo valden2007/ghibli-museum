@@ -11,4 +11,5 @@ export const sceneModules = Object.freeze({
   laputa: './scenes/laputa.js',
   kiki: './scenes/kiki.js',
   'porco-rosso': './scenes/porco-rosso.js',
+  'wind-rises': './scenes/wind-rises.js',
 });

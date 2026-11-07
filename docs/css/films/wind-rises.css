@@ -1,3 +1,19 @@
-body.film-page[data-film-world="wind-rises"] { --film-scene-accent:#6fa8dc; --film-card-radius:2px; }
-body.film-page[data-film-world="wind-rises"] .film-section h2 { border-bottom:1px solid #6fa8dc; font-style:italic; }
-body.film-page[data-film-world="wind-rises"] .film-character { border-top:1px solid #6fa8dc; }
+/* Wind Rises — sky blue / white, italic headings */
+body.film-page[data-film-world="wind-rises"] {
+  --film-scene-accent: #6fa8dc;
+  --film-card-radius: 2px;
+}
+
+body.film-page[data-film-world="wind-rises"] .film-section h2 {
+  border-bottom: 1px solid #6fa8dc;
+  font-style: italic;
+}
+
+body.film-page[data-film-world="wind-rises"] .film-character {
+  border-top: 1px solid #6fa8dc;
+  border-radius: 2px;
+}
+
+body.film-page[data-film-world="wind-rises"] .film-section {
+  background-image: repeating-linear-gradient(10deg, rgba(111,168,220,0.04), rgba(111,168,220,0.04) 1px, transparent 1px, transparent 14px);
+}
