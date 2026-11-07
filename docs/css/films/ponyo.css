@@ -1,3 +1,19 @@
-body.film-page[data-film-world="ponyo"] { --film-scene-accent:#4aa8a8; --film-card-radius:22px; }
-body.film-page[data-film-world="ponyo"] .film-section h2 { border-bottom:2px dotted #4aa8a8; }
-body.film-page[data-film-world="ponyo"] .film-character { border-radius:22px; }
+/* Ponyo — saturated blues, red accents, rounded forms, hand-drawn contours */
+body.film-page[data-film-world="ponyo"] {
+  --film-scene-accent: #4aa8a8;
+  --film-card-radius: 22px;
+}
+
+body.film-page[data-film-world="ponyo"] .film-section h2 {
+  border-bottom: 2px dotted #4aa8a8;
+  border-radius: 0 0 22px 22px;
+}
+
+body.film-page[data-film-world="ponyo"] .film-character {
+  border-radius: 22px;
+  border-color: color-mix(in srgb, #c94a3a 40%, var(--color-border));
+}
+
+body.film-page[data-film-world="ponyo"] .film-character strong {
+  color: #c94a3a;
+}
