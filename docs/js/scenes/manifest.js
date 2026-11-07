@@ -4,4 +4,6 @@
 export const sceneModules = Object.freeze({
   mononoke: './scenes/mononoke.js',
   'spirited-away': './scenes/spirited-away.js',
+  totoro: './scenes/totoro.js',
+  howl: './scenes/howl.js',
 });

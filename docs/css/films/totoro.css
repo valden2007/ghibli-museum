@@ -1,3 +1,18 @@
-body.film-page[data-film-world="totoro"] { --film-scene-accent:#6b8f4e; --film-card-radius:18px; }
-body.film-page[data-film-world="totoro"] .film-section h2 { border-bottom:2px solid #6b8f4e; border-radius:0 0 18px 18px; }
-body.film-page[data-film-world="totoro"] .film-character { border-radius:18px; }
+/* Totoro — warm greens, rounded childish forms, soft shadows */
+body.film-page[data-film-world="totoro"] {
+  --film-scene-accent: #6b8f4e;
+  --film-card-radius: 18px;
+}
+
+body.film-page[data-film-world="totoro"] .film-section h2 {
+  border-bottom: 2px solid #6b8f4e;
+  border-radius: 0 0 18px 18px;
+}
+
+body.film-page[data-film-world="totoro"] .film-character {
+  border-radius: 18px;
+}
+
+body.film-page[data-film-world="totoro"] .film-neighbors a {
+  border-radius: 999px;
+}
