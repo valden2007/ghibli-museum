@@ -1,3 +1,19 @@
-body.film-page[data-film-world="kiki"] { --film-scene-accent:#c94a4a; --film-card-radius:14px; }
-body.film-page[data-film-world="kiki"] .film-section h2 { border-bottom:2px dotted #c94a4a; }
-body.film-page[data-film-world="kiki"] .film-character { border-radius:14px; }
+/* Kiki — warm reds and blues, soft rounded forms, lace */
+body.film-page[data-film-world="kiki"] {
+  --film-scene-accent: #c94a4a;
+  --film-card-radius: 14px;
+}
+
+body.film-page[data-film-world="kiki"] .film-section h2 {
+  border-bottom: 2px dotted #c94a4a;
+  border-radius: 0 0 14px 14px;
+}
+
+body.film-page[data-film-world="kiki"] .film-character {
+  border-radius: 14px;
+  border-color: color-mix(in srgb, #8fa8d9 40%, var(--color-border));
+}
+
+body.film-page[data-film-world="kiki"] .film-character strong {
+  color: #c94a4a;
+}
