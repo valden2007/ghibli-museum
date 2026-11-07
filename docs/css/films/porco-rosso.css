@@ -1,3 +1,21 @@
-body.film-page[data-film-world="porco-rosso"] { --film-scene-accent:#c97a4a; --film-card-radius:0; }
-body.film-page[data-film-world="porco-rosso"] .film-section h2 { border-bottom:1px solid #c97a4a; text-transform:uppercase; }
-body.film-page[data-film-world="porco-rosso"] .film-character { border-radius:0; }
+/* Porco Rosso — sepia + red, vintage typography, 1920s poster frames */
+body.film-page[data-film-world="porco-rosso"] {
+  --film-scene-accent: #c97a4a;
+  --film-card-radius: 0;
+}
+
+body.film-page[data-film-world="porco-rosso"] .film-section h2 {
+  border-bottom: 1px solid #c97a4a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+body.film-page[data-film-world="porco-rosso"] .film-character {
+  border-radius: 0;
+  border-color: color-mix(in srgb, #c97a4a 45%, var(--color-border));
+}
+
+body.film-page[data-film-world="porco-rosso"] .film-character strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+}
